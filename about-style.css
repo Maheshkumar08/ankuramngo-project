@@ -380,6 +380,11 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .navbar-nav{
+    background-color:transparent;
+    margin-right: 50%;
+    /* flex-flow: column; */
+  }
  .about-hero h1 { font-size: 2rem; }
   .about-hero p { font-size: 1rem; }
   .about-section { padding: 60px 5%; }
@@ -442,6 +447,11 @@ ul {
   .footer-column h3::after {
     left: 50%;
     transform: translateX(-50%);
+  }
+  .navbar-nav{
+    background-color:transparent;
+    margin-right: 50%;
+    /* flex-flow: column; */
   }
 }
 

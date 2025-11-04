@@ -773,7 +773,9 @@ ul{
 
 @media (max-width: 768px) {
   .navbar-nav{
-    background-color:#222222;
+    background-color:transparent;
+    margin-right: 50%;
+    /* flex-flow: column; */
   }
   .hero-section-text p {
     font-size: 45px;
@@ -823,8 +825,9 @@ ul{
 }
 @media (max-width: 576px) {
   .navbar-nav{
-    background-color:#222222;
-  
+    background-color:transparent;
+    margin-right: 50%;
+    /* flex-flow: column; */
   }
   .event-container {
     grid-template-columns: 1fr;
