@@ -453,4 +453,9 @@ ul {
     flex-flow: column wrap;
     transition: all 1.9s;
   }
+  .navbar-nav{
+    background-color:transparent;
+    margin-right: 50%;
+    /* flex-flow: column; */
+  }
 }
