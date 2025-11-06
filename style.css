@@ -95,46 +95,46 @@
 
 
 
-.containerr{
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    background-color: #F14079;
-   
+.containerr {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  background-color: #F14079;
 }
-.container .hero-img{
-    width: 100%;
-    height: 50%;
-    border-radius: 12px; 
-    
-}
-.hero-section-text{
-    margin-top: -45%;
-    background-color: var(--text-color);
-    color: var(--info-color);
-    font-size: xx-large;
-    
 
+.container .hero-img {
+  width: 100%;
+  height: 50%;
+  border-radius: 12px;
 }
+
+.hero-section-text {
+  margin-top: -45%;
+  background-color: var(--text-color);
+  color: var(--info-color);
+  font-size: xx-large;
+}
+
 .hero-section-text p {
   font-size: 80px;
   font-weight: 600;
   font-style: normal;
   text-shadow: 4px 6px 12px var(--danger-color);
   text-align: center;
+  color: rgba(253, 253, 0, 0.966);
 }
 
 /* Button styling */
 .hero-section-text button {
   width: 20%;
-  min-width: 140px; /* Prevent button from shrinking too much */
+  min-width: 140px;
   border-radius: 20px;
   font-size: 18px;
   padding: 10px 20px;
   box-shadow: 25px 10px 16px var(--danger-color);
   cursor: pointer;
   border: 1.5px solid var(--danger-color);
-  transition: all 0.3s ease; /* Smooth transition both ways */
+  transition: all 0.3s ease;
 }
 
 /* Hover effect */
@@ -143,6 +143,7 @@
   background-color: #333333;
   color: yellow;
 }
+
 .cr-section {
   display: flex;
   align-items: center;
@@ -388,6 +389,7 @@
   align-self: center;
   margin-bottom: 20px;
   background-color: rgb(243, 163, 190);
+  text-decoration: none;
 }
 
 .event-btn:hover {
