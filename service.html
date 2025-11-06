@@ -310,89 +310,100 @@
   100% { transform: translateY(0px); }
 }
 .footer {
-  background: var(--danger-color); /* Black tone */
-  color: var(--primary-color); /* White */
-  padding: 60px 10% 20px;
+  background: #333;
+  color: #fff;
+  padding: 60px 8% 20px;
   font-family: 'Poppins', sans-serif;
 }
 
+/* Grid layout */
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 40px;
   margin-bottom: 40px;
 }
 
-.footer-column h3 {
-  color: var(--info-color); /* Logo pink tone */
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-  position: relative;
+/* Logo */
+.footer-logo {
+  width: 160px;
+  height: auto;
+}
+.footer-desc {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
+/* Headings */
+.footer-column h3 {
+  color: #F14079;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  position: relative;
+}
 .footer-column h3::after {
   content: "";
   position: absolute;
   width: 60px;
   height: 3px;
-  background: var(--dark-color); /* Green line */
+  background: #72BE48;
   left: 0;
   bottom: -8px;
   border-radius: 5px;
 }
 
+/* Links */
 .footer-column ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-column ul li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
-
 .footer-column ul li a {
-  color: var(--text-color);
+  color: #ddd;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
-
 .footer-column ul li a:hover {
-  color: var(--dark-color);
-  text-decoration: underline;
+  color: #F14079;
 }
 
+/* Contact text */
 .footer-column p {
-  color: var(--text-color);
+  color: #ccc;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
+/* Social icons */
 .footer-social {
-  margin-top: 15px;
+  margin-top: 10px;
 }
-
 .footer-social a {
-  color: var(--primary-color);
-  margin-right: 15px;
+  color: #fff;
   font-size: 1.3rem;
+  margin-right: 15px;
   transition: color 0.3s, transform 0.3s;
 }
-
 .footer-social a:hover {
-  color: var(--dark-color); /* Green hover */
+  color: #F14079;
   transform: scale(1.2);
 }
 
+/* Bottom */
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .footer-bottom p {
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: #ccc;
 }
+
+
 
 
 /* 🌐 Responsive design breakpoints */
@@ -502,6 +513,13 @@
   }
    .inclusive-image {
     max-width: 100%;     /* mobile पर container के भीतर पूरा फैल जाए */
+  }
+   .footer {
+    text-align: center;
+  }
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 576px) {
@@ -790,46 +808,57 @@
       <h3>Want to know more about our programs?</h3>
       <a href="contact-us.html" class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite">Contact Us</a>
     </section>
-    <footer class="footer">
+    <!-- 🌟 4-Part Professional Footer -->
+<footer class="footer">
   <div class="footer-container">
-    <!-- Our Services -->
+
+    <!-- 🔹 Column 1: Logo -->
+    <div class="footer-column text-center text-md-start">
+      <img src="/image/logo-removebg-preview - Copy.png" alt="Ankurm Foundation Logo" class="footer-logo">
+      <p class="footer-desc mt-3">
+        Empowering every child through education, therapy & inclusion.
+      </p>
+    </div>
+
+    <!-- 🔹 Column 2: Join Us -->
     <div class="footer-column">
-      <h3>Our Services</h3>
+      <h3>Join Us</h3>
       <ul>
-        <li><a href="#">Special Education</a></li>
-        <li><a href="#">Therapy & Wellness</a></li>
-        <li><a href="#">Inclusive Learning</a></li>
-        <li><a href="#">Skill Development</a></li>
+        <li><a href="#">Speech Therapy</a></li>
+        <li><a href="#">Occupational Therapy</a></li>
+        <li><a href="#">Behavioral Therapy</a></li>
       </ul>
     </div>
 
-    <!-- Parent Resources -->
+    <!-- 🔹 Column 3: Our Resources -->
     <div class="footer-column">
-      <h3>Parent Resources</h3>
+      <h3>Our Resources</h3>
       <ul>
-        <li><a href="#">Admission Process</a></li>
-        <li><a href="#">Forms & Policies</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Feedback</a></li>
+        <li><a href="About-page.html">About Us</a></li>
+        <li><a href="sucess-story.html">Success Story</a></li>
+        <li><a href="support.html">Donation</a></li>
       </ul>
     </div>
 
-    <!-- Contact Us -->
+    <!-- 🔹 Column 4: Contact Info -->
     <div class="footer-column">
-      <h3>Contact Us</h3>
+      <h3>Contact Info</h3>
       <p>
         Ankurm Foundation<br>
-        1st floor Barahi Tower, near KVM school, Heera Nagar, Mukhani Haldwani , Haldwani, India, Uttarakhand<br>
+        1st Floor, Barahi Tower, Near KVM School,<br>
+        Heera Nagar, Mukhani, Haldwani, Uttarakhand<br><br>
         <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i>ankurmfoundation@gmail.com
+        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
       </p>
       <div class="footer-social">
-        <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ankurmfoundation/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
+
   </div>
 
+  <!-- 🔸 Bottom Line -->
   <div class="footer-bottom">
     <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
   </div>
