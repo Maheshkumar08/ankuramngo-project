@@ -573,6 +573,26 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.reel-box {
+  width: 280px;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+}
+
+.reel-box video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(110,25,110,0.7);
+  border-radius: 50%;
+  padding: 15px;
+}
 
 .accreditation-section {
   width: 100%;
@@ -964,6 +984,7 @@
 
   .cortoon-container img {
     max-width: 180px;
+    margin-bottom: 50%;
   }
 
   .text-container h1 {

@@ -394,36 +394,61 @@
 }
 
 /* CONTACT-CSS */
+.contact-info-section {
+  background-color: #FFF8F6;
+  font-weight: 600;
+}
+
+.contact-info-section .contact-details p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-info-section .social-links a {
+  color: #6E196E;
+  transition: 0.3s;
+}
+
+.contact-info-section .social-links a:hover {
+  color: #F14079;
+}
+
+/* 🌈 Contact Form Section */
 .contact-section {
-        padding: 60px 0;
-      }
+  background-color: #fdf9f9;
+  padding: 60px 0;
+}
 
-      .contact-box {
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      }
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
 
-      /* 🔹 Lottie container in place of image */
-      .contact-lottie {
-        min-height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #f7ecff;
-      }
+.contact-lottie,
+.contact-form {
+  flex: 1;
+}
 
-      .contact-form {
-        padding: 40px;
-        background-color: #F14079;
-      }
+.contact-form h2 {
+  color: #6E196E;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
-      .contact-form h2 label {
-        color: #6E196E;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
+.btn-custom {
+  background-color: #F14079;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #6E196E;
+}
 
       label {
         color: #6E196E;
@@ -567,46 +592,32 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  .contact-section {
-        padding: 60px 0;
-      }
+   .contact-box {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      .contact-box {
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      }
+  .contact-lottie,
+  .contact-form {
+    width: 100%;
+  }
 
-      /* 🔹 Lottie container in place of image */
-      .contact-lottie {
-        min-height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #f7ecff;
-      }
+  .contact-info-section .row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 
-      .contact-form {
-        padding: 40px;
-      }
+  .contact-info-section .contact-details {
+    margin-top: 20px;
+  }
 
-      .contact-form h2 {
-        color: #6E196E;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
+  .contact-info-section .social-links a {
+    margin-right: 10px;
+  }
 
-      .btn-custom {
-        background-color: #6E196E;
-        color: white;
-        transition: background 0.3s ease;
-      }
-
-      .btn-custom:hover {
-        background-color: #F14079;
-        border: 2px solid black;
-      }
+  #contact-info-animation, #contact-animation {
+    height: 300px !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -626,6 +637,15 @@
     background-color:transparent;
     margin-right: 50%;
     /* flex-flow: column; */
+  }
+   h2 {
+    font-size: 1.6rem;
+  }
+  .contact-details p {
+    font-size: 0.9rem;
+  }
+  .mb-3{
+    text-align: start;
   }
 }
 

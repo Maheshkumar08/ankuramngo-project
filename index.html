@@ -75,7 +75,7 @@
         </div>
         <div class="container cr-section">
   <div class="cortoon-container">
-    <img src="/image/cortoon-2-removebg-preview.png" alt="">
+    <img src="/image/class-room.jpeg" alt="">
   </div>
   <div class="text-container">
     <h1>Where Every Child Learns, Heals, and Grows</h1>
@@ -223,13 +223,70 @@
     <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 </section>
+      <!-- 🌟 Parent Video Reviews (Auto Reel Slider) -->
+<section class="parent-video-reviews py-5 wow animate__animated animate__fadeInUp">
+  <div class="container text-center">
+    <h2 class="mb-4" style="color:#6E196E; font-weight:700;">Parent Video Reviews</h2>
+    <p class="text-muted mb-5">Heartfelt words from parents — watch their experiences with us.</p>
+
+    <div id="parentReviewCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+
+        <!-- 🔹 Video 1 -->
+        <div class="carousel-item active">
+          <div class="reel-box mx-auto shadow">
+            <video playsinline  class="w-100 h-100 rounded">
+              <source src="image/parent revi.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h5 class="mt-3" style="color:#F14079;">Anita Sharma</h5>
+          <p class="text-secondary">“Ankurm Foundation has transformed my child’s confidence.”</p>
+        </div>
+
+        <!-- 🔹 Video 2 -->
+        <div class="carousel-item">
+          <div class="reel-box mx-auto shadow">
+            <video playsinline  class="w-100 h-100 rounded">
+              <source src="image/WhatsApp Video 2025-11-05 at 6.59.00 AM.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h5 class="mt-3" style="color:#F14079;">Rohit Verma</h5>
+          <p class="text-secondary">“We’ve seen great improvement in our child’s learning.”</p>
+        </div>
+
+        <!-- 🔹 Video 3 -->
+        <div class="carousel-item">
+          <div class="reel-box mx-auto shadow">
+            <video playsinline  class="w-100 h-100 rounded">
+              <source src="image/parent revi.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h5 class="mt-3" style="color:#F14079;">Neha Gupta</h5>
+          <p class="text-secondary">“Their therapy and inclusive approach changed everything.”</p>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#parentReviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#parentReviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- 🏅 Accreditations Section -->
 <section class="accreditation-section">
   <h2 class="section-heading">Our <span>Accreditations & Supporters</span></h2>
 
   <div class="accreditation-container">
-    <div class="accreditation-box">
-      <img src="image/support1.png" alt="Supporter 1">
+    <div class="accreditation-box" style="background-image: url(/image/chif-guest-image.jpeg);background-size: cover;">
+      <!-- <img src="image/chif-guest-image.jpeg" alt="Supporter 1"> -->
     </div>
     <div class="accreditation-box">
       <img src="image/support2.png" alt="Supporter 2">
@@ -322,6 +379,37 @@
     index = (index + 1) % testimonials.length;
     showTestimonial(index);
   }, 4000);
+
+  //reel video script //
+  const carousel = document.getElementById('parentReviewCarousel');
+  const bsCarousel = new bootstrap.Carousel(carousel, { interval: false });
+  const items = carousel.querySelectorAll('.carousel-item');
+
+  // Function to pause all videos
+  function pauseAllVideos() {
+    items.forEach(item => {
+      const vid = item.querySelector('video');
+      vid.pause();
+      vid.currentTime = 0;
+    });
+  }
+
+  // Event listener: when slide changes, play new video
+  carousel.addEventListener('slid.bs.carousel', () => {
+    pauseAllVideos();
+    const activeVideo = carousel.querySelector('.carousel-item.active video');
+    activeVideo.play();
+
+    // when video ends, go to next slide automatically
+    activeVideo.onended = () => bsCarousel.next();
+  });
+
+  // Auto play first video when page loads
+  window.addEventListener('load', () => {
+    const firstVideo = items[0].querySelector('video');
+    firstVideo.play();
+    firstVideo.onended = () => bsCarousel.next();
+  });
 </script>
 
 </body>

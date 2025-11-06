@@ -237,27 +237,39 @@
 
       /* 🌿 Inclusive Section */
       .inclusive {
-        background: #FEECEE;
-        padding: 80px 20px;
-        text-align: center;
-      }
+  background: #FEECEE;
+  padding: 80px 20px;
+  text-align: center;
+}
 
-      .inclusive img {
-        width: 250px;
-        border-radius: 10px;
-        margin-top: 25px;
-      }
+.inclusive h2 {
+  color: #6E196E;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 
-      .inclusive h2 {
-        color: #6E196E;
-        font-weight: 700;
-      }
+.inclusive p {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
 
-      .inclusive p {
-        max-width: 800px;
-        margin: 15px auto;
-        color: #444;
-      }
+/* Responsive image styling */
+.inclusive-image {
+  width: 100%;
+  max-width: 950px;      /* Desktop पर limit */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.inclusive-image:hover {
+  transform: scale(1.03);
+}
+
 
       /* 💌 CTA */
       .cta {
@@ -424,6 +436,12 @@
     .programs-text, .programs-list { text-align: center; }
     .programs-list li { justify-content: center; }
     .btn-learn { display: block; margin: 0 auto; }
+     .inclusive {
+    padding: 60px 15px;
+  }
+  .inclusive-image {
+    max-width: 100%;
+  }
 }
     
 @media (max-width: 768px) {
@@ -482,12 +500,21 @@
     margin-right: 50%;
     /* flex-flow: column; */
   }
+   .inclusive-image {
+    max-width: 100%;     /* mobile पर container के भीतर पूरा फैल जाए */
+  }
 }
 @media (max-width: 576px) {
   .navbar-nav{
     background-color:transparent;
     margin-right: 50%;
     /* flex-flow: column; */
+  }
+  .inclusive {
+    padding: 50px 10px;
+  }
+  .inclusive p {
+    font-size: 1rem;
   }
   .footer-container {
     grid-template-columns: 1fr;
@@ -643,7 +670,7 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-md-6 text-center">
-        <img src="/image/services-img/therapy.jpg" alt="Core Therapies" class="programs-img animate__animated animate__fadeInLeft">
+        <img src="/image/service-img/core-theripi img.webp" alt="Core Therapies" class="programs-img animate__animated animate__fadeInLeft">
       </div>
       <div class="col-md-6 animate__animated animate__fadeInRight">
         <h2 class="programs-title mb-3">Core Services & Therapies</h2>
@@ -667,7 +694,7 @@
   <div class="container">
     <div class="row align-items-center flex-md-row-reverse g-5">
       <div class="col-md-6 text-center">
-        <img src="/image/services-img/inclusive-education.jpg" alt="Inclusive Education" class="programs-img animate__animated animate__fadeInRight">
+        <img src="/image/service-img/inclusive education-img.jpg" alt="Inclusive Education" class="programs-img animate__animated animate__fadeInRight">
       </div>
       <div class="col-md-6 animate__animated animate__fadeInLeft">
         <h2 class="programs-title mb-3">Inclusive Education Center</h2>
@@ -691,7 +718,7 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-md-6 text-center">
-        <img src="" alt="Life Skills Training" class="programs-img animate__animated animate__fadeInLeft">
+        <img src="/image/service-img/Life Skills & Family Support img.webp" alt="Life Skills Training" class="programs-img animate__animated animate__fadeInLeft">
       </div>
       <div class="col-md-6 animate__animated animate__fadeInRight">
         <h2 class="programs-title mb-3">Life Skills & Family Support</h2>
@@ -715,7 +742,7 @@
   <div class="container">
     <div class="row align-items-center flex-md-row-reverse g-5">
       <div class="col-md-6 text-center">
-        <img src="/image/services-img/flexible-programs.jpg" alt="Flexible Services" class="programs-img animate__animated animate__fadeInRight">
+        <img src="/image/service-img/Flexible & Personalized Programs img.webp" alt="Flexible Services" class="programs-img animate__animated animate__fadeInRight">
       </div>
       <div class="col-md-6 animate__animated animate__fadeInLeft">
         <h2 class="programs-title mb-3">Flexible & Personalized Programs</h2>
@@ -738,11 +765,25 @@
 
 
     <!-- 🌿 INCLUSIVE SECTION -->
-    <section class="inclusive wow animate__animated animate__fadeIn">
-      <h2>Inclusive Education Center</h2>
-      <p>Our Inclusive Education Center integrates children with and without special needs, creating a nurturing environment that promotes empathy, learning, and growth for all.</p>
-      <img src="image/service-img/service-box-7.jpg" alt="Inclusive Illustration">
-    </section>
+   <!-- 🌿 INCLUSIVE SECTION -->
+<section class="inclusive wow animate__animated animate__fadeIn">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2>Inclusive Education Center</h2>
+        <p>
+          Our Inclusive Education Center integrates children with and without special needs,
+          creating a nurturing environment that promotes empathy, learning, and growth for all.
+        </p>
+        <img 
+          src="image/class-room.jpeg" 
+          alt="Inclusive Illustration" 
+          class="inclusive-image img-fluid"
+        >
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- 💌 CTA -->
     <section class="cta wow animate__animated animate__fadeInUpBig">
