@@ -18,6 +18,7 @@
       --accent: #F14079;
       --light: #FFF8F6;
       --dark: #333;
+      --info-color: #F14079;    
     }
 
     body {
@@ -27,22 +28,79 @@
     }
 
     /* 🔹 Navbar */
-    .navbar {
-      background: #e3f4fc;
-      padding: 10px 6%;
-    }
-    .navbar-brand img {
-      width: 150px;
-      height: auto;
-    }
-    .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .nav-link:hover {
-      color: var(--accent) !important;
-    }
+     .navbar {
+  background-color: #e3f4fc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-brand img {
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.nav-link {
+  color: var(--info-color) !important;
+  font-weight: 500;
+  padding: 10px 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover {
+  color: yellow !important;
+  transform: translateY(-2px);
+}
+
+/* 🔹 Dropdown (Show on Hover) */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-menu {
+  background-color: #FEECEE;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #F25435;
+  color: #fff;
+}
+
+/* 🔹 Support Button */
+.btn-danger {
+  background-color:#F14079;
+  border: none;
+  /* transition: all 0.3s ease; */
+}
+
+.btn-danger:hover {
+  background-color: #DB2038;
+  transform: scale(1.05);
+}
+
+/* 🔹 Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
     /* 🌟 Hero Section */
     .hero-section {
@@ -431,7 +489,7 @@
     <div class="row g-4">
       <div class="col-md-4 animate__animated animate__fadeInUp">
         <div class="event-card">
-          <img src="/image/hero-section-banner-copy.jpg" alt="Children’s Day" class="event-image">
+          <img src="/image/img/hero-section-banner-copy.webp" alt="Children’s Day" class="event-image">
           <div class="event-content">
             <div class="event-date">14 NOV 2024</div>
             <h4>Children’s Day Celebration</h4>
@@ -476,9 +534,9 @@
 
     <!-- 📸 3 Instagram-Style Images -->
     <div class="gallery-grid mb-5">
-      <div class="gallery-item"><img src="/image/chif-guest-image.jpeg" alt="Event 1"></div>
-      <div class="gallery-item"><img src="/image/event-gallery.jpeg" alt="Event 2"></div>
-      <div class="gallery-item"><img src="/image/class-room.jpeg" alt="Event 3"></div>
+      <div class="gallery-item"><img src="/image/img/chif-guest-image.webp" alt="Event 1"></div>
+      <div class="gallery-item"><img src="/image/img/event-gallery.webp" alt="Event 2"></div>
+      <div class="gallery-item"><img src="/image/new-service-img/class-room.webp" alt="Event 3"></div>
     </div>
     <p style="font-size: 80px; font-weight: 600; ">Videos</p>
     <!-- 🎥 3 Instagram-Style Videos -->
