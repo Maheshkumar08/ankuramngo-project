@@ -1,258 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ✅ Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="about-style.css">
-    <title>About-us</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="about-style.css" />
+    <title>Who-you-are</title>
+  </head>
+  <body>
     <!-- 🔹 Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid align-items-center">
-    
-    <!-- 🔹 Logo -->
-    <a class="navbar-brand" href="index.html">
-      <img src="/image/logo-removebg-preview.png" alt="ANKURM FOUNDATION">
-    </a>
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/image/img/logo-removebg-preview-1.webp"
+            alt="ANKURM FOUNDATION"
+            style="height: 45px; width: auto"
+          />
+        </a>
 
-    <!-- 🔹 Toggle -->
-    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <i class="fa fa-bars fs-2"></i>
-    </button>
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler text-black border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars fs-2"></i>
+        </button>
 
-    <!-- 🔹 Navbar Links -->
-    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
-      <ul class="navbar-nav text-center mx-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="About-page.html">Who You Are</a></li>
+        <!-- Navbar Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav text-center mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About-page.html">Who You Are</a>
+            </li>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="journalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Journal
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="journalDropdown">
-            <li><a class="dropdown-item" href="Event.html">Event</a></li>
-            <li><a class="dropdown-item" href="sucess-story.html">Success Story</a></li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="journalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Journal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+                <li><a class="dropdown-item" href="Event.html">Event</a></li>
+                <li>
+                  <a class="dropdown-item" href="sucess-story.html"
+                    >Success Story</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact</a>
+            </li>
+
+            <!-- Support Button for mobile -->
+            <li class="nav-item d-lg-none mt-3">
+              <button class="btn btn-outline-danger bg-transparent border-0">
+                <a
+                  href="support.html"
+                  style="text-decoration: none; color: white"
+                  >Support</a
+                >
+              </button>
+            </li>
           </ul>
-        </li>
+        </div>
 
-        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
-
-        <!-- Support Button for mobile -->
-        <li class="nav-item d-lg-none mt-3">
-          <button class="btn btn-danger w-50"><a href="support.html">Support</a></button>
-        </li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Support Button (Desktop only) -->
-    <div class="navbar-support d-none d-lg-block">
-      <button class="btn btn-danger"><a href="support.html">Support</a></button>
-    </div>
-  </div>
-</nav>
-
-<section class="about-hero">
-  <div class="overlay">
-    <h1>About <span>Ankurm Foundation</span></h1>
-    <p>Empowering children with special needs through education, therapy, and love.</p>
-  </div>
-</section>
-
-  <!-- 🌿 ABOUT SECTION -->
-<section class="about-section wow animate__animated animate__fadeInUp">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- 🔹 Left Image -->
-      <div class="col-md-6 text-center mb-4 mb-md-0">
-        <img src="/image/logo.jpg" alt="About Ankurm Foundation" class="about-img">
+        <!-- Support Button (Desktop only) -->
+        <div class="navbar-support d-none d-lg-block">
+          <button class="btn btn-danger">
+            <a href="support.html" style="color: white; text-decoration: none"
+              >Support</a
+            >
+          </button>
+        </div>
       </div>
+    </nav>
 
-      <!-- 🔹 Right Text -->
-      <div class="col-md-6">
-        <h2 class="about-title">About Ankurm Foundation</h2>
-        <p class="about-text">
-          <strong>Ankurm Foundation</strong> is more than just an organization — it’s a collective of passionate individuals dedicated to empowering children with special needs through education, therapy, and compassionate support. Our mission is to create an inclusive world where every child can learn, grow, and thrive.
+    <section class="about-hero">
+      <div class="overlay">
+        <h1>About <span>Ankurm Foundation</span></h1>
+        <p>
+          Empowering children with special needs through education, therapy, and
+          love.
         </p>
-
-        <p class="about-text">
-          Our multidisciplinary team of special educators, therapists, counselors, and volunteers work together to provide personalized programs for every child. We focus on identifying each child’s unique strengths and challenges, ensuring they receive the care and guidance they deserve in a nurturing environment.
-        </p>
-
-        <p class="about-text">
-          At Ankurm Foundation, we believe that with the right support, every child can achieve independence and fulfillment. We grow and learn alongside our children, celebrating each milestone as a step toward a brighter, more inclusive future.
-        </p>
-
-        <a href="contact-us.html" class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite">Get In Touch</a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-
-<section class="about-section">
-  <div class="about-box">
-    <div class="about-image">
-      <img src="/image/about-img/box1.png" alt="Foundation Story">
-    </div>
-    <div class="about-text">
-      <h2>How Did Ankurm Foundation Start?</h2>
-      <p>
-        Ankurm Foundation was born out of a heartfelt realization that children with special needs were underserved in
-        terms of quality education and therapies. Our founder felt compelled to create a safe and inclusive space where
-        every child could receive the care, education, and therapies they deserve to thrive.
-      </p>
-    </div>
-  </div>
-
-  <div class="about-box reverse">
-    <div class="about-image">
-      <img src="/image/about-img/box4.png" alt="Inspiration">
-    </div>
-    <div class="about-text">
-      <h2>What Inspired Us?</h2>
-      <p>
-        We were inspired by the belief that every child, no matter their challenges, holds immense potential waiting to
-        be unlocked. Our mission is to focus on possibilities, not limitations, and help children grow with confidence
-        and independence.
-      </p>
-    </div>
-  </div>
-
-  <div class="about-box">
-    <div class="about-image">
-      <img src="/image/about-img/box3..png" alt="Unique Approach">
-    </div>
-    <div class="about-text">
-      <h2>What Makes Us Unique?</h2>
-      <p>
-        At Ankurm Foundation, we provide individualized attention and personalized therapy programs. Our approach
-        combines emotional care, academic learning, and inclusive education, where children with and without special
-        needs learn together in harmony.
-      </p>
-    </div>
-  </div>
-
-  <div class="about-box reverse">
-    <div class="about-image">
-      <img src="/image/about-img/box2.png" alt="Meaning of Ankurm">
-    </div>
-    <div class="about-text">
-      <h2>The Meaning Behind “Ankurm”</h2>
-      <p>
-        “Ankurm” is derived from the Hindi word “Ankur”, meaning a sprout — a symbol of new beginnings, hope, and
-        potential. Each child at Ankurm is nurtured like a sprout, growing into a confident, capable individual.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- 🌈 VISION & MISSION SECTION -->
-<section class="vision-mission-section py-5" id="vision-mission">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color:#6E196E;">Our Vision & Mission</h2>
-      <p class="text-muted">Empowering every child to reach their full potential </p>
-    </div>
-
-    <div class="row align-items-center gy-5">
-      <!-- Vision -->
-      <div class="col-md-6 wow animate__animated animate__fadeInLeft">
-        <div class="p-4 rounded-4 shadow-sm bg-white h-100">
-          <div class="d-flex align-items-center mb-3">
-            <i class="fa-solid fa-eye me-3" style="font-size:28px;color:#F14079;"></i>
-            <h4 class="fw-bold" style="color:#6E196E;">Our Vision</h4>
+    <!-- 🌿 ABOUT SECTION -->
+    <section class="about-section wow animate__animated animate__fadeInUp">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- 🔹 Left Image -->
+          <div class="col-md-6 text-center mb-4 mb-md-0">
+            <img
+              src="/image/logo.jpg"
+              alt="About Ankurm Foundation"
+              class="about-img"
+            />
           </div>
-          <p style="line-height:1.8; color:#444;">
-            Ankurm Foundation envisions a world where every child, regardless of their abilities, 
-            is empowered to reach their full potential. We believe that with the right support, 
-            education, and care, no child should be limited by challenges. Our goal is to create 
-            an inclusive world where every child lives a fulfilling, independent life with confidence 
-            and compassion.
+
+          <!-- 🔹 Right Text -->
+          <div class="col-md-6">
+            <h2 class="about-title">About Ankurm Foundation</h2>
+            <p class="about-text">
+              <strong>Ankurm Foundation</strong> is more than just an
+              organization — it’s a collective of passionate individuals
+              dedicated to empowering children with special needs through
+              education, therapy, and compassionate support. Our mission is to
+              create an inclusive world where every child can learn, grow, and
+              thrive.
+            </p>
+
+            <p class="about-text">
+              Our multidisciplinary team of special educators, therapists,
+              counselors, and volunteers work together to provide personalized
+              programs for every child. We focus on identifying each child’s
+              unique strengths and challenges, ensuring they receive the care
+              and guidance they deserve in a nurturing environment.
+            </p>
+
+            <p class="about-text">
+              At Ankurm Foundation, we believe that with the right support,
+              every child can achieve independence and fulfillment. We grow and
+              learn alongside our children, celebrating each milestone as a step
+              toward a brighter, more inclusive future.
+            </p>
+
+            <a
+              href="contact-us.html"
+              class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite"
+              >Get In Touch</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-box">
+        <div class="about-image">
+          <img src="/image/about-img/box1.png" alt="Foundation Story" />
+        </div>
+        <div class="about-text">
+          <h2>How Did Ankurm Foundation Start?</h2>
+          <p>
+            Ankurm Foundation was born out of a heartfelt realization that
+            children with special needs were underserved in terms of quality
+            education and therapies. Our founder felt compelled to create a safe
+            and inclusive space where every child could receive the care,
+            education, and therapies they deserve to thrive.
           </p>
         </div>
       </div>
 
-      <!-- Mission -->
-      <div class="col-md-6 wow animate__animated animate__fadeInRight">
-        <div class="p-4 rounded-4 shadow-sm bg-white h-100">
-          <div class="d-flex align-items-center mb-3">
-            <i class="fa-solid fa-bullseye me-3" style="font-size:28px;color:#F14079;"></i>
-            <h4 class="fw-bold" style="color:#6E196E;">Our Mission</h4>
-          </div>
-          <p style="line-height:1.8; color:#444;">
-            Our mission is to provide high-quality, specialized education and therapy 
-            in a safe, inclusive environment that supports the holistic development 
-            of children with special needs. We aim to empower children through personalized 
-            programs focusing on emotional, social, and life skills—helping them thrive beyond 
-            limitations and build a compassionate, inclusive society.
+      <div class="about-box reverse">
+        <div class="about-image">
+          <img src="/image/about-img/box4.png" alt="Inspiration" />
+        </div>
+        <div class="about-text">
+          <h2>What Inspired Us?</h2>
+          <p>
+            We were inspired by the belief that every child, no matter their
+            challenges, holds immense potential waiting to be unlocked. Our
+            mission is to focus on possibilities, not limitations, and help
+            children grow with confidence and independence.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- 🌟 4-Part Professional Footer -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- 🔹 Column 1: Logo -->
-    <div class="footer-column text-center text-md-start">
-      <img src="/image/logo-removebg-preview - Copy.png" alt="Ankurm Foundation Logo" class="footer-logo">
-     
-    </div>
-
-    <!-- 🔹 Column 2: Join Us -->
-    <div class="footer-column">
-      <h3>Join Us</h3>
-      <ul>
-        <li><a href="#">Speech Therapy</a></li>
-        <li><a href="#">Occupational Therapy</a></li>
-        <li><a href="#">Behavioral Therapy</a></li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Column 3: Our Resources -->
-    <div class="footer-column">
-      <h3>Our Resources</h3>
-      <ul>
-        <li><a href="About-page.html">About Us</a></li>
-        <li><a href="sucess-story.html">Success Story</a></li>
-        <li><a href="support.html">Donation</a></li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Column 4: Contact Info -->
-    <div class="footer-column">
-      <h3>Contact Info</h3>
-      <p>
-        Ankurm Foundation<br>
-        1st Floor, Barahi Tower, Near KVM School,<br>
-        Heera Nagar, Mukhani, Haldwani, Uttarakhand<br>
-        <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
-      </p>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <div class="about-box">
+        <div class="about-image">
+          <img src="/image/about-img/box3..png" alt="Unique Approach" />
+        </div>
+        <div class="about-text">
+          <h2>What Makes Us Unique?</h2>
+          <p>
+            At Ankurm Foundation, we provide individualized attention and
+            personalized therapy programs. Our approach combines emotional care,
+            academic learning, and inclusive education, where children with and
+            without special needs learn together in harmony.
+          </p>
+        </div>
       </div>
-    </div>
 
-  </div>
+      <div class="about-box reverse">
+        <div class="about-image">
+          <img src="/image/about-img/box2.png" alt="Meaning of Ankurm" />
+        </div>
+        <div class="about-text">
+          <h2>The Meaning Behind “Ankurm”</h2>
+          <p>
+            “Ankurm” is derived from the Hindi word “Ankur”, meaning a sprout —
+            a symbol of new beginnings, hope, and potential. Each child at
+            Ankurm is nurtured like a sprout, growing into a confident, capable
+            individual.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- 🌈 VISION & MISSION SECTION -->
+    <section class="vision-mission-section py-5" id="vision-mission">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold" style="color: #6e196e">Our Vision & Mission</h2>
+          <p class="text-muted">
+            Empowering every child to reach their full potential
+          </p>
+        </div>
 
-  <!-- 🔸 Bottom Line -->
-  <div class="footer-bottom">
-    <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
-  </div>
-</footer>
-</body>
+        <div class="row align-items-center gy-5">
+          <!-- Vision -->
+          <div class="col-md-6 wow animate__animated animate__fadeInLeft">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fa-solid fa-eye me-3"
+                  style="font-size: 28px; color: #f14079"
+                ></i>
+                <h4 class="fw-bold" style="color: #6e196e">Our Vision</h4>
+              </div>
+              <p style="line-height: 1.8; color: #444">
+                Ankurm Foundation envisions a world where every child,
+                regardless of their abilities, is empowered to reach their full
+                potential. We believe that with the right support, education,
+                and care, no child should be limited by challenges. Our goal is
+                to create an inclusive world where every child lives a
+                fulfilling, independent life with confidence and compassion.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission -->
+          <div class="col-md-6 wow animate__animated animate__fadeInRight">
+            <div class="p-4 rounded-4 shadow-sm bg-white h-100">
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fa-solid fa-bullseye me-3"
+                  style="font-size: 28px; color: #f14079"
+                ></i>
+                <h4 class="fw-bold" style="color: #6e196e">Our Mission</h4>
+              </div>
+              <p style="line-height: 1.8; color: #444">
+                Our mission is to provide high-quality, specialized education
+                and therapy in a safe, inclusive environment that supports the
+                holistic development of children with special needs. We aim to
+                empower children through personalized programs focusing on
+                emotional, social, and life skills—helping them thrive beyond
+                limitations and build a compassionate, inclusive society.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌟 4-Part Professional Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- 🔹 Column 1: Logo -->
+        <div class="footer-column text-center text-md-start">
+          <img
+            src="/image/logo-removebg-preview - Copy.png"
+            alt="Ankurm Foundation Logo"
+            class="footer-logo"
+          />
+        </div>
+
+        <!-- 🔹 Column 2: Join Us -->
+        <div class="footer-column">
+          <h3>Join Us</h3>
+          <ul>
+            <li><a href="#">Speech Therapy</a></li>
+            <li><a href="#">Occupational Therapy</a></li>
+            <li><a href="#">Behavioral Therapy</a></li>
+          </ul>
+        </div>
+
+        <!-- 🔹 Column 3: Our Resources -->
+        <div class="footer-column">
+          <h3>Our Resources</h3>
+          <ul>
+            <li><a href="About-page.html">About Us</a></li>
+            <li><a href="sucess-story.html">Success Story</a></li>
+            <li><a href="support.html">Donation</a></li>
+          </ul>
+        </div>
+
+        <!-- 🔹 Column 4: Contact Info -->
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p>
+            Ankurm Foundation<br />
+            1st Floor, Barahi Tower, Near KVM School,<br />
+            Heera Nagar, Mukhani, Haldwani, Uttarakhand<br />
+            <i class="fa-solid fa-phone"></i> +91 8445799969<br />
+            <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
+            <br />
+            <strong style="color: wheat">Reg no. UK0660342025014709</strong>
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+              target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ankurmfoundation/"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ankurmfoundation/"
+              target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔸 Bottom Line -->
+      <div class="footer-bottom">
+        <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ankurm Foundation empowers children with special needs through education, therapy, and compassionate care.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
 
     <!-- ✅ Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,21 +18,20 @@
     <title>Home</title>
 </head>
 <body>
-   <!-- 🔹 Navbar -->
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid align-items-center">
-    
-    <!-- 🔹 Logo -->
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <img src="/image/img/logo-removebg-preview.webp" alt="ANKURM FOUNDATION">
+      <img src="/image/img/logo-removebg-preview-1.webp" alt="ANKURM FOUNDATION" style="height: 45px; width: auto;" />
     </a>
 
-    <!-- 🔹 Toggle -->
-    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <!-- Toggle Button -->
+    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars fs-2"></i>
     </button>
 
-    <!-- 🔹 Navbar Links -->
+    <!-- Navbar Links -->
     <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
       <ul class="navbar-nav text-center mx-auto">
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
@@ -51,21 +53,21 @@
 
         <!-- Support Button for mobile -->
         <li class="nav-item d-lg-none mt-3">
-          <li class="nav-item d-lg-none mt-3">
           <button class="btn btn-outline-danger bg-transparent border-0">
-  <a href="support.html" style="text-decoration: none; color: white;">Support</a>
-</button>
-
+            <a href="support.html" style="text-decoration: none; color: white;">Support</a>
+          </button>
         </li>
       </ul>
     </div>
 
-    <!-- 🔹 Support Button (Desktop only) -->
+    <!-- Support Button (Desktop only) -->
     <div class="navbar-support d-none d-lg-block">
-      <button class="btn btn-danger"><a href="support.html">Support</a></button>
+      <button class="btn btn-danger"><a href="support.html" style="color: white; text-decoration:none;">Support</a></button>
     </div>
+
   </div>
 </nav>
+
 
 
 
@@ -73,15 +75,19 @@
     <!-- <hero-section> -->
 
         <div class="containerr">
-            <img src="/image/img/hero-section-banner-copy.webp" class="mx-auto d-block hero-img" style="width:100%">
-            <div class="hero-section-text">
-                <div class="heading">
-                    <p>Learn Through Play</p>
-                </div>
-                <button type="button" class="btn btn-warning btn-rounded-9">See Our Program</button>
-            </div>
-        </div>
-        <section class="cr-section">
+  <img src="/image/img/hero-section-banner-copy.webp" class="mx-auto d-block hero-img" style="width:100%">
+  <div class="hero-section-text">
+    <div class="heading">
+      <p>Learn Through Play</p>
+    </div>
+     <div class="hero-buttons">
+      <button type="button" class="btn btn-warning btn-rounded-9">See Our Program</button>
+      <button type="button" class="btn visit-btn" onclick="window.location.href='event.html'">Visit</button>
+    </div>
+  </div>
+</div>
+
+<section class="cr-section">
   <div class="video-text-wrapper">
 
     <!-- 🎬 Video Side -->
@@ -95,21 +101,20 @@
     <!-- 📝 Text Side -->
     <div class="text-container">
       <h1>Where Every Child Learns, Heals, and Grows</h1>
-      <p>
-        At our school, we believe that every child is unique and full of potential. Every child—regardless of their physical, mental, or emotional challenges—deserves the right to learn, express, and grow in a nurturing environment. Our mission is to create a space where children with special needs are not just cared for, but truly understood, supported, and celebrated for who they are.
-
-We provide an inclusive setting that bridges the gap between children with and without special needs, encouraging empathy, teamwork, and mutual respect. Here, learning goes beyond textbooks. It’s about developing communication, confidence, and life skills through love, patience, and understanding. Our teachers, therapists, and caregivers work together to ensure that every child receives personalized attention and care tailored to their individual strengths and challenges.
-
-Therapeutic and educational programs are thoughtfully designed to support holistic development — nurturing the body, mind, and spirit. From early intervention to skill-building activities, every aspect of our curriculum is focused on creating independence and joy in learning. We believe that true education happens when a child feels seen, safe, and valued.
-
-Our goal is simple yet powerful — to help every child discover their unique potential and live a life filled with purpose, confidence, and happiness. We envision a community where differences are not barriers, but bridges that connect hearts and minds. Together, we are building a foundation of acceptance, compassion, and growth, ensuring that every child, regardless of ability, has the opportunity to shine and lead a fulfilling life.
-
-At our school, inclusion is not just a policy — it’s a promise. A promise to empower children, to heal through understanding, and to grow through love.
-      </p>
+      <ul class="animated-list">
+        <li>🌟 <strong>Every child is unique and full of potential</strong>, deserving the right to learn, express, and grow in a nurturing and understanding environment.</li>
+        <li>🤝 <strong>Inclusion is at the heart of our mission</strong>, bridging the gap between children with and without special needs to foster empathy, teamwork, and mutual respect.</li>
+        <li>📚 <strong>Learning goes beyond textbooks</strong>, focusing on communication, confidence, and life skills developed through love, patience, and understanding.</li>
+        <li>👩‍🏫 <strong>Our team of teachers, therapists, and caregivers</strong> provides personalized care tailored to each child’s individual strengths and challenges.</li>
+        <li>🌱 <strong>Therapeutic and educational programs</strong> are thoughtfully designed to nurture the body, mind, and spirit—encouraging holistic growth and independence.</li>
+        <li>✨ <strong>We aim to help every child discover their unique potential</strong>, building confidence, joy, and purpose in learning and life.</li>
+        <li>❤️ <strong>Inclusion is not just a policy—it’s our promise</strong>, to empower children, heal through understanding, and grow through love.</li>
+      </ul>
     </div>
 
   </div>
 </section>
+
 
 </div>
 <div class="section-heading">
@@ -146,7 +151,7 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
 
   <div class="event-container">
     <div class="event-box">
-      <img src="/image/img/cortoon-1.webp" alt="Annual Sports Day">
+      <img src="/image/img/anuaal day.jpeg" alt="Annual Sports Day">
       <h3>Annual Sports Day Celebration</h3>
       <p>Join us for a day full of fun, games, and energy as our students showcase their talents in sports and teamwork.</p>
        <a href="Event.html" class="event-btn">Show</a>
@@ -220,11 +225,11 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
         <!-- 🔹 Video 1 -->
         <div class="carousel-item active">
           <div class="reel-box mx-auto shadow">
-            <video playsinline  class="w-100 h-100 rounded">
+           <video playsinline  class="w-100 h-100 rounded">
               <source src="image/parent revi.mp4" type="video/mp4">
             </video>
           </div>
-          <h5 class="mt-3" style="color:#F14079;">Anita Sharma</h5>
+          <h5 class="mt-3" style="color:#F14079;">.</h5>
           <p class="text-secondary">“Ankurm Foundation has transformed my child’s confidence.”</p>
         </div>
 
@@ -232,10 +237,10 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
         <div class="carousel-item">
           <div class="reel-box mx-auto shadow">
             <video playsinline  class="w-100 h-100 rounded">
-              <source src="image/WhatsApp Video 2025-11-05 at 6.59.00 AM.mp4" type="video/mp4">
+              <source src="/image/parent-review-2.mp4" type="video/mp4">
             </video>
           </div>
-          <h5 class="mt-3" style="color:#F14079;">Rohit Verma</h5>
+          <h5 class="mt-3" style="color:#F14079;">.</h5>
           <p class="text-secondary">“We’ve seen great improvement in our child’s learning.”</p>
         </div>
 
@@ -243,10 +248,11 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
         <div class="carousel-item">
           <div class="reel-box mx-auto shadow">
             <video playsinline  class="w-100 h-100 rounded">
-              <source src="image/parent revi.mp4" type="video/mp4">
+              <source src="/image/parent-review-3.mp4" type="video/mp4">
             </video>
+
           </div>
-          <h5 class="mt-3" style="color:#F14079;">Neha Gupta</h5>
+          <h5 class="mt-3" style="color:#F14079;">.</h5>
           <p class="text-secondary">“Their therapy and inclusive approach changed everything.”</p>
         </div>
 
@@ -314,11 +320,13 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
         1st Floor, Barahi Tower, Near KVM School,<br>
         Heera Nagar, Mukhani, Haldwani, Uttarakhand<br>
         <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
+        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com <br>
+        <strong style="color: wheat;">Reg no. UK0660342025014709</strong>
       </p>
       <div class="footer-social">
         <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -332,73 +340,80 @@ At our school, inclusion is not just a policy — it’s a promise. A promise to
 
 
 <script>
-  window.addEventListener('scroll', function() {
+window.addEventListener('DOMContentLoaded', () => {
+  // Navbar scroll effect
   const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Testimonials slider
   const testimonials = document.querySelectorAll('.testimonial');
   const prevBtn = document.querySelector('.prev');
   const nextBtn = document.querySelector('.next');
   let index = 0;
 
-  // 🔁 Function to show current testimonial
   function showTestimonial(i) {
     testimonials.forEach((t, idx) => {
       t.classList.toggle('active', idx === i);
     });
   }
 
-  // ⏩ Next / ⏪ Prev buttons
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % testimonials.length;
-    showTestimonial(index);
-  });
+  if (prevBtn && nextBtn && testimonials.length > 0) {
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    });
 
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + testimonials.length) % testimonials.length;
-    showTestimonial(index);
-  });
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    });
 
-  // ⏱️ Auto-slide every 4 seconds
-  setInterval(() => {
-    index = (index + 1) % testimonials.length;
-    showTestimonial(index);
-  }, 4000);
+    setInterval(() => {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }, 4000);
+  }
 
-  //reel video script //
+  // Carousel video reel
   const carousel = document.getElementById('parentReviewCarousel');
+  if (!carousel) return;  // agar carousel na mile to exit
+
   const bsCarousel = new bootstrap.Carousel(carousel, { interval: false });
   const items = carousel.querySelectorAll('.carousel-item');
 
-  // Function to pause all videos
   function pauseAllVideos() {
     items.forEach(item => {
       const vid = item.querySelector('video');
-      vid.pause();
-      vid.currentTime = 0;
+      if (vid) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
     });
   }
 
-  // Event listener: when slide changes, play new video
   carousel.addEventListener('slid.bs.carousel', () => {
     pauseAllVideos();
     const activeVideo = carousel.querySelector('.carousel-item.active video');
-    activeVideo.play();
-
-    // when video ends, go to next slide automatically
-    activeVideo.onended = () => bsCarousel.next();
+    if (activeVideo) {
+      activeVideo.play();
+      activeVideo.onended = () => bsCarousel.next();
+    }
   });
 
-  // Auto play first video when page loads
   window.addEventListener('load', () => {
-    const firstVideo = items[0].querySelector('video');
-    firstVideo.play();
-    firstVideo.onended = () => bsCarousel.next();
+    const firstVideo = items[0]?.querySelector('video');
+    if (firstVideo) {
+      firstVideo.play();
+      firstVideo.onended = () => bsCarousel.next();
+    }
   });
+});
 </script>
 
 </body>

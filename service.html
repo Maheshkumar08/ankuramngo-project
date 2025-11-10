@@ -28,13 +28,13 @@
   --background-color: #1BBBB4; /* BLUE */
 }
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+     margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
       .navbar {
-  background-color: #e3f4fc;
+  background-color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -42,6 +42,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 0.5px solid black;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 /* Logo */
@@ -580,19 +583,19 @@
             
 <!-- 🔹 Navbar -->
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid align-items-center">
-    
-    <!-- 🔹 Logo -->
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <img src="/image/img/logo-removebg-preview.webp" alt="ANKURM FOUNDATION">
+      <img src="/image/img/logo-removebg-preview-1.webp" alt="ANKURM FOUNDATION" style="height: 45px; width: auto;" />
     </a>
 
-    <!-- 🔹 Toggle -->
-    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <!-- Toggle Button -->
+    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars fs-2"></i>
     </button>
 
-    <!-- 🔹 Navbar Links -->
+    <!-- Navbar Links -->
     <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
       <ul class="navbar-nav text-center mx-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -614,15 +617,18 @@
 
         <!-- Support Button for mobile -->
         <li class="nav-item d-lg-none mt-3">
-          <button class="btn btn-danger w-10">Support</button>
+          <button class="btn btn-outline-danger bg-transparent border-0">
+            <a href="support.html" style="text-decoration: none; color: white;">Support</a>
+          </button>
         </li>
       </ul>
     </div>
 
-    <!-- 🔹 Support Button (Desktop only) -->
+    <!-- Support Button (Desktop only) -->
     <div class="navbar-support d-none d-lg-block">
-      <button class="btn btn-danger"><h6 id="span">Support</h6></button>
+      <button class="btn btn-danger"><a href="support.html" style="color: white; text-decoration:none;">Support</a></button>
     </div>
+
   </div>
 </nav>
 
@@ -781,7 +787,7 @@
           <li><i class="fa-solid fa-chart-line"></i> Progress tracking & feedback reports.</li>
           <li><i class="fa-solid fa-user-check"></i> One-on-one attention for every child.</li>
         </ul>
-        <a href="contact.html" class="btn-learn">Join Our Programs</a>
+        <a href="contact-us.html" class="btn-learn">Join Our Programs</a>
       </div>
     </div>
   </div>
@@ -816,6 +822,8 @@
       <a href="contact-us.html" class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite">Contact Us</a>
     </section>
     <!-- 🌟 4-Part Professional Footer -->
+<!--footer-->
+<!-- 🌟 4-Part Professional Footer -->
 <footer class="footer">
   <div class="footer-container">
 
@@ -853,11 +861,13 @@
         1st Floor, Barahi Tower, Near KVM School,<br>
         Heera Nagar, Mukhani, Haldwani, Uttarakhand<br>
         <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
+        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com <br>
+        <strong style="color: wheat;">Reg no. UK0660342025014709</strong>
       </p>
       <div class="footer-social">
         <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -868,6 +878,7 @@
     <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
   </div>
 </footer>
+
       new WOW().init();
     </script>
 

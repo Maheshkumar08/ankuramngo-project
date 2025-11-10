@@ -1,772 +1,995 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankurm Foundation | Support</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankurm Foundation | Support</title>
 
-  <!-- ✅ Bootstrap + FontAwesome -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a3d5d4d2b4.js" crossorigin="anonymous"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
-   <!-- Font Awesome (for icons) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- ✅ Bootstrap + FontAwesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a3d5d4d2b4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome (for icons) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
+    <style>
+      :root {
+        --purple: #6e196e;
+        --pink: #f14079;
+        --lightpink: #feecee;
+      }
 
-  <style>
-    :root {
-  --purple: #6E196E;
-  --pink: #F14079;
-  --lightpink: #FEECEE;
-}
+      .navbar {
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 8px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #f14079;
+        border-bottom: 0.5px solid black;
+        font-size: 25px;
+        font-weight: 600;
+      }
 
-  .navbar {
-  background-color:#e3f4fc;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 8px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #F14079;
-}
+      /* Logo */
+      .navbar-brand img {
+        height: 60px;
+        transition: transform 0.3s ease;
+      }
+      .navbar-brand img:hover {
+        transform: scale(1.05);
+      }
 
-/* Logo */
-.navbar-brand img {
-  height: 60px;
-  transition: transform 0.3s ease;
-}
-.navbar-brand img:hover {
-  transform: scale(1.05);
-}
+      /* Links */
+      .nav-link {
+        color: var(--info-color) !important;
+        font-weight: 500;
+        padding: 10px 18px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #712a86 !important;
+        transform: translateY(-2px);
+      }
 
-/* Links */
-.nav-link {
-  color: var(--info-color) !important;
-  font-weight: 500;
-  padding: 10px 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.nav-link:hover {
-  color: #712a86 !important;
-  transform: translateY(-2px);
-}
+      /* 🔹 Dropdown (Show on Hover) */
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
 
-/* 🔹 Dropdown (Show on Hover) */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
+      .dropdown-menu {
+        background-color: #feecee;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-.dropdown-menu {
-  background-color: #FEECEE;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+      .dropdown-item {
+        color: #333333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
 
-.dropdown-item {
-  color: #333333;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+      .dropdown-item:hover {
+        background-color: #712a86;
+        color: #fff;
+      }
 
-.dropdown-item:hover {
-  background-color: #712a86;
-  color: #fff;
-}
+      /* 🔹 Support Button */
+      .btn-danger {
+        background-color: #f14079;
+        border: none;
+        /* transition: all 0.3s ease; */
+      }
 
-/* 🔹 Support Button */
-.btn-danger {
-  background-color:#F14079;
-  border: none;
-  /* transition: all 0.3s ease; */
-}
+      .btn-danger:hover {
+        background-color: #712a86;
+        transform: scale(1.05);
+      }
 
-.btn-danger:hover {
-  background-color: #712a86;
-  transform: scale(1.05);
-}
+      /* 🔹 Fade Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-/* 🔹 Fade Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      /* 🌸 Support Section */
+      .support-section {
+        background-color: #feecee;
+        padding: 100px 0;
+        font-family: "Poppins", sans-serif;
+      }
 
+      .support-title {
+        color: #6e196e;
+        font-weight: 800;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
 
-
-/* 🌸 Support Section */
-    .support-section {
-      background-color: #FEECEE;
-      padding: 100px 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .support-title {
-      color: #6E196E;
-      font-weight: 800;
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .support-intro {
-      color: #555;
-      font-size: 1.1rem;
-      max-width: 750px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    .support-text {
-      color: #333;
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .support-img {
-      width: 100%;
-      max-width: 420px;
-      display: block;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(110, 25, 110, 0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .support-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 35px rgba(110, 25, 110, 0.25);
-    }
-
-    .support-list {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 25px;
-    }
-    .support-list li {
-      margin-bottom: 10px;
-      color: #444;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: transform 0.3s ease;
-    }
-    .support-list li:hover {
-        transform: translateX(5px);
-    }
-    .support-list i {
-        color: #F14079;
+      .support-intro {
+        color: #555;
         font-size: 1.1rem;
-    }
-    
-    .btn-donate {
-        background-color: #F14079;
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .support-text {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .support-img {
+        width: 100%;
+        max-width: 420px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(110, 25, 110, 0.15);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .support-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(110, 25, 110, 0.25);
+      }
+
+      .support-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 25px;
+      }
+      .support-list li {
+        margin-bottom: 10px;
+        color: #444;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.3s ease;
+      }
+      .support-list li:hover {
+        transform: translateX(5px);
+      }
+      .support-list i {
+        color: #f14079;
+        font-size: 1.1rem;
+      }
+
+      .btn-donate {
+        background-color: #f14079;
         color: #fff;
         border: none;
         padding: 10px 35px;
         border-radius: 30px;
         font-weight: 600;
         font-size: 1.1rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-donate:hover {
-      background-color: #fff;
-      color: #6E196E;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(241, 64, 121, 0.3);
-    }
-
-    /* 🌟 Impact Counter Section */
-    .impact-section {
-      background-color: #fff;
-      padding: 100px 0;
-      color: #333;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .impact-title {
-      color: #6E196E;
-      font-weight: 800;
-      font-size: 2.5rem;
-    }
-
-    .impact-subtitle {
-      color: #555;
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-    
-    .impact-box {
-      background-color: #FEECEE;
-      padding: 40px 25px;
-      border-radius: 20px;
-      transition: all 0.4s ease;
-      box-shadow: 0 5px 15px rgba(110, 25, 110, 0.1);
-    }
-    .impact-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(110, 25, 110, 0.2);
-    }
-
-    .counter {
-        font-size: 2.8rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-donate:hover {
+        background-color: #fff;
+        color: #6e196e;
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(241, 64, 121, 0.3);
+      }
+      .account-details {
+        background: var(--lightpink);
+        font-family: "Poppins", sans-serif;
+      }
+      .account-title {
+        color: var(--purple);
         font-weight: 800;
-      color: #F14079;
-    }
-
-    .impact-box p {
-      margin-top: 8px;
-      font-size: 1.1rem;
-      color: #333;
-      font-weight: 500;
-    }
-    /* WHY */
-    .why-cards{ padding:60px 0; background:var(--lightpink); }
-    .why-card{ background:white; border-radius:14px; padding:25px; box-shadow:0 8px 30px rgba(110,25,110,0.06); transition:transform .35s; height:100% }
-    .why-card:hover{ transform:translateY(-8px) }
-    .why-icon{ width:64px; height:64px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:26px; color:white; background:linear-gradient(135deg,var(--purple),var(--pink)); margin-bottom:14px }
-    section {
-      scroll-margin-top: 100px;
-      transition: all 0.3s ease;
-    }
-    .footer {
-  background: #333;
-  color: #fff;
-  padding: 60px 4% 20px;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Grid layout */
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-/* Logo */
-.footer-logo {
-  width: 280px;
-  height: auto;
-}
-.footer-desc {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Headings */
-.footer-column h3 {
-  color: #F14079;
-  margin-bottom: 18px;
-  font-size: 1.3rem;
-  position: relative;
-}
-.footer-column h3::after {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 3px;
-  background: #72BE48;
-  left: 0;
-  bottom: -8px;
-  border-radius: 5px;
-}
-
-/* Links */
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-.footer-column ul li a {
-  color: #ddd;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.footer-column ul li a:hover {
-  color: #F14079;
-}
-
-/* Contact text */
-.footer-column p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Social icons */
-.footer-social {
-  margin-top: 10px;
-}
-.footer-social a {
-  color: #fff;
-  font-size: 1.3rem;
-  margin-right: 15px;
-  transition: color 0.3s, transform 0.3s;
-}
-.footer-social a:hover {
-  color: #F14079;
-  transform: scale(1.2);
-}
-
-/* Bottom */
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-.footer-bottom p {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-    /* 📱 Responsive */
-    @media (max-width: 992px) {
-        .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
-
-/* Dropdown menu */
-.dropdown-menu {
-  background-color: #FEECEE;
-  border-radius: 10px;
-  border: none;
-}
-.dropdown-item:hover {
-  background-color: var(--secondary-color);
-  color: white;
-}
-
-/* Support button */
-.btn-danger {
-  background-color:transparent;
-  border: none;
-  padding: 8px 22px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-    .navbar-nav{
-      color:#F14079;
-      
-    }
-
-      .support-title {
-        font-size: 2rem;
-      }
-      .support-intro, .support-text, .support-list {
-        text-align: center;
-      }
-      .support-list li {
-        justify-content: center;
-      }
-       .support-list {
-    padding-left: 0;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  .support-list li {
-    justify-content: flex-start !important;
-    text-align: left;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 1rem;
-    line-height: 1.6;
-    flex-wrap: wrap;
-  }
-
-  .support-list i {
-    flex-shrink: 0;
-    margin-top: 3px;
-  }
-
-  .support-text, .support-intro {
-    text-align: center;
-    padding: 0 10px;
-  }
-      .btn-donate {
-        display: block;
-        margin: 20px auto;
-      }
-      .impact-title {
-        font-size: 2rem;
-      }
-      .impact-box {
-        padding: 30px 15px;
-      }
-      .counter {
         font-size: 2.2rem;
       }
-    }
-    @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
-  .navbar-brand {
-    flex: 1;
-  }
-
-  .navbar-toggler {
-    border: none;
-    color: #fff;
-    font-size: 28px;
-  }
-
-  .navbar-collapse {
-    width: 100%;
-    background-color: #6E196E;
-    border-radius: 0 0 15px 15px;
-    margin-top: 10px;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.1rem;
-    padding: 10px;
-  }
-
-  /* Support button center */
-  .navbar-support {
-    display: none !important;
-  }
-
-  .navbar-collapse.show .btn-danger {
-    display: block;
-    margin: 15px auto;
-    padding: 10px 80px;
-    text-align: center;
-    font-size: 1.05rem;
-    font-weight: 600;
-    width: auto;
-    white-space: nowrap;
-    border-radius: 25px;
-    line-height: 1.4;
-  }
-  .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-  .footer {
-    text-align: center;
-  }
-  .footer-column h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-@media (max-width: 576px) {
-  .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-}
-/* Mobile portrait (max width 480px) */
-@media (max-width: 480px) {
-  .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-  .navbar{
-    display: flex;
-    flex-flow: column wrap;
-    transition: all 0.4s;
-  }
-.navbar-collapse.show .btn-danger {
-    padding: 10px 80px;
-    font-size: 17px;
-    margin-left: -0%;
-    margin-top: -5%;
-    
-  }
-  .navbar-collapse.show .btn-danger #span{
-    margin-left: -80px;
-  }
-  
-}
-  </style>
-</head>
-
-<body>
-<!-- 🔹 Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid align-items-center">
-    
-    <!-- 🔹 Logo -->
-    <a class="navbar-brand" href="index.html">
-      <img src="/image/logo-removebg-preview.png" alt="ANKURM FOUNDATION">
-    </a>
-
-    <!-- 🔹 Toggle -->
-    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <i class="fa fa-bars fs-2"></i>
-    </button>
-
-    <!-- 🔹 Navbar Links -->
-    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
-      <ul class="navbar-nav text-center mx-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="About-page.html">Who You Are</a></li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="journalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Journal
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="journalDropdown">
-            <li><a class="dropdown-item" href="Event.html">Event</a></li>
-            <li><a class="dropdown-item" href="sucess-story.html">Success Story</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
-
-        <!-- Support Button for mobile -->
-        <li class="nav-item d-lg-none mt-3">
-          <button class="btn btn-danger w-10">Support</button>
-        </li>
-      </ul>
-    </div>
-
-    
-    <!-- 🔹 Support Button (Desktop only) -->
-    <div class="navbar-support d-none d-lg-block">
-      <button class="btn btn-danger"><h6 id="span">Support</h6></button>
-    </div>
-  </div>
-</nav>
-
-  <!-- 🌸 SUPPORT SECTION -->
-  <section class="support-section wow animate__animated animate__fadeInUp">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="support-title">Donations & Support</h2>
-        <p class="support-intro">
-          At <strong>Ankurm Foundation</strong>, we believe that every child deserves the opportunity to thrive.  
-          Your generous support enables us to provide specialized education and therapies to children with special needs.
-        </p>
-      </div>
-
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <img src="/image/qr-code-image.webp" alt="Support Ankurm Foundation" class="support-img">
-        </div>
-
-        <div class="col-md-6">
-          <p class="support-text">
-            Donations play a vital role in sustaining our mission — helping us acquire essential resources, hire professionals,
-            and develop customized programs for each child. Your contribution can fund therapies, educational materials, and more.
-          </p>
-
-          <ul class="support-list">
-            <li><i class="fa-solid fa-hand-holding-heart"></i> <strong>One-Time Donations:</strong> Make an immediate impact.</li>
-            <li><i class="fa-solid fa-calendar-check"></i> <strong>Monthly Sponsorships:</strong> Support long-term initiatives.</li>
-            <li><i class="fa-solid fa-people-group"></i> <strong>Corporate Partnerships:</strong> Join us through CSR and sponsorships.</li>
-            <li><i class="fa-solid fa-gift"></i> <strong>In-Kind Donations:</strong> Donate materials, equipment, or services.</li>
-          </ul>
-
-          <p class="support-text">
-            We ensure full transparency — every contribution is used effectively, and donors receive regular updates on their impact.
-          </p>
-
-          <a href="donate.html" class="btn-donate animate__animated animate__pulse animate__infinite">
-            <i class="fa-solid fa-heart"></i> Donate Now
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🌟 IMPACT COUNTER SECTION -->
-  <section class="impact-section wow animate__animated animate__fadeInUp">
-    <div class="container text-center">
-      <h2 class="impact-title">Our Impact So Far</h2>
-      <p class="impact-subtitle">Together, we’re building a brighter, more inclusive future for every child 💖</p>
-
-      <div class="row mt-5 gy-4">
-        <div class="col-md-3 col-6">
-          <div class="impact-box">
-            <h3 class="counter" data-target="350">0</h3>
-            <p>Children Supported</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="impact-box">
-            <h3 class="counter" data-target="25">0</h3>
-            <p>Therapists Engaged</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="impact-box">
-            <h3 class="counter" data-target="45">0</h3>
-            <p>Special Educators</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-          <div class="impact-box">
-            <h3 class="counter" data-target="120">0</h3>
-            <p>Active Volunteers</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="why-cards container">
-<div class="container">
-    <div class="text-center mb-4">
-      <h2 style="color:var(--purple); font-weight:800">Why Your Support Matters</h2>
-      <p class="muted">We use donations to deliver therapy, build inclusive classrooms and empower families.</p>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="why-card text-center">
-          <div class="why-icon mx-auto"><i class="fa-solid fa-brain"></i></div>
-          <h5>Therapy &amp; Rehabilitation</h5>
-          <p class="muted">Fund speech, occupational &amp; physiotherapy sessions tailored to each child.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="why-card text-center">
-          <div class="why-icon mx-auto"><i class="fa-solid fa-chalkboard-teacher"></i></div>
-          <h5>Inclusive Education</h5>
-          <p class="muted">Support special educators and adaptive learning materials.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="why-card text-center">
-          <div class="why-icon mx-auto"><i class="fa-solid fa-hand-holding-heart"></i></div>
-          <h5>Family Support</h5>
-          <p class="muted">Counseling and parent workshops to strengthen home-care.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="why-card text-center">
-          <div class="why-icon mx-auto"><i class="fa-solid fa-gears"></i></div>
-          <h5>Resources &amp; Equipment</h5>
-          <p class="muted">Assistive devices, learning aids and safe spaces for therapy.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>    
-<!-- 🌟 4-Part Professional Footer -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- 🔹 Column 1: Logo -->
-    <div class="footer-column text-center text-md-start">
-      <img src="/image/logo-removebg-preview - Copy.png" alt="Ankurm Foundation Logo" class="footer-logo">
-     
-    </div>
-
-    <!-- 🔹 Column 2: Join Us -->
-    <div class="footer-column">
-      <h3>Join Us</h3>
-      <ul>
-        <li><a href="#">Speech Therapy</a></li>
-        <li><a href="#">Occupational Therapy</a></li>
-        <li><a href="#">Behavioral Therapy</a></li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Column 3: Our Resources -->
-    <div class="footer-column">
-      <h3>Our Resources</h3>
-      <ul>
-        <li><a href="About-page.html">About Us</a></li>
-        <li><a href="sucess-story.html">Success Story</a></li>
-        <li><a href="support.html">Donation</a></li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Column 4: Contact Info -->
-    <div class="footer-column">
-      <h3>Contact Info</h3>
-      <p>
-        Ankurm Foundation<br>
-        1st Floor, Barahi Tower, Near KVM School,<br>
-        Heera Nagar, Mukhani, Haldwani, Uttarakhand<br>
-        <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
-      </p>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- 🔸 Bottom Line -->
-  <div class="footer-bottom">
-    <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
-  </div>
-</footer>
-  <!-- ✅ Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- ⚙️ Counter JS -->
-  <script>
-    const counters = document.querySelectorAll(".counter");
-    const speed = 150;
-
-    const startCounting = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute("data-target");
-          const count = +counter.innerText;
-          const increment = target / speed;
-
-          if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 25);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCount();
-      });
-    };
-
-    let started = false;
-    window.addEventListener("scroll", () => {
-      const section = document.querySelector(".impact-section");
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < window.innerHeight - 150 && !started) {
-        startCounting();
-        started = true;
+      .account-intro {
+        color: #555;
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
       }
-    });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<script>
-  new WOW().init();
-</script>
+      .account-box {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(110, 25, 110, 0.1);
+        text-align: left;
+      }
+      .account-box p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .account-box h4 {
+        color: var(--pink);
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .upi-qr {
+        width: 160px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(110, 25, 110, 0.15);
+        transition: transform 0.3s ease;
+      }
+      .upi-qr:hover {
+        transform: scale(1.05);
+      }
 
-</body>
+      /* 🌟 Impact Counter Section */
+      .impact-section {
+        background-color: #fff;
+        padding: 100px 0;
+        color: #333;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .impact-title {
+        color: #6e196e;
+        font-weight: 800;
+        font-size: 2.5rem;
+      }
+
+      .impact-subtitle {
+        color: #555;
+        font-size: 1.1rem;
+        margin-top: 10px;
+      }
+
+      .impact-box {
+        background-color: #feecee;
+        padding: 40px 25px;
+        border-radius: 20px;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(110, 25, 110, 0.1);
+      }
+      .impact-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(110, 25, 110, 0.2);
+      }
+
+      .counter {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #f14079;
+      }
+
+      .impact-box p {
+        margin-top: 8px;
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 500;
+      }
+      /* WHY */
+      .why-cards {
+        padding: 60px 0;
+        background: var(--lightpink);
+      }
+      .why-card {
+        background: white;
+        border-radius: 14px;
+        padding: 25px;
+        box-shadow: 0 8px 30px rgba(110, 25, 110, 0.06);
+        transition: transform 0.35s;
+        height: 100%;
+      }
+      .why-card:hover {
+        transform: translateY(-8px);
+      }
+      .why-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: white;
+        background: linear-gradient(135deg, var(--purple), var(--pink));
+        margin-bottom: 14px;
+      }
+      section {
+        scroll-margin-top: 100px;
+        transition: all 0.3s ease;
+      }
+      .footer {
+        background: #333;
+        color: #fff;
+        padding: 60px 4% 20px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Grid layout */
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* Logo */
+      .footer-logo {
+        width: 280px;
+        height: auto;
+      }
+      .footer-desc {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Headings */
+      .footer-column h3 {
+        color: #f14079;
+        margin-bottom: 18px;
+        font-size: 1.3rem;
+        position: relative;
+      }
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #72be48;
+        left: 0;
+        bottom: -8px;
+        border-radius: 5px;
+      }
+
+      /* Links */
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      .footer-column ul li a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-column ul li a:hover {
+        color: #f14079;
+      }
+
+      /* Contact text */
+      .footer-column p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Social icons */
+      .footer-social {
+        margin-top: 10px;
+      }
+      .footer-social a {
+        color: #fff;
+        font-size: 1.3rem;
+        margin-right: 15px;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .footer-social a:hover {
+        color: #f14079;
+        transform: scale(1.2);
+      }
+
+      /* Bottom */
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .footer-bottom p {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+
+      /* 📱 Responsive */
+      @media (max-width: 992px) {
+        .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+          background-color: #feecee;
+          border-radius: 10px;
+          border: none;
+        }
+        .dropdown-item:hover {
+          background-color: var(--secondary-color);
+          color: white;
+        }
+
+        /* Support button */
+        .btn-danger {
+          background-color: transparent;
+          border: none;
+          padding: 8px 22px;
+          border-radius: 25px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .navbar-nav {
+          color: #f14079;
+        }
+
+        .support-title {
+          font-size: 2rem;
+        }
+        .support-intro,
+        .support-text,
+        .support-list {
+          text-align: center;
+        }
+        .support-list li {
+          justify-content: center;
+        }
+        .support-list {
+          padding-left: 0;
+          text-align: left;
+          margin: 0 auto;
+          max-width: 90%;
+        }
+
+        .support-list li {
+          justify-content: flex-start !important;
+          text-align: left;
+          align-items: flex-start;
+          gap: 10px;
+          font-size: 1rem;
+          line-height: 1.6;
+          flex-wrap: wrap;
+        }
+
+        .support-list i {
+          flex-shrink: 0;
+          margin-top: 3px;
+        }
+
+        .support-text,
+        .support-intro {
+          text-align: center;
+          padding: 0 10px;
+        }
+        .btn-donate {
+          display: block;
+          margin: 20px auto;
+        }
+        .impact-title {
+          font-size: 2rem;
+        }
+        .impact-box {
+          padding: 30px 15px;
+        }
+        .counter {
+          font-size: 2.2rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
+
+        .navbar-brand {
+          flex: 1;
+        }
+
+        .navbar-toggler {
+          border: none;
+          color: #fff;
+          font-size: 28px;
+        }
+
+        .navbar-collapse {
+          width: 100%;
+          background-color: #6e196e;
+          border-radius: 0 0 15px 15px;
+          margin-top: 10px;
+        }
+
+        .navbar-nav {
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 0;
+        }
+
+        .navbar-nav .nav-link {
+          color: white !important;
+          font-size: 1.1rem;
+          padding: 10px;
+        }
+
+        /* Support button center */
+        .navbar-support {
+          display: none !important;
+        }
+
+        .navbar-collapse.show .btn-danger {
+          display: block;
+          margin: 15px auto;
+          padding: 10px 80px;
+          text-align: center;
+          font-size: 1.05rem;
+          font-weight: 600;
+          width: auto;
+          white-space: nowrap;
+          border-radius: 25px;
+          line-height: 1.4;
+        }
+        .navbar-nav {
+          background-color: transparent;
+          margin-right: 50%;
+          /* flex-flow: column; */
+        }
+        .footer {
+          text-align: center;
+        }
+        .footer-column h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      @media (max-width: 576px) {
+        .navbar-nav {
+          background-color: transparent;
+          margin-right: 50%;
+          /* flex-flow: column; */
+        }
+      }
+      /* Mobile portrait (max width 480px) */
+      @media (max-width: 480px) {
+        .navbar-nav {
+          background-color: transparent;
+          margin-right: 50%;
+          /* flex-flow: column; */
+        }
+        .navbar {
+          display: flex;
+          flex-flow: column wrap;
+          transition: all 0.4s;
+        }
+        .navbar-collapse.show .btn-danger {
+          padding: 10px 80px;
+          font-size: 17px;
+          margin-left: -0%;
+          margin-top: -5%;
+        }
+        .navbar-collapse.show .btn-danger #span {
+          margin-left: -80px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 🔹 Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="/image/img/logo-removebg-preview-1.webp"
+            alt="ANKURM FOUNDATION"
+            style="height: 45px; width: auto"
+          />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler text-black border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars fs-2"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav text-center mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About-page.html">Who You Are</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="journalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Journal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+                <li><a class="dropdown-item" href="Event.html">Event</a></li>
+                <li>
+                  <a class="dropdown-item" href="sucess-story.html"
+                    >Success Story</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact</a>
+            </li>
+
+            <!-- Support Button for mobile -->
+            <li class="nav-item d-lg-none mt-3">
+              <button class="btn btn-outline-danger bg-transparent border-0">
+                <a
+                  href="support.html"
+                  style="text-decoration: none; color: white"
+                  >Support</a
+                >
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support Button (Desktop only) -->
+        <div class="navbar-support d-none d-lg-block">
+          <button class="btn btn-danger">
+            <a href="support.html" style="color: white; text-decoration: none"
+              >Support</a
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 🌸 SUPPORT SECTION -->
+    <section class="support-section wow animate__animated animate__fadeInUp">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="support-title">Donations & Support</h2>
+          <p class="support-intro">
+            At <strong>Ankurm Foundation</strong>, we believe that every child
+            deserves the opportunity to thrive. Your generous support enables us
+            to provide specialized education and therapies to children with
+            special needs.
+          </p>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <img
+              src="/image/qr-code-image.webp"
+              alt="Support Ankurm Foundation"
+              class="support-img"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <p class="support-text">
+              Donations play a vital role in sustaining our mission — helping us
+              acquire essential resources, hire professionals, and develop
+              customized programs for each child. Your contribution can fund
+              therapies, educational materials, and more.
+            </p>
+
+            <ul class="support-list">
+              <li>
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <strong>One-Time Donations:</strong> Make an immediate impact.
+              </li>
+              <li>
+                <i class="fa-solid fa-calendar-check"></i>
+                <strong>Monthly Sponsorships:</strong> Support long-term
+                initiatives.
+              </li>
+              <li>
+                <i class="fa-solid fa-people-group"></i>
+                <strong>Corporate Partnerships:</strong> Join us through CSR and
+                sponsorships.
+              </li>
+              <li>
+                <i class="fa-solid fa-gift"></i>
+                <strong>In-Kind Donations:</strong> Donate materials, equipment,
+                or services.
+              </li>
+            </ul>
+
+            <p class="support-text">
+              We ensure full transparency — every contribution is used
+              effectively, and donors receive regular updates on their impact.
+            </p>
+
+            <a
+              href="donate.html"
+              class="btn-donate animate__animated animate__pulse animate__infinite"
+            >
+              <i class="fa-solid fa-heart"></i> Donate Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="account-details py-5">
+      <div class="container text-center">
+        <h2 class="account-title mb-4">Bank Account Details</h2>
+        <p class="account-intro mb-5">
+          You can directly donate to our foundation’s account using the details
+          below. Every contribution helps us create an inclusive tomorrow 🌈
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="account-box p-4 text-align-c">
+              <h4>
+                <i class="fa-solid fa-building-columns"></i> Bank Information
+              </h4>
+              <p><strong>Bank Name:</strong> State Bank of India</p>
+              <p><strong>Account Name:</strong> Ankurm Foundation</p>
+              <p><strong>Account Number:</strong> 1234567890123</p>
+              <p><strong>IFSC Code:</strong> SBIN000XXXX</p>
+              <p><strong>Branch:</strong> Haldwani, Uttarakhand</p>
+            </div>
+
+            <div class="mt-4">
+              <h4><i class="fa-solid fa-qrcode"></i> UPI Payment</h4>
+              <p class="mt-2">
+                <strong>UPI ID:</strong> ankurmfoundation@okaxis
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 🌟 IMPACT COUNTER SECTION -->
+    <section class="impact-section wow animate__animated animate__fadeInUp">
+      <div class="container text-center">
+        <h2 class="impact-title">Our Impact So Far</h2>
+        <p class="impact-subtitle">
+          Together, we’re building a brighter, more inclusive future for every
+          child 💖
+        </p>
+
+        <div class="row mt-5 gy-4">
+          <div class="col-md-3 col-6">
+            <div class="impact-box">
+              <h3 class="counter" data-target="350">0</h3>
+              <p>Children Supported</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="impact-box">
+              <h3 class="counter" data-target="25">0</h3>
+              <p>Therapists Engaged</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="impact-box">
+              <h3 class="counter" data-target="45">0</h3>
+              <p>Special Educators</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+            <div class="impact-box">
+              <h3 class="counter" data-target="120">0</h3>
+              <p>Active Volunteers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-cards container">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 style="color: var(--purple); font-weight: 800">
+            Why Your Support Matters
+          </h2>
+          <p class="muted">
+            We use donations to deliver therapy, build inclusive classrooms and
+            empower families.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="why-card text-center">
+              <div class="why-icon mx-auto">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h5>Therapy &amp; Rehabilitation</h5>
+              <p class="muted">
+                Fund speech, occupational &amp; physiotherapy sessions tailored
+                to each child.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="why-card text-center">
+              <div class="why-icon mx-auto">
+                <i class="fa-solid fa-chalkboard-teacher"></i>
+              </div>
+              <h5>Inclusive Education</h5>
+              <p class="muted">
+                Support special educators and adaptive learning materials.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="why-card text-center">
+              <div class="why-icon mx-auto">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <h5>Family Support</h5>
+              <p class="muted">
+                Counseling and parent workshops to strengthen home-care.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="why-card text-center">
+              <div class="why-icon mx-auto">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <h5>Resources &amp; Equipment</h5>
+              <p class="muted">
+                Assistive devices, learning aids and safe spaces for therapy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 🌟 4-Part Professional Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- 🔹 Column 1: Logo -->
+        <div class="footer-column text-center text-md-start">
+          <img
+            src="/image/logo-removebg-preview - Copy.png"
+            alt="Ankurm Foundation Logo"
+            class="footer-logo"
+          />
+        </div>
+
+        <!-- 🔹 Column 2: Join Us -->
+        <div class="footer-column">
+          <h3>Join Us</h3>
+          <ul>
+            <li><a href="#">Speech Therapy</a></li>
+            <li><a href="#">Occupational Therapy</a></li>
+            <li><a href="#">Behavioral Therapy</a></li>
+          </ul>
+        </div>
+
+        <!-- 🔹 Column 3: Our Resources -->
+        <div class="footer-column">
+          <h3>Our Resources</h3>
+          <ul>
+            <li><a href="About-page.html">About Us</a></li>
+            <li><a href="sucess-story.html">Success Story</a></li>
+            <li><a href="support.html">Donation</a></li>
+          </ul>
+        </div>
+
+        <!-- 🔹 Column 4: Contact Info -->
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p>
+            Ankurm Foundation<br />
+            1st Floor, Barahi Tower, Near KVM School,<br />
+            Heera Nagar, Mukhani, Haldwani, Uttarakhand <br />
+            <i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 5:00 PM<br />
+            <i class="fa-solid fa-phone"></i> +91 8445799969<br />
+            <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
+            <br />
+            <strong style="color: wheat">Reg no. UK0660342025014709</strong>
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+              target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ankurmfoundation/"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/918445799969?text=Hello%20Ankurm%20Foundation%2C%20I%20want%20to%20know%20more%20about%20your%20programs."
+              target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔸 Bottom Line -->
+      <div class="footer-bottom">
+        <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- ✅ Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ⚙️ Counter JS -->
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      const speed = 150;
+
+      const startCounting = () => {
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 25);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      };
+
+      let started = false;
+      window.addEventListener("scroll", () => {
+        const section = document.querySelector(".impact-section");
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 150 && !started) {
+          startCounting();
+          started = true;
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
 </html>
