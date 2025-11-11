@@ -69,7 +69,7 @@
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Login successful
-            window.location.href = "dashboard.html";
+            window.location.href = "dashboard-upload.html";
           })
           .catch((error) => {
             errorMsg.textContent = error.message;
