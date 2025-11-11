@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/my-website/index.html" },
+    { "source": "/about", "destination": "/my-website/about.html" },
+    { "source": "/service", "destination": "/my-website/service.html" },
+    { "source": "/contact", "destination": "/my-website/contact.html" },
+    { "source": "/event", "destination": "/my-website/event.html" },
+    { "source": "/admin/login", "destination": "/admin/login.html" },
+    { "source": "/admin/dashboard", "destination": "/admin/dashboard.html" },
+    { "source": "/admin/upload", "destination": "/admin/upload.html" }
+  ]
+}
