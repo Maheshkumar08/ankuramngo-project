@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+      #error-msg {
+        color: red;
+        min-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Admin Login</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="error-msg"></p>
+    </form>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA5-oKQ0J23OusHFg0koC0PilXP7Y_IU64",
+        authDomain: "ankurm-project.firebaseapp.com",
+        databaseURL: "https://ankurm-project-default-rtdb.firebaseio.com",
+        projectId: "ankurm-project",
+        storageBucket: "ankurm-project.firebasestorage.app",
+        messagingSenderId: "38277687905",
+        appId: "1:38277687905:web:6644d7d6c275a5d0e61820",
+        measurementId: "G-WJVKTT37EB",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const loginForm = document.getElementById("login-form");
+      const errorMsg = document.getElementById("error-msg");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = loginForm.email.value;
+        const password = loginForm.password.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Login successful
+            window.location.href = "dashboard.html";
+          })
+          .catch((error) => {
+            errorMsg.textContent = error.message;
+          });
+      });
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User already logged in
+          window.location.href = "dashboard.html";
+        }
+      });
+    </script>
+  </body>
+</html>

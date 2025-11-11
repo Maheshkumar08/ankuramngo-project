@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Professional Admin Upload Panel | Ankurm Foundation</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --purple: #6e196e;
+        --pink: #f14079;
+        --light-bg: #f8f9fa;
+        --dark-bg: #121212;
+        --dark-text: #eee;
+        --light-text: #333;
+        --toast-bg-light: #fff;
+        --toast-bg-dark: #333;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--light-bg);
+        color: var(--light-text);
+        min-height: 100vh;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        padding: 20px 0;
+      }
+
+      body.dark-mode {
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
+      }
+
+      .container {
+        max-width: 720px;
+        margin: auto;
+        background: white;
+        border-radius: 16px;
+        padding: 40px 50px 60px;
+        box-shadow: 0 12px 36px rgba(110, 25, 110, 0.15);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      body.dark-mode .container {
+        background: #1e1e1e;
+        color: var(--dark-text);
+        box-shadow: 0 12px 36px rgba(241, 64, 121, 0.35);
+      }
+
+      h2 {
+        font-weight: 900;
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+        color: var(--purple);
+        text-align: center;
+      }
+
+      form label {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      input[type="file"] {
+        cursor: pointer;
+      }
+
+      button[type="submit"] {
+        background: var(--pink);
+        border: none;
+        font-weight: 700;
+        padding: 14px 0;
+        font-size: 1.15rem;
+        border-radius: 30px;
+        width: 100%;
+        color: white;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 6px 18px rgba(241, 64, 121, 0.5);
+      }
+
+      button[type="submit"]:hover {
+        background: #db2038;
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(219, 32, 56, 0.7);
+      }
+
+      #preview {
+        margin-top: 25px;
+        text-align: center;
+      }
+      #preview img,
+      #preview video {
+        max-width: 100%;
+        max-height: 280px;
+        border-radius: 20px;
+        box-shadow: 0 10px 26px rgba(110, 25, 110, 0.25);
+        object-fit: contain;
+      }
+
+      .file-list {
+        margin-top: 40px;
+        border-top: 2px solid var(--pink);
+        padding-top: 20px;
+      }
+
+      .file-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 10px;
+        border-radius: 15px;
+        margin-bottom: 18px;
+        background: #fff;
+        box-shadow: 0 4px 18px rgba(110, 25, 110, 0.12);
+        transition: background 0.3s ease;
+      }
+
+      body.dark-mode .file-item {
+        background: #2a2a2a;
+        box-shadow: 0 4px 18px rgba(241, 64, 121, 0.22);
+      }
+
+      .file-item:hover {
+        background: var(--pink);
+        color: white;
+        cursor: pointer;
+      }
+
+      .file-item:hover .file-url {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .file-item img,
+      .file-item video {
+        width: 140px;
+        height: 90px;
+        border-radius: 14px;
+        object-fit: cover;
+        box-shadow: 0 4px 18px rgba(110, 25, 110, 0.2);
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+
+      .file-item:hover img,
+      .file-item:hover video {
+        transform: scale(1.1);
+      }
+
+      .file-info {
+        flex-grow: 1;
+      }
+
+      .file-url {
+        font-size: 0.95rem;
+        word-break: break-word;
+        color: var(--purple);
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .file-meta {
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      body.dark-mode .file-meta {
+        color: #aaa;
+      }
+
+      .btn-delete {
+        background: transparent;
+        border: none;
+        color: var(--pink);
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+      }
+
+      .btn-delete:hover {
+        color: #db2038;
+      }
+
+      /* Progress Bar */
+      .progress {
+        height: 22px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-top: 20px;
+        box-shadow: 0 4px 14px rgba(241, 64, 121, 0.3);
+        background: #eee;
+      }
+
+      body.dark-mode .progress {
+        background: #333;
+        box-shadow: 0 4px 14px rgba(219, 32, 56, 0.5);
+      }
+
+      .progress-bar {
+        background: var(--pink);
+        transition: width 0.4s ease;
+      }
+
+      /* Toast Notifications */
+      #toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 320px;
+      }
+
+      .toast {
+        background: var(--toast-bg-light);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 28px rgba(110, 25, 110, 0.2);
+        font-weight: 600;
+        color: var(--purple);
+        opacity: 0;
+        transform: translateX(120%);
+        animation: slide-in 0.5s forwards;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      body.dark-mode .toast {
+        background: var(--toast-bg-dark);
+        color: #f8c8db;
+        box-shadow: 0 8px 28px rgba(241, 64, 121, 0.9);
+      }
+      .toast.success {
+        border-left: 6px solid #72be48;
+      }
+      .toast.error {
+        border-left: 6px solid #dc3545;
+      }
+      .toast button {
+        background: transparent;
+        border: none;
+        color: inherit;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      .toast button:hover {
+        color: #db2038;
+      }
+      @keyframes slide-in {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Dark Mode Toggle Button */
+      #dark-mode-toggle {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--purple);
+        color: white;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 50px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(110, 25, 110, 0.5);
+        transition: background 0.3s ease;
+        z-index: 1200;
+      }
+      #dark-mode-toggle:hover {
+        background: #db2038;
+      }
+      #upload-area:hover,
+      #upload-area:focus {
+        background-color: var(--pink);
+        color: white;
+        border-color: var(--pink);
+        outline: none;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 600px) {
+        .container {
+          padding: 30px 20px 40px;
+        }
+        .file-item {
+          flex-direction: column;
+          gap: 15px;
+          align-items: flex-start;
+        }
+        .file-item img,
+        .file-item video {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" role="main" aria-labelledby="page-title">
+      <h2 id="page-title">Admin Upload Panel</h2>
+
+      <form id="upload-form" aria-describedby="upload-instructions" novalidate>
+        <label
+          for="file-input"
+          id="upload-area"
+          tabindex="0"
+          role="button"
+          aria-describedby="file-error"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed var(--pink);
+            border-radius: 16px;
+            padding: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--pink);
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+          onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); this.click(); }"
+        >
+          <i
+            class="fa fa-cloud-upload-alt"
+            style="font-size: 4rem; margin-bottom: 15px"
+          ></i>
+          Click here or press Enter to select a file<br />
+          <small
+            style="
+              font-weight: 400;
+              font-size: 0.9rem;
+              color: var(--purple);
+              margin-top: 8px;
+            "
+          >
+            Supported: JPG, PNG, WEBP, GIF, MP4, WEBM, MOV (max 10MB)
+          </small>
+        </label>
+
+        <input
+          type="file"
+          id="file-input"
+          accept="image/*,video/*"
+          aria-required="true"
+          aria-describedby="file-error"
+          style="display: none"
+        />
+
+        <div
+          id="file-error"
+          role="alert"
+          style="color: #dc3545; margin-top: 6px"
+        ></div>
+
+        <button type="submit" aria-live="polite" style="margin-top: 15px">
+          Upload File
+        </button>
+      </form>
+
+      <div id="preview" aria-live="polite" aria-atomic="true"></div>
+
+      <section
+        class="file-list"
+        aria-live="polite"
+        aria-relevant="additions removals"
+        aria-atomic="true"
+        id="file-list"
+        tabindex="0"
+        aria-label="Uploaded files list"
+      >
+        <h4>Uploaded Files</h4>
+      </section>
+    </div>
+
+    <button
+      id="dark-mode-toggle"
+      aria-pressed="false"
+      aria-label="Toggle dark mode"
+    >
+      <i class="fa fa-moon"></i>
+    </button>
+
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Firebase SDK and logic -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        onValue,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA5-oKQ0J23OusHFg0koC0PilXP7Y_IU64",
+        authDomain: "ankurm-project.firebaseapp.com",
+        databaseURL: "https://ankurm-project-default-rtdb.firebaseio.com",
+        projectId: "ankurm-project",
+        storageBucket: "ankurm-project.appspot.com",
+        messagingSenderId: "38277687905",
+        appId: "1:38277687905:web:6644d7d6c275a5d0e61820",
+        measurementId: "G-WJVKTT37EB",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const eventsRef = ref(db, "events");
+
+      const form = document.getElementById("upload-form");
+      const fileInput = document.getElementById("file-input");
+      const preview = document.getElementById("preview");
+      const fileList = document.getElementById("file-list");
+      const progressContainer = document.getElementById("upload-progress");
+      const progressBar = document.getElementById("progress-bar");
+      const fileError = document.getElementById("file-error");
+
+      const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+
+      // Toast helper
+      function showToast(message, type = "success") {
+        const toastContainer = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        toast.classList.add("toast", type);
+        toast.setAttribute("role", "alert");
+        toast.setAttribute("aria-live", "assertive");
+        toast.innerHTML = `
+        <span>${message}</span>
+        <button aria-label="Close notification">&times;</button>
+      `;
+        toast.querySelector("button").onclick = () => {
+          toast.remove();
+        };
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          setTimeout(() => toast.remove(), 300);
+        }, 4000);
+      }
+
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        darkModeToggle.setAttribute("aria-pressed", isDark);
+        darkModeToggle.innerHTML = isDark
+          ? '<i class="fa fa-sun"></i>'
+          : '<i class="fa fa-moon"></i>';
+      });
+
+      // Validate file on select
+      fileInput.addEventListener("change", () => {
+        fileError.textContent = "";
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        const validTypes = [
+          "image/jpeg",
+          "image/png",
+          "image/webp",
+          "image/gif",
+          "video/mp4",
+          "video/webm",
+          "video/quicktime",
+        ];
+
+        if (!validTypes.includes(file.type)) {
+          fileError.textContent =
+            "Invalid file type! Only JPG, PNG, WEBP, GIF images or MP4, WEBM, MOV videos allowed.";
+          fileInput.value = "";
+          return;
+        }
+        if (file.size > MAX_FILE_SIZE) {
+          fileError.textContent = "File size exceeds 10MB limit.";
+          fileInput.value = "";
+        }
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        fileError.textContent = "";
+        if (!fileInput.files.length) {
+          fileError.textContent = "Please select a file.";
+          return;
+        }
+        const file = fileInput.files[0];
+
+        // Validate again before upload
+        if (file.size > MAX_FILE_SIZE) {
+          fileError.textContent = "File size exceeds 10MB limit.";
+          return;
+        }
+
+        const validTypes = [
+          "image/jpeg",
+          "image/png",
+          "image/webp",
+          "image/gif",
+          "video/mp4",
+          "video/webm",
+          "video/quicktime",
+        ];
+        if (!validTypes.includes(file.type)) {
+          fileError.textContent = "Unsupported file type.";
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "ramkumar");
+
+        const fileType = file.type.startsWith("video/") ? "video" : "image";
+
+        try {
+          progressContainer.style.display = "block";
+          progressBar.style.width = "0%";
+          progressBar.setAttribute("aria-valuenow", 0);
+
+          // Fake progress with intervals for smooth UI
+          let progress = 0;
+          const interval = setInterval(() => {
+            if (progress < 90) {
+              progress += 8;
+              progressBar.style.width = progress + "%";
+              progressBar.setAttribute("aria-valuenow", progress);
+            } else {
+              clearInterval(interval);
+            }
+          }, 200);
+
+          const res = await fetch(
+            `https://api.cloudinary.com/v1_1/dw57vpkzc/${fileType}/upload`,
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+
+          clearInterval(interval);
+          progressBar.style.width = "100%";
+          progressBar.setAttribute("aria-valuenow", 100);
+
+          const data = await res.json();
+
+          if (data.secure_url) {
+            preview.innerHTML =
+              fileType === "video"
+                ? `<video controls src="${data.secure_url}" class="animate__animated animate__fadeIn" style="max-width:100%;border-radius:20px;"></video>`
+                : `<img src="${data.secure_url}" alt="Preview" class="animate__animated animate__fadeIn" style="max-width:100%; border-radius:20px;" />`;
+
+            await push(eventsRef, {
+              fileUrl: data.secure_url,
+              fileType,
+              uploadedAt: Date.now(),
+            });
+
+            showToast("File uploaded successfully!", "success");
+            fileInput.value = "";
+            progressContainer.style.display = "none";
+            progressBar.style.width = "0%";
+          } else {
+            showToast("Upload failed! Check Cloudinary settings.", "error");
+            console.error(data);
+            progressContainer.style.display = "none";
+          }
+        } catch (error) {
+          showToast("Upload error! Check console.", "error");
+          console.error(error);
+          progressContainer.style.display = "none";
+        }
+      });
+
+      // Render uploaded files list
+      function renderFiles(data) {
+        // Remove existing except header
+        fileList.querySelectorAll(".file-item").forEach((el) => el.remove());
+
+        if (!data) {
+          const noFiles = document.createElement("p");
+          noFiles.textContent = "No files uploaded yet.";
+          noFiles.style.color = "#666";
+          noFiles.style.textAlign = "center";
+          noFiles.style.marginTop = "15px";
+          fileList.appendChild(noFiles);
+          return;
+        }
+
+        Object.entries(data).forEach(([key, file]) => {
+          const item = document.createElement("div");
+          item.className = "file-item";
+
+          const media = document.createElement(
+            file.fileType === "video" ? "video" : "img"
+          );
+          if (file.fileType === "video") {
+            media.controls = true;
+            media.muted = true;
+            media.src = file.fileUrl;
+            media.setAttribute("aria-label", "Uploaded video");
+          } else {
+            media.src = file.fileUrl;
+            media.alt = "Uploaded image";
+          }
+
+          const info = document.createElement("div");
+          info.className = "file-info";
+          info.innerHTML = `
+          <div class="file-url" title="${file.fileUrl}">${file.fileUrl}</div>
+          <div class="file-meta">Type: ${file.fileType} | Uploaded: ${new Date(
+            file.uploadedAt
+          ).toLocaleString()}</div>
+        `;
+
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "btn-delete";
+          deleteBtn.setAttribute("aria-label", "Delete uploaded file");
+          deleteBtn.innerHTML = `<i class="fa fa-trash"></i>`;
+
+          deleteBtn.addEventListener("click", () => {
+            if (
+              confirm(
+                "Are you sure you want to delete this file? This action cannot be undone."
+              )
+            ) {
+              remove(ref(db, `events/${key}`))
+                .then(() => showToast("File deleted successfully!", "success"))
+                .catch((err) =>
+                  showToast("Error deleting file: " + err.message, "error")
+                );
+            }
+          });
+
+          item.appendChild(media);
+          item.appendChild(info);
+          item.appendChild(deleteBtn);
+          fileList.appendChild(item);
+        });
+      }
+
+      // Listen for realtime DB changes
+      onValue(eventsRef, (snapshot) => {
+        renderFiles(snapshot.val());
+      });
+
+      // Initialize dark mode based on user preference or default
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.body.classList.add("dark-mode");
+        darkModeToggle.setAttribute("aria-pressed", "true");
+        darkModeToggle.innerHTML = '<i class="fa fa-sun"></i>';
+      }
+    </script>
+  </body>
+</html>
