@@ -382,7 +382,22 @@
           Upload File
         </button>
       </form>
-
+      <!-- Progress Bar Container -->
+      <div
+        id="upload-progress"
+        class="progress"
+        style="display: none; margin-top: 20px"
+      >
+        <div
+          id="progress-bar"
+          class="progress-bar"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          style="width: 0%"
+        ></div>
+      </div>
       <div id="preview" aria-live="polite" aria-atomic="true"></div>
 
       <section
