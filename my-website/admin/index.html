@@ -8,10 +8,16 @@
       body {
         font-family: Arial, sans-serif;
         max-width: 400px;
-        margin: 50px auto;
+        margin: 80px auto;
         padding: 20px;
         border: 1px solid #ddd;
         border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #333;
       }
       input,
       button {
@@ -19,16 +25,29 @@
         padding: 10px;
         margin: 10px 0;
         font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
       }
       #error-msg {
         color: red;
         min-height: 20px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <h2>Admin Login</h2>
-    <form id="login-form">
+
+    <form id="loginForm">
       <input type="email" id="email" placeholder="Email" required />
       <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
@@ -42,37 +61,45 @@
         signInWithEmailAndPassword,
       } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-      // 🔹 Your Firebase config
+      // ✅ Your Firebase config
       const firebaseConfig = {
         apiKey: "AIzaSyA5-oKQ0J23OusHFg0koC0PilXP7Y_IU64",
         authDomain: "ankurm-project.firebaseapp.com",
         projectId: "ankurm-project",
-        storageBucket: "ankurm-project.firebasestorage.app",
+        storageBucket: "ankurm-project.appspot.com",
         messagingSenderId: "38277687905",
         appId: "1:38277687905:web:6644d7d6c275a5d0e61820",
       };
 
-      // 🔹 Initialize Firebase
+      // ✅ Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
-      // 🔹 Handle login form submit
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
+      // ✅ Wait for DOM to load first
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.getElementById("loginForm");
+        const errorMsg = document.getElementById("error-msg");
 
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
+        if (loginForm) {
+          loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-          try {
-            await signInWithEmailAndPassword(auth, email, password);
-            alert("Login successful ✅");
-            window.location.href = "dashboard-upload.html"; // redirect after login
-          } catch (error) {
-            alert("Invalid credentials ❌");
-          }
-        });
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            try {
+              await signInWithEmailAndPassword(auth, email, password);
+              alert("Login successful ✅");
+              window.location.href = "dashboard-upload.html"; // redirect after login
+            } catch (error) {
+              console.error(error);
+              errorMsg.textContent = "❌ Invalid email or password!";
+            }
+          });
+        } else {
+          console.error("Form not found in DOM!");
+        }
+      });
     </script>
   </body>
 </html>
