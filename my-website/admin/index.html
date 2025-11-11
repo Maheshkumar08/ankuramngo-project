@@ -90,7 +90,7 @@
             try {
               await signInWithEmailAndPassword(auth, email, password);
               alert("Login successful ✅");
-              window.location.href = "dashboard-upload.html"; // redirect after login
+              window.location.href = "/admin/dashboard-upload.html"; // redirect after login
             } catch (error) {
               console.error(error);
               errorMsg.textContent = "❌ Invalid email or password!";
