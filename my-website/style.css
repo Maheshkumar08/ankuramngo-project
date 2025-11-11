@@ -29,171 +29,165 @@
   font-weight: 400;
 }
 
-/* 🔹 Navbar Base */
+/* ====== Navbar ====== */
 .navbar {
-  background-color: white;
-  color: #F14079;
-  position: sticky;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
   top: 0;
+  left: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
-  padding: 8px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 0.5px solid black;
-  font-size: 25px;
-  font-weight: 600;
 }
 
-/* Logo */
-.navbar-brand img {
-  height: 60px;
-  transition: transform 0.3s ease;
-}
-
-.navbar-brand img:hover {
-  transform: scale(1.05);
-}
-
-/* Links */
-.nav-link {
-  color: var(--info-color) !important;
-  font-weight: 500;
-  padding: 10px 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-link:hover {
-  color: yellow !important;
-  transform: translateY(-2px);
-}
-
-/* 🔹 Dropdown (Show on Hover) */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.dropdown-menu {
-  background-color: #FEECEE;
-  border: none;
-  border-radius: 10px;
+.navbar.scrolled {
+  background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-item {
-  color: #333333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.navbar .navbar-brand img {
+  height: 45px;
 }
 
-.dropdown-item:hover {
-  background-color: #F25435;
-  color: #fff;
+.navbar .nav-link {
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
 }
 
-/* 🔹 Support Button */
-.btn-danger {
-  background-color: #F14079;
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #6e196e;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #6e196e;
+  color: white;
+}
+
+.navbar-toggler {
   border: none;
-  /* transition: all 0.3s ease; */
+  background: none;
 }
 
-.btn-danger a {
-  color: #fff;
+.navbar-toggler .fa-bars {
+  color: #333;
+}
+
+.navbar-support .btn {
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-support .btn:hover,
+.navbar-support .btn:focus {
+  background-color: #57255a;
+  color: white;
   text-decoration: none;
 }
 
-.btn-danger:hover {
-  background-color: #DB2038;
-  transform: scale(1.05);
-}
-
-/* 🔹 Fade Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@media (max-width: 991px) {
+  .navbar .nav-item.d-lg-none {
+    margin-top: 1rem;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .navbar .nav-item.d-lg-none .btn {
+    width: 100%;
   }
 }
 
-
-
-.containerr {
-  width: 100%;
-  height: 50%;
-  text-align: center;
-  background-color: #F14079;
-}
-
-.container .hero-img {
-  width: 100%;
-  height: 50%;
-  border-radius: 12px;
-}
-
-.hero-section-text {
-  margin-top: -45%;
-  background-color: var(--text-color);
-  color: var(--info-color);
-  font-size: xx-large;
-}
-
-.hero-section-text p {
-  font-size: 80px;
-  font-weight: 600;
-  font-style: normal;
-  text-shadow: 4px 6px 12px var(--danger-color);
-  text-align: center;
-  color: rgba(253, 253, 0, 0.966);
-}
-
-/* Button styling */
-.hero-buttons {
+/* ====== Hero Section ====== */
+.hero {
+  margin-top: 80px;
+  /* navbar height + some padding */
+  background-color: #fff8f6;
+  padding: 3rem 1rem;
   display: flex;
-  gap: 55px;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  display: flex;
   flex-wrap: wrap;
-  /* mobile me line break allow karega */
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-/* 🎨 Button styling (Your existing style applied to both) */
-.hero-section-text button {
-  width: 20%;
-  min-width: 140px;
-  border-radius: 20px;
-  font-size: 18px;
-  padding: 10px 20px;
-  box-shadow: 25px 10px 16px var(--danger-color);
-  cursor: pointer;
-  /* border: 1.5px solid var(--danger-color); */
-  transition: all 0.3s ease;
-  background-color: yellow;
-  color: black;
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #57255a;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  max-width: 550px;
+}
+
+.hero-buttons .btn {
+  margin-right: 1rem;
+  padding: 0.75rem 2rem;
   font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-/* ✨ Hover effect (applies to both buttons) */
-.hero-section-text button:hover {
-  transform: scale(1.1);
-  background-color: #333333;
-  color: yellow;
+.btn-primary {
+  background-color: #f25435;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-/* 🧭 Visit Button custom tweak */
-.visit-btn {
-  background-color: transparent;
-  color: var(--danger-color);
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #57255a;
+  color: white;
 }
 
-.visit-btn:hover {
-  background-color: #333333;
-  color: yellow;
+.btn-secondary {
+  background-color: #f25435;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #f25435;
+  color: white;
+}
+
+.hero-image {
+  flex: 1 1 450px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(110, 25, 110, 0.3);
 }
 
 .cr-section {
