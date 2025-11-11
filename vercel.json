@@ -1,12 +1,15 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/my-website/index.html" },
-    { "source": "/about", "destination": "/my-website/about.html" },
-    { "source": "/service", "destination": "/my-website/service.html" },
-    { "source": "/contact", "destination": "/my-website/contact.html" },
-    { "source": "/event", "destination": "/my-website/event.html" },
-    { "source": "/admin/login", "destination": "/admin/login.html" },
-    { "source": "/admin/dashboard", "destination": "/admin/dashboard.html" },
-    { "source": "/admin/upload", "destination": "/admin/upload.html" }
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "admin/**/*.html", "use": "@vercel/static" },
+    { "src": "assets/**/*", "use": "@vercel/static" },
+    { "src": "images/**/*", "use": "@vercel/static" },
+    { "src": "css/**/*", "use": "@vercel/static" },
+    { "src": "js/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/admin/(.*)", "dest": "/admin/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
