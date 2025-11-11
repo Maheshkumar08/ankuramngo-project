@@ -560,6 +560,20 @@ body {
     transform: scale(1.05);
 }
 
+.social-media-section {
+    background-color: #f8f9fa;
+    /* light grey background */
+}
+
+.social-media-section .social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-media-section .social-icons a:hover {
+    transform: scale(1.3);
+    text-decoration: none;
+}
+
 /* ====== Footer ====== */
 .footer {
     background-color: var(--primary-color);
