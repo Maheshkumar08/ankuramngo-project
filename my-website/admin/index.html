@@ -36,52 +36,43 @@
     </form>
 
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
       import {
         getAuth,
         signInWithEmailAndPassword,
-        onAuthStateChanged,
-      } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
+      // 🔹 Your Firebase config
       const firebaseConfig = {
         apiKey: "AIzaSyA5-oKQ0J23OusHFg0koC0PilXP7Y_IU64",
         authDomain: "ankurm-project.firebaseapp.com",
-        databaseURL: "https://ankurm-project-default-rtdb.firebaseio.com",
         projectId: "ankurm-project",
         storageBucket: "ankurm-project.firebasestorage.app",
         messagingSenderId: "38277687905",
         appId: "1:38277687905:web:6644d7d6c275a5d0e61820",
-        measurementId: "G-WJVKTT37EB",
       };
 
+      // 🔹 Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
-      const loginForm = document.getElementById("login-form");
-      const errorMsg = document.getElementById("error-msg");
+      // 🔹 Handle login form submit
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-      loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
 
-        const email = loginForm.email.value;
-        const password = loginForm.password.value;
-
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            // Login successful
-            window.location.href = "dashboard.html";
-          })
-          .catch((error) => {
-            errorMsg.textContent = error.message;
-          });
-      });
-
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User already logged in
-          window.location.href = "dashboard.html";
-        }
-      });
+          try {
+            await signInWithEmailAndPassword(auth, email, password);
+            alert("Login successful ✅");
+            window.location.href = "dashboard-upload.html"; // redirect after login
+          } catch (error) {
+            alert("Invalid credentials ❌");
+          }
+        });
     </script>
   </body>
 </html>
