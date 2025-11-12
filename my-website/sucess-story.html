@@ -24,90 +24,146 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
+      /* ====== Navbar Styling Only ====== */
+      :root {
+        --primary-color: #fff8f6;
+        --secondary-color: #f25435;
+        --success-color: #db2038;
+        --danger-color: #333333;
+        --warning-color: #feecee;
+        --info-color: #f14079;
+        --light-color: #f8f5ed;
+        --dark-color: #72be48;
+      }
+
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* ===== Navbar Base ===== */
       .navbar {
-        background-color: white;
-        color: #f14079;
-        position: sticky;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
         top: 0;
+        left: 0;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
         z-index: 1000;
-        padding: 8px 5%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 0.5px solid black;
-        font-size: 25px;
-        font-weight: 600;
       }
 
-      /* Logo */
-      .navbar-brand img {
-        height: 60px;
-        transition: transform 0.3s ease;
-      }
-      .navbar-brand img:hover {
-        transform: scale(1.05);
-      }
-
-      /* Links */
-      .nav-link {
-        color: var(--info-color) !important;
-        font-weight: 500;
-        padding: 10px 18px;
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
-      .nav-link:hover {
-        color: yellow !important;
-        transform: translateY(-2px);
-      }
-
-      /* 🔹 Dropdown (Show on Hover) */
-      .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        animation: fadeIn 0.3s ease;
-      }
-
-      .dropdown-menu {
-        background-color: #feecee;
-        border: none;
-        border-radius: 10px;
+      .navbar.scrolled {
+        background-color: white;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
 
-      .dropdown-item {
-        color: #333333;
-        transition: background-color 0.3s ease, color 0.3s ease;
+      .navbar .navbar-brand img {
+        height: 45px;
       }
 
-      .dropdown-item:hover {
-        background-color: #f25435;
-        color: #fff;
+      .navbar .nav-link {
+        color: #333;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
       }
 
-      /* 🔹 Support Button */
-      .btn-danger {
-        background-color: #f14079;
+      .navbar .nav-link:hover,
+      .navbar .nav-link:focus {
+        color: #6e196e;
+      }
+
+      .navbar .dropdown-menu {
+        border-radius: 0.25rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar .dropdown-item:hover,
+      .navbar .dropdown-item:focus {
+        background-color: #6e196e;
+        color: white;
+      }
+
+      .navbar-toggler {
         border: none;
-        /* transition: all 0.3s ease; */
+        background: none;
       }
-      .btn-danger a {
-        color: #fff;
+
+      .navbar-toggler .fa-bars {
+        color: #333;
+      }
+
+      /* ===== Support Button ===== */
+      .navbar-support .btn {
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar-support .btn:hover,
+      .navbar-support .btn:focus {
+        background-color: #57255a;
+        color: white;
         text-decoration: none;
       }
-      .btn-danger:hover {
-        background-color: #db2038;
-        transform: scale(1.05);
+      /* ====== Parent Review Section (Responsive Fixed Layout) ====== */
+      .video-section {
+        background-color: #feecee;
+        padding: 60px 20px;
       }
 
-      /* 🔹 Fade Animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .video-carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: nowrap;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+      }
+
+      /* 🎞️ Main Video */
+      .main-video {
+        width: 600px;
+        max-width: 90%;
+        aspect-ratio: 16/9;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        flex-shrink: 0;
+      }
+      .main-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* 📸 Preview Thumbnails */
+      .preview-box {
+        width: 150px;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        flex-shrink: 0;
+      }
+      .preview-box:hover {
+        transform: scale(1.05);
+        border-color: #f14079;
+      }
+      .preview-box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
       .success-section {
         background-color: #fff8f6;
@@ -292,22 +348,31 @@
       }
       @media (max-width: 992px) {
         /* 🔹 Responsive Fix */
-        .nav-item.dropdown:hover .dropdown-menu {
-          display: block;
+        .navbar .nav-item.d-lg-none {
+          margin-top: 1rem;
         }
 
-        /* Dropdown menu */
+        .navbar .nav-item.d-lg-none .btn {
+          width: 100%;
+        }
+
+        /* Dropdown for mobile */
         .dropdown-menu {
           background-color: #feecee;
           border-radius: 10px;
           border: none;
         }
+
         .dropdown-item:hover {
           background-color: var(--secondary-color);
           color: white;
         }
 
-        /* Support button */
+        /* Collapsed navbar background */
+        #mainNavbar {
+          background-color: #712a86;
+        }
+
         .btn-danger {
           background-color: transparent;
           border: none;
@@ -316,18 +381,10 @@
           font-weight: 600;
           transition: all 0.3s ease;
         }
-
-        .navbar-nav {
-          color: #222222;
-        }
       }
       @media (max-width: 768px) {
         .navbar {
           flex-wrap: wrap;
-        }
-
-        .navbar-brand {
-          flex: 1;
         }
 
         .navbar-toggler {
@@ -355,7 +412,7 @@
           padding: 10px;
         }
 
-        /* Support button center */
+        /* Hide desktop Support */
         .navbar-support {
           display: none !important;
         }
@@ -367,15 +424,15 @@
           text-align: center;
           font-size: 1.05rem;
           font-weight: 600;
-          width: auto;
-          white-space: nowrap;
           border-radius: 25px;
           line-height: 1.4;
         }
-        .navbar-nav {
-          background-color: transparent;
-          margin-right: 50%;
-          /* flex-flow: column; */
+        .video-carousel {
+          transform: scale(0.9);
+          gap: 15px;
+        }
+        .preview-box {
+          width: 90px;
         }
         .footer {
           text-align: center;
@@ -391,50 +448,59 @@
           margin-right: 50%;
           /* flex-flow: column; */
         }
+        .video-carousel {
+          flex-wrap: nowrap;
+          justify-content: center;
+          gap: 10px;
+        }
+        .main-video {
+          width: 75%;
+        }
+        .preview-box {
+          width: 20%;
+        }
         .footer-container {
           grid-template-columns: 1fr;
           text-align: center;
         }
       }
       @media (max-width: 480px) {
-        .navbar-nav {
-          background-color: transparent;
-          margin-right: 50%;
-          /* flex-flow: column; */
-        }
         .navbar {
           display: flex;
           flex-flow: column wrap;
-          transition: all 0.4s;
         }
+
         .navbar-collapse.show .btn-danger {
-          padding: 10px 80px;
-          font-size: 17px;
-          margin-left: -0%;
+          padding: 10px 60px;
+          font-size: 16px;
           margin-top: -5%;
+          font-weight: 600;
         }
-        .navbar-collapse.show .btn-danger #span {
-          margin-left: -80px;
+        .main-video {
+          width: 70%;
+        }
+        .preview-box {
+          width: 18%;
         }
       }
     </style>
   </head>
   <body>
-    <!-- 🔹 Navbar -->
+    <!-- ✅ Navbar Start -->
     <nav class="navbar navbar-expand-lg">
       <div
         class="container-fluid d-flex align-items-center justify-content-between"
       >
-        <!-- Logo -->
+        <!-- 🔹 Logo -->
         <a class="navbar-brand" href="index.html">
           <img
-            src="/image/img/logo-removebg-preview-1.webp"
+            src="image/img/logo-removebg-preview-1.webp"
             alt="ANKURM FOUNDATION"
             style="height: 45px; width: auto"
           />
         </a>
 
-        <!-- Toggle Button -->
+        <!-- 🔹 Toggle Button (Mobile) -->
         <button
           class="navbar-toggler text-black border-0"
           type="button"
@@ -447,7 +513,7 @@
           <i class="fa fa-bars fs-2"></i>
         </button>
 
-        <!-- Navbar Links -->
+        <!-- 🔹 Navbar Links -->
         <div
           class="collapse navbar-collapse justify-content-center"
           id="mainNavbar"
@@ -460,10 +526,10 @@
               <a class="nav-link" href="service.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="About-page.html">Who You Are</a>
+              <a class="nav-link" href="About-page.html">About-us</a>
             </li>
 
-            <!-- Dropdown -->
+            <!-- 🔸 Dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -489,12 +555,12 @@
               <a class="nav-link" href="contact-us.html">Contact</a>
             </li>
 
-            <!-- Support Button for mobile -->
+            <!-- 🔹 Support Button for Mobile -->
             <li class="nav-item d-lg-none mt-3">
               <button class="btn btn-outline-danger bg-transparent border-0">
                 <a
                   href="support.html"
-                  style="text-decoration: none; color: white"
+                  style="text-decoration: none; color: white; font-weight: 600"
                   >Support</a
                 >
               </button>
@@ -502,7 +568,7 @@
           </ul>
         </div>
 
-        <!-- Support Button (Desktop only) -->
+        <!-- 🔹 Support Button (Desktop Only) -->
         <div class="navbar-support d-none d-lg-block">
           <button class="btn btn-danger">
             <a href="support.html" style="color: white; text-decoration: none"
@@ -512,6 +578,7 @@
         </div>
       </div>
     </nav>
+    <!-- ✅ Navbar End -->
 
     <section
       class="success-hero text-center text-white d-flex align-items-center justify-content-center"
@@ -534,21 +601,27 @@
         </p>
       </div>
     </section>
+    <!-- 🌟 Parent Review Video Section -->
     <section class="video-section text-center py-5">
-      <h2 class="text-danger mb-4">Watch Their Journey</h2>
-      <div class="ratio ratio-16x9 mx-auto" style="max-width: 760px">
-        <video
-          src="/image/WhatsApp Video 2025-11-05 at 6.59.00 AM.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          style="
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          "
-        ></video>
+      <div class="container">
+        <h2 class="text-danger mb-4">Watch Their Journey</h2>
+
+        <div class="video-carousel">
+          <!-- Previous Video Thumbnail -->
+          <div class="preview-box prev-video" onclick="playPrevVideo()">
+            <img src="image/thumb1.jpg" alt="Previous Video Thumbnail" />
+          </div>
+
+          <!-- Main Playing Video -->
+          <div class="main-video">
+            <video id="mainVideo" playsinline controls></video>
+          </div>
+
+          <!-- Next Video Thumbnail -->
+          <div class="preview-box next-video" onclick="playNextVideo()">
+            <img src="image/thumb3.jpg" alt="Next Video Thumbnail" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -632,25 +705,30 @@
       <a href="volunteer.html" class="btn btn-light me-3">Volunteer</a>
       <a href="support.html" class="btn btn-danger">Donate Now</a>
     </section>
+    <!--footer-->
     <!-- 🌟 4-Part Professional Footer -->
     <footer class="footer">
       <div class="footer-container">
         <!-- 🔹 Column 1: Logo -->
         <div class="footer-column text-center text-md-start">
           <img
-            src="/image/logo-removebg-preview - Copy.png"
+            src="/my-website//image/logo-removebg-preview - Copy.png"
             alt="Ankurm Foundation Logo"
             class="footer-logo"
           />
+          <h6>Every mind sprouts with learning</h6>
         </div>
 
         <!-- 🔹 Column 2: Join Us -->
         <div class="footer-column">
           <h3>Join Us</h3>
           <ul>
-            <li><a href="#">Speech Therapy</a></li>
-            <li><a href="#">Occupational Therapy</a></li>
-            <li><a href="#">Behavioral Therapy</a></li>
+            <li><a href="service.html">Speech Therapy</a></li>
+            <li><a href="service.html">Occupational Therapy</a></li>
+            <li><a href="service.html">Behavioral Therapy</a></li>
+            <li><a href="service.html">Physiotherapy</a></li>
+            <li><a href="service.html">Sensory Integration Therapy</a></li>
+            <li><a href="service.html">Special Education Support</a></li>
           </ul>
         </div>
 
@@ -661,6 +739,32 @@
             <li><a href="About-page.html">About Us</a></li>
             <li><a href="sucess-story.html">Success Story</a></li>
             <li><a href="support.html">Donation</a></li>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="font-size: 30px; color: #1877f2"
+                ></i>
+              </a>
+              <a
+                href="https://www.instagram.com/ankurmfoundation/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-instagram"
+                  style="font-size: 30px; color: #e4405f"
+                ></i>
+              </a>
+              <a href="https://wa.me/918445799969" target="_blank">
+                <i
+                  class="fa-brands fa-whatsapp"
+                  style="font-size: 30px; color: #25d366"
+                ></i>
+              </a>
+            </div>
           </ul>
         </div>
 
@@ -670,43 +774,102 @@
           <p>
             Ankurm Foundation<br />
             1st Floor, Barahi Tower, Near KVM School,<br />
-            Heera Nagar, Mukhani, Haldwani, Uttarakhand <br />
-            <i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 5:00 PM<br />
+            Heera Nagar, Mukhani, Haldwani, Uttarakhand<br />
             <i class="fa-solid fa-phone"></i> +91 8445799969<br />
             <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
             <br />
-            <strong style="color: wheat">Reg no. UK0660342025014709</strong>
+            <!-- <strong style="color: wheat;">Reg no. UK0660342025014709</strong> -->
           </p>
-          <div class="footer-social">
-            <a
-              href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
-              target="_blank"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ankurmfoundation/"
-              target="_blank"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a
-              href="https://wa.me/918445799969?text=Hello%20Ankurm%20Foundation%2C%20I%20want%20to%20know%20more%20about%20your%20programs."
-              target="_blank"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
-          </div>
         </div>
       </div>
 
       <!-- 🔸 Bottom Line -->
       <div class="footer-bottom">
         <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
+        <p>
+          <a href="https://www.thinkbizhightech.com/"
+            >development by ThinkBiz Hightech Private Limited</a
+          >
+        </p>
       </div>
     </footer>
   </body>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
+    window.addEventListener("DOMContentLoaded", () => {
+      // Navbar scroll effect
+      const navbar = document.querySelector(".navbar");
+      if (navbar) {
+        window.addEventListener("scroll", () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 50);
+        });
+      }
+
+      // 🎥 Parent Review Videos
+      const videos = [
+        "all new data/ball-game.mp4",
+        "all new data/skill.mp4",
+        "all new data/therepiy.mp4",
+        "all new data/student.mp4",
+      ];
+
+      const mainVideoEl = document.getElementById("mainVideo");
+      const prevVideoBox = document.querySelector(".prev-video");
+      const nextVideoBox = document.querySelector(".next-video");
+      let currentIndex = 0;
+
+      function updatePreviews() {
+        prevVideoBox.innerHTML = "";
+        nextVideoBox.innerHTML = "";
+
+        // Previous thumbnail
+        const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
+        const prev = document.createElement("video");
+        prev.src = videos[prevIndex];
+        prev.muted = true;
+        prev.loop = true;
+        prev.autoplay = true;
+        prev.playsInline = true;
+        prevVideoBox.appendChild(prev);
+
+        // Next thumbnail
+        const nextIndex = (currentIndex + 1) % videos.length;
+        const next = document.createElement("video");
+        next.src = videos[nextIndex];
+        next.muted = true;
+        next.loop = true;
+        next.autoplay = true;
+        next.playsInline = true;
+        nextVideoBox.appendChild(next);
+      }
+
+      function playCurrentVideo() {
+        mainVideoEl.src = videos[currentIndex];
+        mainVideoEl.play();
+        updatePreviews();
+      }
+
+      function playNextVideo() {
+        currentIndex = (currentIndex + 1) % videos.length;
+        playCurrentVideo();
+      }
+
+      function playPrevVideo() {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        playCurrentVideo();
+      }
+
+      // Button actions
+      prevVideoBox.addEventListener("click", playPrevVideo);
+      nextVideoBox.addEventListener("click", playNextVideo);
+
+      // Auto next on end
+      mainVideoEl.addEventListener("ended", playNextVideo);
+
+      // Initialize
+      playCurrentVideo();
+
+      // AOS Init
+      AOS.init({ duration: 1000, once: true });
     });
   </script>
 </html>

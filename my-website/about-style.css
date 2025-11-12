@@ -27,97 +27,94 @@
   box-sizing: border-box;
 }
 
-/* 🌟 Navbar */
+/* ====== Navbar Styling Only ====== */
+:root {
+  --primary-color: #FFF8F6;
+  --secondary-color: #F25435;
+  --success-color: #DB2038;
+  --danger-color: #333333;
+  --warning-color: #FEECEE;
+  --info-color: #F14079;
+  --light-color: #F8F5ED;
+  --dark-color: #72BE48;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Navbar Base ===== */
 .navbar {
-  background-color: white;
-  color: #F14079;
-  position: sticky;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
   top: 0;
+  left: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
-  padding: 8px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 0.5px solid black;
-  font-size: 25px;
-  font-weight: 600;
 }
 
-/* Logo */
-.navbar-brand img {
-  height: 60px;
-  transition: transform 0.3s ease;
-}
-
-.navbar-brand img:hover {
-  transform: scale(1.05);
-}
-
-/* Links */
-.nav-link {
-  color: var(--info-color) !important;
-  font-weight: 500;
-  padding: 10px 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-link:hover {
-  color: yellow !important;
-  transform: translateY(-2px);
-}
-
-/* 🔹 Dropdown (Show on Hover) */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.dropdown-menu {
-  background-color: #FEECEE;
-  border: none;
-  border-radius: 10px;
+.navbar.scrolled {
+  background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-item {
-  color: #333333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.navbar .navbar-brand img {
+  height: 45px;
 }
 
-.dropdown-item:hover {
-  background-color: #F25435;
-  color: #fff;
+.navbar .nav-link {
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
 }
 
-/* 🔹 Support Button */
-.btn-danger {
-  background-color: #F14079;
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #6e196e;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #6e196e;
+  color: white;
+}
+
+.navbar-toggler {
   border: none;
-  /* transition: all 0.3s ease; */
+  background: none;
 }
 
-.btn-danger a {
-  color: #fff;
+.navbar-toggler .fa-bars {
+  color: #333;
+}
+
+/* ===== Support Button ===== */
+.navbar-support .btn {
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-support .btn:hover,
+.navbar-support .btn:focus {
+  background-color: #57255a;
+  color: white;
   text-decoration: none;
 }
 
-.btn-danger:hover {
-  background-color: #DB2038;
-  transform: scale(1.05);
-}
-
-/* 🔹 Fade Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .about-section {
   background-color: #FEECEE;
@@ -559,12 +556,15 @@ label {
 @media (max-width: 992px) {
 
   /* Navbar collapse */
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
+  .navbar .nav-item.d-lg-none {
+    margin-top: 1rem;
   }
 
+  .navbar .nav-item.d-lg-none .btn {
+    width: 100%;
+  }
 
-  /* Dropdown menu */
+  /* Dropdown for mobile */
   .dropdown-menu {
     background-color: #FEECEE;
     border-radius: 10px;
@@ -576,7 +576,11 @@ label {
     color: white;
   }
 
-  /* Support button */
+  /* Collapsed navbar background */
+  #mainNavbar {
+    background-color: #712a86;
+  }
+
   .btn-danger {
     background-color: transparent;
     border: none;
@@ -584,11 +588,6 @@ label {
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
-  }
-
-  .navbar-nav {
-    color: #222222;
-
   }
 
   .about-title {
@@ -625,13 +624,9 @@ label {
     flex-wrap: wrap;
   }
 
-  .navbar-brand {
-    flex: 1;
-  }
-
   .navbar-toggler {
     border: none;
-    color: black;
+    color: #fff;
     font-size: 28px;
   }
 
@@ -654,7 +649,7 @@ label {
     padding: 10px;
   }
 
-  /* Support button center */
+  /* Hide desktop Support */
   .navbar-support {
     display: none !important;
   }
@@ -666,16 +661,8 @@ label {
     text-align: center;
     font-size: 1.05rem;
     font-weight: 600;
-    width: auto;
-    white-space: nowrap;
     border-radius: 25px;
     line-height: 1.4;
-  }
-
-  .navbar-nav {
-    background-color: transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
   }
 
   .about-hero h1 {
@@ -810,6 +797,18 @@ label {
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .navbar-collapse.show .btn-danger {
+    padding: 10px 60px;
+    font-size: 16px;
+    margin-top: -5%;
+    font-weight: 600;
+  }
+
   .about-text h2 {
     font-size: 1.4rem;
   }

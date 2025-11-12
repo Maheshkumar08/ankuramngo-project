@@ -47,20 +47,29 @@
     </style>
   </head>
   <body>
-    <!-- 🔹 Navbar -->
+    <!-- ✅ Navbar Start -->
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid align-items-center">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
         <!-- 🔹 Logo -->
         <a class="navbar-brand" href="index.html">
-          <img src="/image/logo-removebg-preview.png" alt="ANKURM FOUNDATION" />
+          <img
+            src="image/img/logo-removebg-preview-1.webp"
+            alt="ANKURM FOUNDATION"
+            style="height: 45px; width: auto"
+          />
         </a>
 
-        <!-- 🔹 Toggle -->
+        <!-- 🔹 Toggle Button (Mobile) -->
         <button
           class="navbar-toggler text-black border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <i class="fa fa-bars fs-2"></i>
         </button>
@@ -78,10 +87,10 @@
               <a class="nav-link" href="service.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="About-page.html">Who You Are</a>
+              <a class="nav-link" href="About-page.html">About-us</a>
             </li>
 
-            <!-- Dropdown -->
+            <!-- 🔸 Dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -107,242 +116,255 @@
               <a class="nav-link" href="contact-us.html">Contact</a>
             </li>
 
-            <!-- Support Button for mobile -->
+            <!-- 🔹 Support Button for Mobile -->
             <li class="nav-item d-lg-none mt-3">
-              <button class="btn btn-danger w-50">
-                <a href="support.html">Support</a>
+              <button class="btn btn-outline-danger bg-transparent border-0">
+                <a
+                  href="support.html"
+                  style="text-decoration: none; color: white; font-weight: 600"
+                  >Support</a
+                >
               </button>
             </li>
           </ul>
         </div>
 
-        <!-- 🔹 Support Button (Desktop only) -->
+        <!-- 🔹 Support Button (Desktop Only) -->
         <div class="navbar-support d-none d-lg-block">
           <button class="btn btn-danger">
-            <a href="support.html">Support</a>
+            <a href="support.html" style="color: white; text-decoration: none"
+              >Support</a
+            >
           </button>
         </div>
       </div>
     </nav>
+    <!-- ✅ Navbar End -->
 
-    <section class="about-hero">
-      <div class="overlay">
-        <h1><span>CONTACT-US</span></h1>
-      </div>
-    </section>
-    <!-- 🌍 Contact Info Section -->
-    <!-- 🌍 Contact Info Section with Google Map -->
-    <section
-      class="contact-info-section py-5 wow animate__animated animate__fadeInUp"
-    >
+    <section class="contact-info-section py-5" style="margin-top: 10%">
       <div class="container">
-        <div class="row align-items-center g-4">
-          <!-- 🔹 Left: Contact Info Text -->
-          <div
-            class="col-md-6 wow animate__animated animate__fadeInLeft"
-            data-wow-delay="0.3s"
-          >
-            <h2
+        <div class="row align-items-start g-4">
+          <!-- 🔹 Left: Contact Info -->
+          <div class="col-lg-6 col-md-12">
+            <div
+              class="p-4 h-100"
               style="
-                background-color: #6e196e;
-                font-weight: 700;
-                color: #f14079;
+                background: #fff;
                 border-radius: 12px;
-                padding: 10px 10px;
-                text-align: center;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
               "
             >
-              Get in Touch
-            </h2>
-            <p style="color: #444">
-              We’d love to hear from you! Reach out to us for admissions,
-              collaborations, or any queries — our team will get back to you
-              shortly.
-            </p>
-
-            <div class="contact-details mt-4">
-              <p>
-                <i class="fa-solid fa-location-dot" style="color: #f14079"></i>
-                1st Floor, Barahi Tower, Near KVM School, Heera Nagar, Mukhani
-                Haldwani, Uttarakhand, India
-              </p>
-              <p>
-                <i class="fa-solid fa-phone" style="color: #f14079"></i> +91
-                8445799969
-              </p>
-              <p>
-                <i class="fa-solid fa-envelope" style="color: #f14079"></i>
-                ankurmfoundation@gmail.com
-              </p>
-              <p>
-                <i class="fa-solid fa-clock" style="color: #f14079"></i> Mon -
-                Sat: 9:00 AM - 5:00 PM
-              </p>
-              <p>
-                <i class="fa-solid fa-file-contract" style="color: #f14079"></i>
-                Reg. No. UK0660342025014709
-              </p>
-            </div>
-
-            <div class="social-links mt-3">
-              <a
-                href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
-                class="me-3"
-                ><i class="fa-brands fa-facebook fa-lg"></i
-              ></a>
-              <a href="https://www.instagram.com/ankurmfoundation/" class="me-3"
-                ><i class="fa-brands fa-instagram fa-lg"></i
-              ></a>
-              <a href="https://wa.me/918445799969" class="me-3"
-                ><i class="fa-brands fa-whatsapp fa-lg"></i
-              ></a>
-            </div>
-
-            <!-- 🗺️ Google Map -->
-            <div class="map-container mt-4">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.248731015907!2d79.50730500000002!3d29.211263600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a09beed3a63339%3A0x2ea3c67462cee70!2sAnkurm%20Foundation!5e0!3m2!1sen!2sin!4v0000000000000!5m2!1sen!2sin"
-                width="100%"
-                height="300"
+              <h2
                 style="
-                  border: 0;
+                  background-color: #6e196e;
+                  font-weight: 700;
+                  color: #f14079;
                   border-radius: 12px;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                  padding: 10px;
+                  text-align: center;
                 "
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
               >
-              </iframe>
+                Get in Touch
+              </h2>
+              <p style="color: #444; margin-top: 12px">
+                We’d love to hear from you! Reach out to us for admissions,
+                collaborations, or any queries — our team will get back to you
+                shortly.
+              </p>
+
+              <div class="contact-details mt-3">
+                <p>
+                  <i
+                    class="fa-solid fa-location-dot"
+                    style="color: #f14079; width: 20px"
+                  ></i>
+                  1st Floor, Barahi Tower, Near KVM School, Heera Nagar, Mukhani
+                  Haldwani, Uttarakhand, India
+                </p>
+                <p>
+                  <i
+                    class="fa-solid fa-phone"
+                    style="color: #f14079; width: 20px"
+                  ></i>
+                  +91 8445799969
+                </p>
+                <p>
+                  <i
+                    class="fa-solid fa-envelope"
+                    style="color: #f14079; width: 20px"
+                  ></i>
+                  ankurmfoundation@gmail.com
+                </p>
+                <p>
+                  <i
+                    class="fa-solid fa-clock"
+                    style="color: #f14079; width: 20px"
+                  ></i>
+                  Mon - Sat: 9:00 AM - 5:00 PM
+                </p>
+                <p>
+                  <i
+                    class="fa-solid fa-file-contract"
+                    style="color: #f14079; width: 20px"
+                  ></i>
+                  Reg. No. UK0660342025014709
+                </p>
+              </div>
+
+              <div class="social-links mt-3">
+                <a
+                  href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+                  class="me-3"
+                  ><i class="fa-brands fa-facebook fa-lg"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/ankurmfoundation/"
+                  class="me-3"
+                  ><i class="fa-brands fa-instagram fa-lg"></i
+                ></a>
+                <a href="https://wa.me/918445799969" class="me-3"
+                  ><i class="fa-brands fa-whatsapp fa-lg"></i
+                ></a>
+              </div>
+
+              <!-- 🗺️ Google Map -->
+              <div class="map-container mt-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.248731015907!2d79.50730500000002!3d29.211263600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a09beed3a63339%3A0x2ea3c67462cee70!2sAnkurm%20Foundation!5e0!3m2!1sen!2sin!4v0000000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="250"
+                  style="
+                    border: 0;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
 
-          <!-- 🔹 Right: Lottie Animation -->
-          <div
-            class="col-md-6 wow animate__animated animate__fadeInRight"
-            data-wow-delay="0.5s"
-          >
+          <!-- 🔹 Right: Contact Form -->
+          <div class="col-lg-6 col-md-12">
             <div
-              id="contact-info-animation"
-              style="width: 100%; height: 380px"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🌟 Contact Section -->
-    <section class="contact-section">
-      <div class="container">
-        <div class="row contact-box">
-          <!-- Left JSON Animation -->
-          <div class="col-md-6 contact-lottie">
-            <div
-              id="contact-animation"
-              style="width: 100%; height: 400px"
-            ></div>
-          </div>
-
-          <!-- Right Form -->
-          <div class="col-md-6 contact-form">
-            <h2
+              class="p-4 h-100"
               style="
-                background-color: #6e196e;
-                font-weight: 700;
-                color: #f14079;
+                background: #fff;
                 border-radius: 12px;
-                padding: 10px 10px;
-                text-align: center;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
               "
             >
-              Contact Us
-            </h2>
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+              <h2
+                style="
+                  background-color: #6e196e;
+                  font-weight: 700;
+                  color: #f14079;
+                  border-radius: 12px;
+                  padding: 10px;
+                  text-align: center;
+                "
+              >
+                Contact Us
+              </h2>
+              <form id="contactForm" class="mt-3">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
 
-              <div class="mb-3">
-                <label for="subject" class="form-label">Subject</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="subject"
-                  placeholder="Subject"
-                />
-              </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    placeholder="Subject"
+                  />
+                </div>
 
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  rows="5"
-                  placeholder="Write your message..."
-                  required
-                ></textarea>
-              </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message..."
+                    required
+                  ></textarea>
+                </div>
 
-              <button type="submit" class="btn btn-custom w-100">
-                Send Message
-              </button>
-            </form>
-            <div class="text-center mt-4">
-              <a href="support.html" class="donate-btn">
-                <span>Donate Now</span>
-                <lottie-player
-                  src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
-                  background="transparent"
-                  speed="1"
-                  style="width: 40px; height: 40px; margin-left: 10px"
-                  loop
-                  autoplay
+                <button
+                  type="submit"
+                  class="btn w-100"
+                  style="
+                    background: #6e196e;
+                    color: #fff;
+                    border-radius: 10px;
+                    padding: 10px 0;
+                  "
                 >
-                </lottie-player>
-              </a>
+                  Send Message
+                </button>
+              </form>
+
+              <div class="text-center mt-4">
+                <a
+                  href="support.html"
+                  class="donate-btn"
+                  style="text-decoration: none"
+                >
+                  Donate Now
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!--footer-->
     <!-- 🌟 4-Part Professional Footer -->
     <footer class="footer">
       <div class="footer-container">
         <!-- 🔹 Column 1: Logo -->
         <div class="footer-column text-center text-md-start">
           <img
-            src="/image/logo-removebg-preview - Copy.png"
+            src="/my-website//image/logo-removebg-preview - Copy.png"
             alt="Ankurm Foundation Logo"
             class="footer-logo"
           />
+          <h6>Every mind sprouts with learning</h6>
         </div>
 
         <!-- 🔹 Column 2: Join Us -->
         <div class="footer-column">
           <h3>Join Us</h3>
           <ul>
-            <li><a href="#">Speech Therapy</a></li>
-            <li><a href="#">Occupational Therapy</a></li>
-            <li><a href="#">Behavioral Therapy</a></li>
+            <li><a href="service.html">Speech Therapy</a></li>
+            <li><a href="service.html">Occupational Therapy</a></li>
+            <li><a href="service.html">Behavioral Therapy</a></li>
+            <li><a href="service.html">Physiotherapy</a></li>
+            <li><a href="service.html">Sensory Integration Therapy</a></li>
+            <li><a href="service.html">Special Education Support</a></li>
           </ul>
         </div>
 
@@ -353,6 +375,32 @@
             <li><a href="About-page.html">About Us</a></li>
             <li><a href="sucess-story.html">Success Story</a></li>
             <li><a href="support.html">Donation</a></li>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="font-size: 30px; color: #1877f2"
+                ></i>
+              </a>
+              <a
+                href="https://www.instagram.com/ankurmfoundation/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-instagram"
+                  style="font-size: 30px; color: #e4405f"
+                ></i>
+              </a>
+              <a href="https://wa.me/918445799969" target="_blank">
+                <i
+                  class="fa-brands fa-whatsapp"
+                  style="font-size: 30px; color: #25d366"
+                ></i>
+              </a>
+            </div>
           </ul>
         </div>
 
@@ -362,54 +410,39 @@
           <p>
             Ankurm Foundation<br />
             1st Floor, Barahi Tower, Near KVM School,<br />
-            Heera Nagar, Mukhani, Haldwani, Uttarakhand <br />
-            <i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 5:00 PM<br />
+            Heera Nagar, Mukhani, Haldwani, Uttarakhand<br />
             <i class="fa-solid fa-phone"></i> +91 8445799969<br />
             <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
             <br />
-            <strong style="color: wheat">Reg no. UK0660342025014709</strong>
+            <!-- <strong style="color: wheat;">Reg no. UK0660342025014709</strong> -->
           </p>
-          <div class="footer-social">
-            <a
-              href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
-              target="_blank"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ankurmfoundation/"
-              target="_blank"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a
-              href="https://wa.me/918445799969?text=Hello%20Ankurm%20Foundation%2C%20I%20want%20to%20know%20more%20about%20your%20programs."
-              target="_blank"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
-          </div>
         </div>
       </div>
 
       <!-- 🔸 Bottom Line -->
       <div class="footer-bottom">
         <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
+        <p>
+          <a href="https://www.thinkbizhightech.com/"
+            >development by ThinkBiz Hightech Private Limited</a
+          >
+        </p>
       </div>
     </footer>
     <script>
-      // 🌍 Contact Info Animation
-      lottie.loadAnimation({
-        container: document.getElementById("contact-info-animation"),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/image/about-img/school.json",
-      });
-      // Example Lottie animation
-      lottie.loadAnimation({
-        container: document.getElementById("contact-animation"),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json", // 💫 Replace with your own JSON link
+      window.addEventListener("DOMContentLoaded", () => {
+        // ===== 🌐 Navbar Scroll Effect =====
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 50);
+          });
+        }
+        getElementById("contactForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you! Your message has been sent.");
+          this.reset();
+        });
       });
     </script>
   </body>

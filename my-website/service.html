@@ -1,120 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ankurm Foundation | Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- WOW.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <style>
-        :root {
-  --primary-color: #FFF8F6;     /*WHITE */
-  --secondary-color: #F25435;  /* RED TONE */
-  --success-color: #DB2038;    /* BLUE BLACK */
-  --danger-color: #333333;     /* BLACK */
-  --warning-color: #FEECEE;    /* LIGHT PINK */
-  --info-color: #F14079;       /* LOGO COLOR */
-  --light-color: #F8F5ED;      /* LIGHT WHITE */
-  --dark-color: #72BE48;       /* GREEN*/
-  --text-color: #F4F5F3;       /* GREAY */
-  --background-color: #1BBBB4; /* BLUE */
-}
-*{
-     margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      :root {
+        --primary-color: #fff8f6; /*WHITE */
+        --secondary-color: #f25435; /* RED TONE */
+        --success-color: #db2038; /* BLUE BLACK */
+        --danger-color: #333333; /* BLACK */
+        --warning-color: #feecee; /* LIGHT PINK */
+        --info-color: #f14079; /* LOGO COLOR */
+        --light-color: #f8f5ed; /* LIGHT WHITE */
+        --dark-color: #72be48; /* GREEN*/
+        --text-color: #f4f5f3; /* GREAY */
+        --background-color: #1bbbb4; /* BLUE */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* ====== Navbar Styling Only ====== */
+      :root {
+        --primary-color: #fff8f6;
+        --secondary-color: #f25435;
+        --success-color: #db2038;
+        --danger-color: #333333;
+        --warning-color: #feecee;
+        --info-color: #f14079;
+        --light-color: #f8f5ed;
+        --dark-color: #72be48;
+      }
 
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* ===== Navbar Base ===== */
       .navbar {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 8px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 0.5px solid black;
-  font-size: 25px;
-  font-weight: 600;
-}
+        background-color: transparent;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 1000;
+      }
 
-/* Logo */
-.navbar-brand img {
-  height: 60px;
-  transition: transform 0.3s ease;
-}
-.navbar-brand img:hover {
-  transform: scale(1.05);
-}
+      .navbar.scrolled {
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-/* Links */
-.nav-link {
-  color: var(--info-color) !important;
-  font-weight: 500;
-  padding: 10px 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.nav-link:hover {
-  color: yellow !important;
-  transform: translateY(-2px);
-}
+      .navbar .navbar-brand img {
+        height: 45px;
+      }
 
-/* 🔹 Dropdown (Show on Hover) */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
+      .navbar .nav-link {
+        color: #333;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+      }
 
-.dropdown-menu {
-  background-color: #FEECEE;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+      .navbar .nav-link:hover,
+      .navbar .nav-link:focus {
+        color: #6e196e;
+      }
 
-.dropdown-item {
-  color: #333333;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+      .navbar .dropdown-menu {
+        border-radius: 0.25rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
 
-.dropdown-item:hover {
-  background-color: #F25435;
-  color: #fff;
-}
+      .navbar .dropdown-item:hover,
+      .navbar .dropdown-item:focus {
+        background-color: #6e196e;
+        color: white;
+      }
 
-/* 🔹 Support Button */
-.btn-danger {
-  background-color:#F14079;
-  border: none;
-  /* transition: all 0.3s ease; */
-}
+      .navbar-toggler {
+        border: none;
+        background: none;
+      }
 
-.btn-danger:hover {
-  background-color: #DB2038;
-  transform: scale(1.05);
-}
+      .navbar-toggler .fa-bars {
+        color: #333;
+      }
 
-/* 🔹 Fade Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      /* ===== Support Button ===== */
+      .navbar-support .btn {
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+      }
 
+      .navbar-support .btn:hover,
+      .navbar-support .btn:focus {
+        background-color: #57255a;
+        color: white;
+        text-decoration: none;
+      }
       /* 🌈 Hero Section */
       .hero {
-        background-color: #6E196E;
-        color:#F14079;
+        background-color: #6e196e;
+        color: #f14079;
         text-align: center;
         padding: 100px 20px 80px;
+        margin-top: 6%;
       }
 
       .hero h1 {
@@ -136,23 +162,28 @@
       }
 
       @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       /* 💫 Services Section */
       .services-section {
         padding: 80px 0;
-        
       }
 
       .service-card {
-        background:#F14079;
+        background: #f14079;
         border-radius: 15px;
         padding: 30px;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
@@ -176,7 +207,7 @@
       }
 
       .service-card h4 {
-        color: #6E196E;
+        color: #6e196e;
         font-weight: 700;
         margin-bottom: 10px;
       }
@@ -185,101 +216,100 @@
         color: #555;
         font-size: 0.95rem;
       }
-       .programs-section {
-    background-color: #FFF8F6;
-    font-family: 'Poppins', sans-serif;
-  }
-  .programs-title {
-    color: #6E196E;
-    font-weight: 800;
-    font-size: 2.2rem;
-  }
-  .programs-text {
-    color: #444;
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  .programs-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-  }
-  .programs-list li {
-    margin-bottom: 10px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .programs-list i {
-    color: #F14079;
-    font-size: 1.1rem;
-  }
-  .programs-img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 20px;
-    box-shadow: 10px 18px 25px rgba(110, 25, 110, 0.15);
-    transition: all 0.4s ease;
-  }
-  .programs-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(110, 25, 110, 0.25);
-  }
-  .btn-learn {
-    background-color: #F14079;
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .btn-learn:hover {
-    background-color: #6E196E;
-    transform: scale(1.05);
-  }
+      .programs-section {
+        background-color: #fff8f6;
+        font-family: "Poppins", sans-serif;
+      }
+      .programs-title {
+        color: #6e196e;
+        font-weight: 800;
+        font-size: 2.2rem;
+      }
+      .programs-text {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+      .programs-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 25px;
+      }
+      .programs-list li {
+        margin-bottom: 10px;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .programs-list i {
+        color: #f14079;
+        font-size: 1.1rem;
+      }
+      .programs-img {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 20px;
+        box-shadow: 10px 18px 25px rgba(110, 25, 110, 0.15);
+        transition: all 0.4s ease;
+      }
+      .programs-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(110, 25, 110, 0.25);
+      }
+      .btn-learn {
+        background-color: #f14079;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-learn:hover {
+        background-color: #6e196e;
+        transform: scale(1.05);
+      }
 
       /* 🌿 Inclusive Section */
       .inclusive {
-  background: #FEECEE;
-  padding: 80px 20px;
-  text-align: center;
-}
+        background: #feecee;
+        padding: 80px 20px;
+        text-align: center;
+      }
 
-.inclusive h2 {
-  color: #6E196E;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
+      .inclusive h2 {
+        color: #6e196e;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
 
-.inclusive p {
-  max-width: 800px;
-  margin: 0 auto 25px;
-  color: #444;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
+      .inclusive p {
+        max-width: 800px;
+        margin: 0 auto 25px;
+        color: #444;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
 
-/* Responsive image styling */
-.inclusive-image {
-  width: 100%;
-  max-width: 950px;      /* Desktop पर limit */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
+      /* Responsive image styling */
+      .inclusive-image {
+        width: 100%;
+        max-width: 950px; /* Desktop पर limit */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
 
-.inclusive-image:hover {
-  transform: scale(1.03);
-}
-
+      .inclusive-image:hover {
+        transform: scale(1.03);
+      }
 
       /* 💌 CTA */
       .cta {
-        background: #6E196E;
+        background: #6e196e;
         color: white;
         text-align: center;
         padding: 80px 20px;
@@ -290,7 +320,7 @@
       }
 
       .btn-custom {
-        background-color: #F14079;
+        background-color: #f14079;
         color: white;
         border: none;
         padding: 10px 25px;
@@ -300,586 +330,794 @@
 
       .btn-custom:hover {
         background-color: #fff;
-        color: #6E196E;
+        color: #6e196e;
       }
       .hero-img {
-  width: 300px;
-  margin-top: 20px;
-  border-radius: 15px;
-  animation: float 4s ease-in-out infinite;
-    overflow: visible
-}
+        width: 300px;
+        margin-top: 20px;
+        border-radius: 15px;
+        animation: float 4s ease-in-out infinite;
+        overflow: visible;
+      }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-.footer {
-  background: #333;
-  color: #fff;
-  padding: 60px 4% 20px;
-  font-family: 'Poppins', sans-serif;
-}
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .footer {
+        background: #333;
+        color: #fff;
+        padding: 60px 4% 20px;
+        font-family: "Poppins", sans-serif;
+      }
 
-/* Grid layout */
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin-bottom: 10px;
-}
+      /* Grid layout */
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin-bottom: 10px;
+      }
 
-/* Logo */
-.footer-logo {
-  width: 280px;
-  height: auto;
-}
-.footer-desc {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+      /* Logo */
+      .footer-logo {
+        width: 280px;
+        height: auto;
+      }
+      .footer-desc {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
 
-/* Headings */
-.footer-column h3 {
-  color: #F14079;
-  margin-bottom: 18px;
-  font-size: 1.3rem;
-  position: relative;
-}
-.footer-column h3::after {
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 3px;
-  background: #72BE48;
-  left: 0;
-  bottom: -8px;
-  border-radius: 5px;
-}
+      /* Headings */
+      .footer-column h3 {
+        color: #f14079;
+        margin-bottom: 18px;
+        font-size: 1.3rem;
+        position: relative;
+      }
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #72be48;
+        left: 0;
+        bottom: -8px;
+        border-radius: 5px;
+      }
 
-/* Links */
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-.footer-column ul li a {
-  color: #ddd;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.footer-column ul li a:hover {
-  color: #F14079;
-}
+      /* Links */
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      .footer-column ul li a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-column ul li a:hover {
+        color: #f14079;
+      }
 
-/* Contact text */
-.footer-column p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+      /* Contact text */
+      .footer-column p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
 
-/* Social icons */
-.footer-social {
-  margin-top: 10px;
-}
-.footer-social a {
-  color: #fff;
-  font-size: 1.3rem;
-  margin-right: 15px;
-  transition: color 0.3s, transform 0.3s;
-}
-.footer-social a:hover {
-  color: #F14079;
-  transform: scale(1.2);
-}
+      /* Social icons */
+      .footer-social {
+        margin-top: 10px;
+      }
+      .footer-social a {
+        color: #fff;
+        font-size: 1.3rem;
+        margin-right: 15px;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .footer-social a:hover {
+        color: #f14079;
+        transform: scale(1.2);
+      }
 
-/* Bottom */
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-.footer-bottom p {
-  font-size: 0.9rem;
-  color: #ccc;
-}
+      /* Bottom */
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .footer-bottom p {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
 
+      /* 🌐 Responsive design breakpoints */
 
+      /* Tablets (max width 992px) */
+      @media (max-width: 992px) {
+        .navbar .nav-item.d-lg-none {
+          margin-top: 1rem;
+        }
 
+        .navbar .nav-item.d-lg-none .btn {
+          width: 100%;
+        }
 
-/* 🌐 Responsive design breakpoints */
+        /* Dropdown for mobile */
+        .dropdown-menu {
+          background-color: #feecee;
+          border-radius: 10px;
+          border: none;
+        }
 
-/* Tablets (max width 992px) */
-@media (max-width: 992px) {
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-  }
+        .dropdown-item:hover {
+          background-color: var(--secondary-color);
+          color: white;
+        }
 
+        /* Collapsed navbar background */
+        #mainNavbar {
+          background-color: #712a86;
+        }
 
-/* Dropdown menu */
-.dropdown-menu {
-  background-color: #FEECEE;
-  border-radius: 10px;
-  border: none;
-}
-.dropdown-item:hover {
-  background-color: var(--secondary-color);
-  color: white;
-}
+        .btn-danger {
+          background-color: transparent;
+          border: none;
+          padding: 8px 22px;
+          border-radius: 25px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+        .programs-title {
+          text-align: center;
+          font-size: 2rem;
+        }
+        .programs-text,
+        .programs-list {
+          text-align: center;
+        }
+        .programs-list li {
+          justify-content: center;
+        }
+        .btn-learn {
+          display: block;
+          margin: 0 auto;
+        }
+        .inclusive {
+          padding: 60px 15px;
+        }
+        .inclusive-image {
+          max-width: 100%;
+        }
+        .hero {
+          background-color: #e3f4fc;
+          color: #ee0a85;
+          margin-top: 22%;
+        }
+      }
 
-/* Support button */
-.btn-danger {
-  background-color:transparent;
-  border: none;
-  padding: 8px 22px;
-  border-radius: 25px;
-  font-weight: 600;
-  /* transition: all 0.3s ease; */
-}
-.btn-danger:hover {
-  background-color: #DB2038;
-  transform: scale(1.05);
-}
-    .navbar-nav{
-      color:#222222;
-      
-    }
- .programs-title { text-align: center; font-size: 2rem; }
-    .programs-text, .programs-list { text-align: center; }
-    .programs-list li { justify-content: center; }
-    .btn-learn { display: block; margin: 0 auto; }
-     .inclusive {
-    padding: 60px 15px;
-  }
-  .inclusive-image {
-    max-width: 100%;
-  }
-  .hero{
-    background-color: #e3f4fc;
-    color: #ee0a85;
-  }
-}
-    
-@media (max-width: 768px) {
- .navbar {
-    flex-wrap: wrap;
-  }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
 
-  .navbar-brand {
-    flex: 1;
-  }
+        .navbar-toggler {
+          border: none;
+          color: #fff;
+          font-size: 28px;
+        }
 
-  .navbar-toggler {
-    border: none;
-    color: black;
-    font-size: 28px;
-  }
+        .navbar-collapse {
+          width: 100%;
+          background-color: #6e196e;
+          border-radius: 0 0 15px 15px;
+          margin-top: 10px;
+        }
 
-  .navbar-collapse {
-    width: 100%;
-    background-color: #6E196E;
-    border-radius: 0 0 15px 15px;
-    margin-top: 10px;
-  }
+        .navbar-nav {
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 0;
+        }
 
-  .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
+        .navbar-nav .nav-link {
+          color: white !important;
+          font-size: 1.1rem;
+          padding: 10px;
+        }
 
-  .navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.1rem;
-    padding: 10px;
-  }
+        /* Hide desktop Support */
+        .navbar-support {
+          display: none !important;
+        }
 
-  /* Support button center */
-  .navbar-support {
-    display: none !important;
-  }
+        .navbar-collapse.show .btn-danger {
+          display: block;
+          margin: 15px auto;
+          padding: 10px 80px;
+          text-align: center;
+          font-size: 1.05rem;
+          font-weight: 600;
+          border-radius: 25px;
+          line-height: 1.4;
+        }
+        .inclusive-image {
+          max-width: 100%; /* mobile पर container के भीतर पूरा फैल जाए */
+        }
+        .footer {
+          text-align: center;
+        }
+        .footer-column h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      @media (max-width: 576px) {
+        .navbar-nav {
+          background-color: transparent;
+          margin-right: 50%;
+          /* flex-flow: column; */
+        }
+        .inclusive {
+          padding: 50px 10px;
+        }
+        .inclusive p {
+          font-size: 1rem;
+        }
+        .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
 
-  .navbar-collapse.show .btn-danger {
-    display: block;
-    margin: 15px auto;
-    padding: 10px 80px;
-    text-align: center;
-    font-size: 1.05rem;
-    font-weight: 600;
-    width: auto;
-    white-space: nowrap;
-    border-radius: 25px;
-    line-height: 1.4;
-  }
-  .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-   .inclusive-image {
-    max-width: 100%;     /* mobile पर container के भीतर पूरा फैल जाए */
-  }
-   .footer {
-    text-align: center;
-  }
-  .footer-column h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-@media (max-width: 576px) {
-  .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-  .inclusive {
-    padding: 50px 10px;
-  }
-  .inclusive p {
-    font-size: 1rem;
-  }
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+        .footer-column h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
 
-  .footer-column h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
+      /* Mobile portrait (max width 480px) */
+      @media (max-width: 480px) {
+        .navbar {
+          display: flex;
+          flex-flow: column wrap;
+        }
 
-/* Mobile portrait (max width 480px) */
-@media (max-width: 480px) {
-   .navbar-nav{
-    background-color:transparent;
-    margin-right: 50%;
-    /* flex-flow: column; */
-  }
-  .navbar{
-    display: flex;
-    flex-flow: column wrap;
-    transition: all 0.4s;
-  }
-.navbar-collapse.show .btn-danger {
-    /* padding: 10px 80px; */
-    font-size: 17px;
-    margin-left: -0%;
-    margin-top: -5%;
-    /* margin: 10px; */
-    
-  }
-  
-}
+        .navbar-collapse.show .btn-danger {
+          padding: 10px 60px;
+          font-size: 16px;
+          margin-top: -5%;
+          font-weight: 600;
+        }
+      }
     </style>
   </head>
   <body>
-            
-<!-- 🔹 Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <!-- ✅ Navbar Start -->
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex align-items-center justify-content-between"
+      >
+        <!-- 🔹 Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="image/img/logo-removebg-preview-1.webp"
+            alt="ANKURM FOUNDATION"
+            style="height: 45px; width: auto"
+          />
+        </a>
 
-    <!-- Logo -->
-    <a class="navbar-brand" href="index.html">
-      <img src="/image/img/logo-removebg-preview-1.webp" alt="ANKURM FOUNDATION" style="height: 45px; width: auto;" />
-    </a>
+        <!-- 🔹 Toggle Button (Mobile) -->
+        <button
+          class="navbar-toggler text-black border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars fs-2"></i>
+        </button>
 
-    <!-- Toggle Button -->
-    <button class="navbar-toggler text-black border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars fs-2"></i>
-    </button>
+        <!-- 🔹 Navbar Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav text-center mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About-page.html">About-us</a>
+            </li>
 
-    <!-- Navbar Links -->
-    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
-      <ul class="navbar-nav text-center mx-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="About-page.html">Who You Are</a></li>
+            <!-- 🔸 Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="journalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Journal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+                <li><a class="dropdown-item" href="Event.html">Event</a></li>
+                <li>
+                  <a class="dropdown-item" href="sucess-story.html"
+                    >Success Story</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="journalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Journal
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="journalDropdown">
-            <li><a class="dropdown-item" href="Event.html">Event</a></li>
-            <li><a class="dropdown-item" href="sucess-story.html">Success Story</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact</a>
+            </li>
+
+            <!-- 🔹 Support Button for Mobile -->
+            <li class="nav-item d-lg-none mt-3">
+              <button class="btn btn-outline-danger bg-transparent border-0">
+                <a
+                  href="support.html"
+                  style="text-decoration: none; color: white; font-weight: 600"
+                  >Support</a
+                >
+              </button>
+            </li>
           </ul>
-        </li>
+        </div>
 
-        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
-
-        <!-- Support Button for mobile -->
-        <li class="nav-item d-lg-none mt-3">
-          <button class="btn btn-outline-danger bg-transparent border-0">
-            <a href="support.html" style="text-decoration: none; color: white;">Support</a>
+        <!-- 🔹 Support Button (Desktop Only) -->
+        <div class="navbar-support d-none d-lg-block">
+          <button class="btn btn-danger">
+            <a href="support.html" style="color: white; text-decoration: none"
+              >Support</a
+            >
           </button>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Support Button (Desktop only) -->
-    <div class="navbar-support d-none d-lg-block">
-      <button class="btn btn-danger"><a href="support.html" style="color: white; text-decoration:none;">Support</a></button>
-    </div>
-
-  </div>
-</nav>
+        </div>
+      </div>
+    </nav>
+    <!-- ✅ Navbar End -->
 
     <!-- 🌟 HERO -->
     <section class="hero wow animate__animated animate__fadeInDown">
       <h1>Our Services</h1>
-      <p>Empowering children with special needs through education, therapy, and holistic support.</p>
+      <p>
+        Empowering children with special needs through education, therapy, and
+        holistic support.
+      </p>
       <!-- <img 
   src="/image/service-img/Our_Service-main.png" 
   alt="Children Illustration" 
   class="wow animate__animated animate__zoomIn hero-img"
   data-wow-delay="0.3s"> -->
-
     </section>
 
     <!-- 🌈 SERVICES SECTION -->
     <section class="services-section container">
       <div class="row g-4">
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.1s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-1.webp" alt="Special Education" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-1.webp"
+              alt="Special Education"
+              class="service-img"
+            />
             <h4>Special Education</h4>
-            <p>Individualized learning programs designed to meet the unique needs of every child.</p>
+            <p>
+              Individualized learning programs designed to meet the unique needs
+              of every child.
+            </p>
           </div>
         </div>
 
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.2s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-2.webp" alt="Occupational Therapy" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-2.webp"
+              alt="Occupational Therapy"
+              class="service-img"
+            />
             <h4>Occupational Therapy</h4>
-            <p>Helping children develop fine motor skills and improve daily functional abilities.</p>
+            <p>
+              Helping children develop fine motor skills and improve daily
+              functional abilities.
+            </p>
           </div>
         </div>
 
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.3s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-3.webp" alt="Speech Therapy" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-3.webp"
+              alt="Speech Therapy"
+              class="service-img"
+            />
             <h4>Speech Therapy</h4>
-            <p>Supporting children with communication and language development.</p>
+            <p>
+              Supporting children with communication and language development.
+            </p>
           </div>
         </div>
 
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.4s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-4.webp" alt="Behavioral Therapy" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-4.webp"
+              alt="Behavioral Therapy"
+              class="service-img"
+            />
             <h4>Behavioral Therapy</h4>
-            <p>Empowering children to manage emotions and build positive behavior patterns.</p>
+            <p>
+              Empowering children to manage emotions and build positive behavior
+              patterns.
+            </p>
           </div>
         </div>
 
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.5s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-5.webp" alt="Life Skills Training" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-5.webp"
+              alt="Life Skills Training"
+              class="service-img"
+            />
             <h4>Life Skills Training</h4>
-            <p>Focusing on self-care, dressing, and independent living activities.</p>
+            <p>
+              Focusing on self-care, dressing, and independent living
+              activities.
+            </p>
           </div>
         </div>
 
-        <div class="col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+        <div
+          class="col-md-4 wow animate__animated animate__fadeInUp"
+          data-wow-delay="0.6s"
+        >
           <div class="service-card">
-            <img src="/image/new-service-img/service-box-6.webp" alt="Parent Counseling" class="service-img">
+            <img
+              src="/image/new-service-img/service-box-6.webp"
+              alt="Parent Counseling"
+              class="service-img"
+            />
             <h4>Parent Counseling</h4>
-            <p>Helping families build supportive environments for their child’s growth.</p>
+            <p>
+              Helping families build supportive environments for their child’s
+              growth.
+            </p>
           </div>
         </div>
       </div>
     </section>
     <!-- 🌈 1️⃣ Core Services & Therapies -->
-<section class="programs-section py-5">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-md-6 text-center">
-        <img src="/image/new-service-img/core-theripi img.webp" alt="Core Therapies" class="programs-img animate__animated animate__fadeInLeft">
+    <section class="programs-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6 text-center">
+            <img
+              src="/image/new-service-img/core-theripi img.webp"
+              alt="Core Therapies"
+              class="programs-img animate__animated animate__fadeInLeft"
+            />
+          </div>
+          <div class="col-md-6 animate__animated animate__fadeInRight">
+            <h2 class="programs-title mb-3">Core Services & Therapies</h2>
+            <p class="programs-text">
+              <strong>Ankurm Foundation</strong> offers a wide range of
+              therapies designed to enhance children’s overall development. Our
+              experts provide
+              <strong
+                >speech therapy, occupational therapy, sensory
+                integration</strong
+              >, and <strong>behavioral therapy</strong>
+              to improve communication, focus, and motor coordination.
+            </p>
+            <ul class="programs-list">
+              <li>
+                <i class="fa-solid fa-brain"></i> Personalized therapy sessions
+                for each child.
+              </li>
+              <li>
+                <i class="fa-solid fa-child-reaching"></i> Focus on motor,
+                speech & social development.
+              </li>
+              <li>
+                <i class="fa-solid fa-user-md"></i> Experienced therapists
+                guiding every step.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 animate__animated animate__fadeInRight">
-        <h2 class="programs-title mb-3">Core Services & Therapies</h2>
-        <p class="programs-text">
-          <strong>Ankurm Foundation</strong> offers a wide range of therapies designed to enhance children’s overall development. 
-          Our experts provide <strong>speech therapy, occupational therapy, sensory integration</strong>, and <strong>behavioral therapy</strong> 
-          to improve communication, focus, and motor coordination.
-        </p>
-        <ul class="programs-list">
-          <li><i class="fa-solid fa-brain"></i> Personalized therapy sessions for each child.</li>
-          <li><i class="fa-solid fa-child-reaching"></i> Focus on motor, speech & social development.</li>
-          <li><i class="fa-solid fa-user-md"></i> Experienced therapists guiding every step.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 🌸 2️⃣ Inclusive Education Center -->
-<section class="programs-section py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center flex-md-row-reverse g-5">
-      <div class="col-md-6 text-center">
-        <img src="/image/new-service-img/inclusive education-img.webp" alt="Inclusive Education" class="programs-img animate__animated animate__fadeInRight">
+    <!-- 🌸 2️⃣ Inclusive Education Center -->
+    <section class="programs-section py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center flex-md-row-reverse g-5">
+          <div class="col-md-6 text-center">
+            <img
+              src="/image/new-service-img/inclusive education-img.webp"
+              alt="Inclusive Education"
+              class="programs-img animate__animated animate__fadeInRight"
+            />
+          </div>
+          <div class="col-md-6 animate__animated animate__fadeInLeft">
+            <h2 class="programs-title mb-3">Inclusive Education Center</h2>
+            <p class="programs-text">
+              We believe that
+              <strong>learning together builds empathy and equality</strong>. At
+              our inclusive center, children with special needs study alongside
+              their peers — engaging in
+              <strong
+                >arts, yoga, computer learning, and creative activities</strong
+              >
+              that promote confidence and teamwork.
+            </p>
+            <ul class="programs-list">
+              <li>
+                <i class="fa-solid fa-school"></i> Shared classrooms for all
+                children.
+              </li>
+              <li>
+                <i class="fa-solid fa-handshake-angle"></i> Builds social
+                understanding & respect.
+              </li>
+              <li>
+                <i class="fa-solid fa-laptop"></i> Modern resources for blended
+                learning.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 animate__animated animate__fadeInLeft">
-        <h2 class="programs-title mb-3">Inclusive Education Center</h2>
-        <p class="programs-text">
-          We believe that <strong>learning together builds empathy and equality</strong>. 
-          At our inclusive center, children with special needs study alongside their peers — 
-          engaging in <strong>arts, yoga, computer learning, and creative activities</strong> that promote confidence and teamwork.
-        </p>
-        <ul class="programs-list">
-          <li><i class="fa-solid fa-school"></i> Shared classrooms for all children.</li>
-          <li><i class="fa-solid fa-handshake-angle"></i> Builds social understanding & respect.</li>
-          <li><i class="fa-solid fa-laptop"></i> Modern resources for blended learning.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 💖 3️⃣ Life Skills & Family Support -->
-<section class="programs-section py-5">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-md-6 text-center">
-        <img src="/image/new-service-img/Life Skills & Family Support img.webp" alt="Life Skills Training" class="programs-img animate__animated animate__fadeInLeft">
+    <!-- 💖 3️⃣ Life Skills & Family Support -->
+    <section class="programs-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6 text-center">
+            <img
+              src="/image/new-service-img/Life Skills & Family Support img.webp"
+              alt="Life Skills Training"
+              class="programs-img animate__animated animate__fadeInLeft"
+            />
+          </div>
+          <div class="col-md-6 animate__animated animate__fadeInRight">
+            <h2 class="programs-title mb-3">Life Skills & Family Support</h2>
+            <p class="programs-text">
+              We empower children to handle daily activities independently —
+              from dressing and eating to learning digital and social skills.
+              Parents receive <strong>guidance and counseling</strong>
+              to ensure they can support their child’s progress confidently at
+              home.
+            </p>
+            <ul class="programs-list">
+              <li>
+                <i class="fa-solid fa-utensils"></i> Practical skill training
+                for independence.
+              </li>
+              <li>
+                <i class="fa-solid fa-people-arrows"></i> Parent workshops &
+                family support.
+              </li>
+              <li>
+                <i class="fa-solid fa-hand-holding-heart"></i> Emotional and
+                behavioral guidance.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 animate__animated animate__fadeInRight">
-        <h2 class="programs-title mb-3">Life Skills & Family Support</h2>
-        <p class="programs-text">
-          We empower children to handle daily activities independently — from dressing and eating 
-          to learning digital and social skills. Parents receive <strong>guidance and counseling</strong> 
-          to ensure they can support their child’s progress confidently at home.
-        </p>
-        <ul class="programs-list">
-          <li><i class="fa-solid fa-utensils"></i> Practical skill training for independence.</li>
-          <li><i class="fa-solid fa-people-arrows"></i> Parent workshops & family support.</li>
-          <li><i class="fa-solid fa-hand-holding-heart"></i> Emotional and behavioral guidance.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 💫 4️⃣ Flexible & Personalized Programs -->
-<section class="programs-section py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center flex-md-row-reverse g-5">
-      <div class="col-md-6 text-center">
-        <img src="/image/new-service-img/Flexible & Personalized Programs img.webp" alt="Flexible Services" class="programs-img animate__animated animate__fadeInRight">
+    <!-- 💫 4️⃣ Flexible & Personalized Programs -->
+    <section class="programs-section py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center flex-md-row-reverse g-5">
+          <div class="col-md-6 text-center">
+            <img
+              src="/image/new-service-img/Flexible & Personalized Programs img.webp"
+              alt="Flexible Services"
+              class="programs-img animate__animated animate__fadeInRight"
+            />
+          </div>
+          <div class="col-md-6 animate__animated animate__fadeInLeft">
+            <h2 class="programs-title mb-3">
+              Flexible & Personalized Programs
+            </h2>
+            <p class="programs-text">
+              Every child is unique — that’s why we offer
+              <strong>customized schedules and therapy plans</strong>. Whether
+              your child needs full-time, part-time, or specific sessions, we
+              tailor our approach to ensure the best developmental outcomes.
+            </p>
+            <ul class="programs-list">
+              <li>
+                <i class="fa-solid fa-clock"></i> Flexible session timings.
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-line"></i> Progress tracking &
+                feedback reports.
+              </li>
+              <li>
+                <i class="fa-solid fa-user-check"></i> One-on-one attention for
+                every child.
+              </li>
+            </ul>
+            <a href="contact-us.html" class="btn-learn">Join Our Programs</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 animate__animated animate__fadeInLeft">
-        <h2 class="programs-title mb-3">Flexible & Personalized Programs</h2>
-        <p class="programs-text">
-          Every child is unique — that’s why we offer <strong>customized schedules and therapy plans</strong>. 
-          Whether your child needs full-time, part-time, or specific sessions, 
-          we tailor our approach to ensure the best developmental outcomes.
-        </p>
-        <ul class="programs-list">
-          <li><i class="fa-solid fa-clock"></i> Flexible session timings.</li>
-          <li><i class="fa-solid fa-chart-line"></i> Progress tracking & feedback reports.</li>
-          <li><i class="fa-solid fa-user-check"></i> One-on-one attention for every child.</li>
-        </ul>
-        <a href="contact-us.html" class="btn-learn">Join Our Programs</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
 
     <!-- 🌿 INCLUSIVE SECTION -->
-   <!-- 🌿 INCLUSIVE SECTION -->
-<section class="inclusive wow animate__animated animate__fadeIn">
-  <div class="container">
-    <div class="row align-items-center justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2>Inclusive Education Center</h2>
-        <p>
-          Our Inclusive Education Center integrates children with and without special needs,
-          creating a nurturing environment that promotes empathy, learning, and growth for all.
-        </p>
-        <img 
-          src="/image/new-service-img/class-room.webp" 
-          alt="Inclusive Illustration" 
-          class="inclusive-image img-fluid"
-        >
+    <!-- 🌿 INCLUSIVE SECTION -->
+    <section class="inclusive wow animate__animated animate__fadeIn">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2>Inclusive Education Center</h2>
+            <p>
+              Our Inclusive Education Center integrates children with and
+              without special needs, creating a nurturing environment that
+              promotes empathy, learning, and growth for all.
+            </p>
+            <img
+              src="/image/new-service-img/class-room.webp"
+              alt="Inclusive Illustration"
+              class="inclusive-image img-fluid"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- 💌 CTA -->
     <section class="cta wow animate__animated animate__fadeInUpBig">
       <h3>Want to know more about our programs?</h3>
-      <a href="contact-us.html" class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite">Contact Us</a>
+      <a
+        href="contact-us.html"
+        class="btn btn-custom mt-3 wow animate__animated animate__pulse animate__infinite"
+        >Contact Us</a
+      >
     </section>
+    <!--footer-->
     <!-- 🌟 4-Part Professional Footer -->
-<!--footer-->
-<!-- 🌟 4-Part Professional Footer -->
-<footer class="footer">
-  <div class="footer-container">
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- 🔹 Column 1: Logo -->
+        <div class="footer-column text-center text-md-start">
+          <img
+            src="/my-website//image/logo-removebg-preview - Copy.png"
+            alt="Ankurm Foundation Logo"
+            class="footer-logo"
+          />
+          <h6>Every mind sprouts with learning</h6>
+        </div>
 
-    <!-- 🔹 Column 1: Logo -->
-    <div class="footer-column text-center text-md-start">
-      <img src="/image/logo-removebg-preview - Copy.png" alt="Ankurm Foundation Logo" class="footer-logo">
-     
-    </div>
+        <!-- 🔹 Column 2: Join Us -->
+        <div class="footer-column">
+          <h3>Join Us</h3>
+          <ul>
+            <li><a href="service.html">Speech Therapy</a></li>
+            <li><a href="service.html">Occupational Therapy</a></li>
+            <li><a href="service.html">Behavioral Therapy</a></li>
+            <li><a href="service.html">Physiotherapy</a></li>
+            <li><a href="service.html">Sensory Integration Therapy</a></li>
+            <li><a href="service.html">Special Education Support</a></li>
+          </ul>
+        </div>
 
-    <!-- 🔹 Column 2: Join Us -->
-    <div class="footer-column">
-      <h3>Join Us</h3>
-      <ul>
-        <li><a href="#">Speech Therapy</a></li>
-        <li><a href="#">Occupational Therapy</a></li>
-        <li><a href="#">Behavioral Therapy</a></li>
-      </ul>
-    </div>
+        <!-- 🔹 Column 3: Our Resources -->
+        <div class="footer-column">
+          <h3>Our Resources</h3>
+          <ul>
+            <li><a href="About-page.html">About Us</a></li>
+            <li><a href="sucess-story.html">Success Story</a></li>
+            <li><a href="support.html">Donation</a></li>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-facebook-f"
+                  style="font-size: 30px; color: #1877f2"
+                ></i>
+              </a>
+              <a
+                href="https://www.instagram.com/ankurmfoundation/"
+                target="_blank"
+              >
+                <i
+                  class="fa-brands fa-instagram"
+                  style="font-size: 30px; color: #e4405f"
+                ></i>
+              </a>
+              <a href="https://wa.me/918445799969" target="_blank">
+                <i
+                  class="fa-brands fa-whatsapp"
+                  style="font-size: 30px; color: #25d366"
+                ></i>
+              </a>
+            </div>
+          </ul>
+        </div>
 
-    <!-- 🔹 Column 3: Our Resources -->
-    <div class="footer-column">
-      <h3>Our Resources</h3>
-      <ul>
-        <li><a href="About-page.html">About Us</a></li>
-        <li><a href="sucess-story.html">Success Story</a></li>
-        <li><a href="support.html">Donation</a></li>
-      </ul>
-    </div>
-
-    <!-- 🔹 Column 4: Contact Info -->
-    <div class="footer-column">
-      <h3>Contact Info</h3>
-      <p>
-        Ankurm Foundation<br>
-        1st Floor, Barahi Tower, Near KVM School,<br>
-        Heera Nagar, Mukhani, Haldwani, Uttarakhand<br>
-        <i class="fa-solid fa-phone"></i> +91 8445799969<br>
-        <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com <br>
-        <strong style="color: wheat;">Reg no. UK0660342025014709</strong>
-      </p>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/p/Ankurm-Foundation-61571694448389/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.instagram.com/ankurmfoundation/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- 🔹 Column 4: Contact Info -->
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p>
+            Ankurm Foundation<br />
+            1st Floor, Barahi Tower, Near KVM School,<br />
+            Heera Nagar, Mukhani, Haldwani, Uttarakhand<br />
+            <i class="fa-solid fa-phone"></i> +91 8445799969<br />
+            <i class="fa-solid fa-envelope"></i> ankurmfoundation@gmail.com
+            <br />
+            <!-- <strong style="color: wheat;">Reg no. UK0660342025014709</strong> -->
+          </p>
+        </div>
       </div>
-    </div>
 
-  </div>
+      <!-- 🔸 Bottom Line -->
+      <div class="footer-bottom">
+        <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
+        <p>
+          <a href="https://www.thinkbizhightech.com/"
+            >development by ThinkBiz Hightech Private Limited</a
+          >
+        </p>
+      </div>
+    </footer>
 
-  <!-- 🔸 Bottom Line -->
-  <div class="footer-bottom">
-    <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
-  </div>
-</footer>
-
-      new WOW().init();
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // ===== 🌐 Navbar Scroll Effect =====
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 50);
+          });
+        }
+      });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
