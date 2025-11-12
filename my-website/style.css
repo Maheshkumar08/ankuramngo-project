@@ -778,6 +778,17 @@
   position: relative;
 }
 
+.footer-column img {
+  width: 240px;
+  /* 👈 Logo chhota aur neat */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  /* Center + thoda space neeche */
+  border-radius: 8px;
+  /* optional, soft corners */
+}
+
 .footer-column h3::after {
   content: "";
   position: absolute;
