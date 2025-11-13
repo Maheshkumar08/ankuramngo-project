@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
     <!-- ✅ Font Awesome CDN -->
     <link
       rel="stylesheet"
@@ -41,9 +49,20 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
-
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 900;
+        font-family: "Playfair Display", serif;
+      }
+      p {
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+      }
       /* ===== Navbar Base ===== */
       .navbar {
         background-color: transparent;
@@ -342,6 +361,8 @@
         color: #ddd;
         text-decoration: none;
         transition: color 0.3s;
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
       }
       .footer-column ul li a:hover {
         color: #f14079;

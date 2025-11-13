@@ -39,6 +39,7 @@
   left: 0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
+
 }
 
 .navbar.scrolled {
@@ -55,6 +56,8 @@
   font-weight: 600;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
 }
 
 .navbar .nav-link:hover,
@@ -135,8 +138,10 @@
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #57255a;
-  font-weight: bold;
+  font-weight: 400;
+  font-family: "Abril Fatface", serif;
 }
+
 
 .hero-text p {
   font-size: 1.2rem;
@@ -144,6 +149,8 @@
   color: #666;
   max-width: 550px;
   font-weight: bold;
+  font-family: Poppins, sans-serif;
+
 }
 
 .hero-buttons .btn {
@@ -254,6 +261,20 @@
   transition: color 0.3s ease;
 }
 
+.icon {
+  font-size: 60px;
+  color: #6e196e;
+  margin-bottom: 15px;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  /* 💥 3D shadow effect */
+  transition: all 0.3s ease;
+}
+
+.learning-card:hover .icon {
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
 /* ✅ Text inside card */
 .learning-card p {
   color: #333;
@@ -261,6 +282,7 @@
   line-height: 1.6;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-family: Roboto, sans-serif;
 }
 
 /* ✅ Icon color turns white on hover */
@@ -322,6 +344,7 @@
   color: #6e196e;
   font-weight: 700;
   margin-bottom: 20px;
+  font-family: "Playfair Display";
 }
 
 .animated-list li {
@@ -329,6 +352,8 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
 }
 
 .cartoon-section {
@@ -357,6 +382,7 @@
   text-transform: capitalize;
   position: relative;
   animation: fadeInUp 1s ease;
+  font-family: "Playfair Display";
 }
 
 @keyframes fadeInUp {
@@ -489,6 +515,7 @@
   text-transform: capitalize;
   animation: fadeInUp 1s ease;
   background: none;
+  font-family: "Playfair Display";
   /* Remove pink background if any */
 }
 
@@ -536,6 +563,7 @@
   color: #222;
   font-weight: 700;
   margin: 15px 15px 5px;
+  font-family: "Playfair Display";
 }
 
 .event-box p {
@@ -543,6 +571,8 @@
   color: #555;
   margin: 0 15px 20px;
   line-height: 1.5;
+  font-family: "Roboto, sans-serif";
+  font-weight: 400;
 }
 
 /* 🔘 Show Button */
@@ -583,10 +613,13 @@
   margin-bottom: 60px;
   text-transform: capitalize;
   animation: fadeInUp 1s ease;
+  font-family: "Playfair Display";
 }
 
 .why-choose-section .section-heading span {
   color: var(--info-color);
+  font-family: "Playfair Display";
+  font-weight: 700;
 }
 
 /* 🧱 Boxes */
@@ -633,12 +666,15 @@
   color: var(--danger-color);
   margin-bottom: 12px;
   font-weight: 700;
+  font-family: "Playfair Display";
+
 }
 
 .why-box p {
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
+  font-family: Roboto, sans-serif;
 }
 
 /* ====== Parent Video Reviews ====== */
@@ -715,6 +751,9 @@
   color: var(--primary-color);
   margin-bottom: 40px;
   text-transform: capitalize;
+  font-family: "Playfair Display";
+
+
 }
 
 .accreditation-section .section-heading span {
@@ -778,6 +817,7 @@
   transition: all 0.3s ease;
   text-decoration: none;
   color: #333;
+  font-family: "Playfair Display";
 }
 
 .social-card i {
@@ -820,7 +860,7 @@
   background: #333;
   color: #fff;
   padding: 60px 4% 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Roboto, sans-serif";
 }
 
 /* Grid layout */
@@ -864,6 +904,8 @@
   margin-top: 10px;
   font-size: 1rem;
   color: #fff;
+  font-family: "Roboto, sans-serif";
+  font-weight: 600;
 }
 
 /* Headings */
@@ -873,6 +915,8 @@
   font-size: 1.3rem;
   position: relative;
   text-align: center;
+  font-family: "Roboto, sans-serif";
+  font-weight: 600;
   /* 👈 Heading text bhi center */
 }
 
@@ -895,6 +939,7 @@
 .footer-column ul {
   list-style: none;
   padding: 0;
+  font-weight: 400;
 }
 
 .footer-column ul li {

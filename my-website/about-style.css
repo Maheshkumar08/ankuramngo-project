@@ -127,6 +127,9 @@
   font-weight: 800;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+
 }
 
 .about-text {
@@ -135,6 +138,9 @@
   line-height: 1.8;
   margin-bottom: 15px;
   text-align: justify;
+
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 
 .about-img {
@@ -194,6 +200,8 @@
   padding: 80px 20px;
   border-radius: 20px;
   display: inline-block;
+
+
 }
 
 .about-hero h1 {
@@ -201,10 +209,14 @@
   margin-bottom: 10px;
   color: #fff;
   animation: textPop 1.5s ease forwards;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
 }
 
 .about-hero h1 span {
   color: #F14079;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
 }
 
 .about-hero p {
@@ -214,6 +226,9 @@
   margin: 0 auto;
   opacity: 0;
   animation: fadeIn 2s ease 0.5s forwards;
+
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 
 /* 🌈 About Section with Cartoon Images */
@@ -267,6 +282,9 @@
   font-size: 2rem;
   color: #6E196E;
   margin-bottom: 15px;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+
 }
 
 .about-text p {
@@ -274,6 +292,9 @@
   color: #444;
   line-height: 1.7;
   text-align: justify;
+  font-weight: 600;
+  font-family: "ROBOT", serif;
+
 }
 
 /* 🌀 Animations */
@@ -421,6 +442,8 @@
   margin-top: 10px;
   font-size: 1rem;
   color: #fff;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 
 /* Headings */
@@ -430,6 +453,8 @@
   font-size: 1.3rem;
   position: relative;
   text-align: center;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
   /* 👈 Heading text bhi center */
 }
 
@@ -461,6 +486,8 @@
   color: #ddd;
   text-decoration: none;
   transition: color 0.3s;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 
 .footer-column ul li a:hover {
@@ -472,6 +499,8 @@
   color: #ccc;
   font-size: 0.95rem;
   line-height: 1.6;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 
 /* Social icons */
@@ -513,6 +542,7 @@
   font-size: 1rem;
   margin-bottom: 8px;
   font-weight: 600;
+
 }
 
 .contact-info-section .social-links a {
