@@ -70,12 +70,12 @@
         color: #333;
         font-weight: 600;
         padding: 0.5rem 1rem;
-        transition: color 0.3s ease;
+        /* transition: color 0.3s ease; */
       }
 
       .navbar .nav-link:hover,
       .navbar .nav-link:focus {
-        color: #6e196e;
+        color: #0b5ed7;
       }
 
       .navbar .dropdown-menu {
@@ -408,7 +408,26 @@
         font-size: 0.95rem;
         line-height: 1.6;
       }
+      .footer-column {
+        text-align: center;
+      }
 
+      /* ✅ Responsive logo */
+      .footer-column img {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        display: block;
+        margin: 0 auto 15px;
+        border-radius: 8px;
+      }
+
+      /* ✅ Heading */
+      .footer-column h6 {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #fff;
+      }
       /* Headings */
       .footer-column h3 {
         color: #f14079;
@@ -615,6 +634,14 @@
         .footer {
           text-align: center;
         }
+        .footer-column img {
+          max-width: 180px;
+        }
+
+        .footer-column h6 {
+          font-size: 0.95rem;
+          margin-top: 8px;
+        }
         .footer-column h3::after {
           left: 50%;
           transform: translateX(-50%);
@@ -639,6 +666,14 @@
           font-size: 16px;
           margin-top: -5%;
           font-weight: 600;
+        }
+        .footer-column img {
+          max-width: 150px;
+        }
+
+        .footer-column h6 {
+          font-size: 0.9rem;
+          margin-top: 6px;
         }
       }
     </style>

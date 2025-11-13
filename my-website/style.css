@@ -59,7 +59,7 @@
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-  color: #6e196e;
+  color: #0B5ED7;
 }
 
 .navbar .dropdown-menu {
@@ -142,6 +142,7 @@
   margin-bottom: 2rem;
   color: #666;
   max-width: 550px;
+  font-weight: bold;
 }
 
 .hero-buttons .btn {
@@ -178,7 +179,7 @@
   color: white;
 }
 
-.learning-section {
+/* .learning-section {
   background-color: #fff8f6;
   text-align: center;
 }
@@ -195,6 +196,8 @@
 .learning-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background-color: #0B5ED7;
+  color: white;
 }
 
 .learning-card .icon {
@@ -207,7 +210,63 @@
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
+} */
+
+.learning-section {
+  background-color: #fff8f6;
+  text-align: center;
 }
+
+.learning-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+/* ✅ Hover effect */
+.learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background-color: #0B5ED7;
+  color: white;
+}
+
+/* ✅ Ensure inner text/icons also turn white */
+.learning-card:hover h3,
+.learning-card:hover h4,
+.learning-card:hover p,
+.learning-card:hover i,
+.learning-card:hover span,
+.learning-card:hover a {
+  color: white !important;
+}
+
+/* ✅ Icon styling */
+.learning-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #0B5ED7;
+  /* default icon color */
+  transition: color 0.3s ease;
+}
+
+/* ✅ Text inside card */
+.learning-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* ✅ Icon color turns white on hover */
+.learning-card:hover .icon {
+  color: white;
+}
+
 
 .hero-image {
   flex: 1 1 450px;
@@ -258,7 +317,7 @@
   max-width: 600px;
 }
 
-.text-container h1 {
+.text-container h3 {
   color: #6e196e;
   font-weight: 700;
   margin-bottom: 20px;
@@ -783,27 +842,37 @@
   line-height: 1.6;
 }
 
+
+/* ===== Footer Responsive & Clean ===== */
+.footer-column {
+  text-align: center;
+}
+
+/* ✅ Responsive logo */
+.footer-column img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 8px;
+}
+
+/* ✅ Heading */
+.footer-column h6 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
 /* Headings */
 .footer-column h3 {
   color: #F14079;
   margin-bottom: 18px;
   font-size: 1.3rem;
   position: relative;
-}
-
-.footer-column img {
-  width: 240px;
-  /* 👈 Logo chhota aur neat */
-  height: auto;
-  display: block;
-  margin: 8 auto 15px;
-  /* Center + thoda space neeche */
-  border-radius: 8px;
-  /* optional, soft corners */
-}
-
-.footer-column h6 {
-  margin-top: -10%;
+  text-align: center;
+  /* 👈 Heading text bhi center */
 }
 
 .footer-column h3::after {
@@ -812,10 +881,14 @@
   width: 60px;
   height: 3px;
   background: #72BE48;
-  left: 0;
+  left: 50%;
+  /* 👈 Center position */
   bottom: -8px;
+  transform: translateX(-50%);
+  /* 👈 Perfect centering trick */
   border-radius: 5px;
 }
+
 
 /* Links */
 .footer-column ul {
@@ -1149,18 +1222,12 @@
   }
 
   .footer-column img {
-    width: 240px;
-    /* 👈 Logo chhota aur neat */
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    /* Center + thoda space neeche */
-    border-radius: 8px;
-    /* optional, soft corners */
+    max-width: 180px;
   }
 
   .footer-column h6 {
-    margin-top: -13%;
+    font-size: 0.95rem;
+    margin-top: 8px;
   }
 
   .footer-column h3::after {
@@ -1196,20 +1263,7 @@
     text-align: center;
   }
 
-  .footer-column img {
-    width: 240px;
-    /* 👈 Logo chhota aur neat */
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    /* Center + thoda space neeche */
-    border-radius: 8px;
-    /* optional, soft corners */
-  }
 
-  .footer-column h6 {
-    margin-top: -13%;
-  }
 
   .footer-column h3::after {
     left: 50%;
@@ -1290,18 +1344,12 @@
     }
 
     .footer-column img {
-      width: 240px;
-      /* 👈 Logo chhota aur neat */
-      height: auto;
-      display: block;
-      margin: 0 auto 15px;
-      /* Center + thoda space neeche */
-      border-radius: 8px;
-      /* optional, soft corners */
+      max-width: 150px;
     }
 
     .footer-column h6 {
-      margin-top: -13%;
+      font-size: 0.9rem;
+      margin-top: 6px;
     }
   }
 
