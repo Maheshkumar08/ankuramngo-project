@@ -550,7 +550,7 @@ p {
 .event-section {
   width: 100%;
   background-color: rgb(243, 163, 190);
-  padding: 60px 0;
+  /* padding: 60px 0; */
   text-align: center;
 }
 
@@ -1168,6 +1168,7 @@ p {
     background-color: #6E196E;
     border-radius: 0 0 15px 15px;
     margin-top: 10px;
+    margin-left: 40%;
   }
 
   .navbar-nav {
@@ -1342,7 +1343,7 @@ p {
   }
 
   .section-heading {
-    margin-top: 20%;
+    margin-top: 5%;
     font-size: 1.8rem;
 
   }

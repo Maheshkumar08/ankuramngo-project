@@ -651,6 +651,7 @@ label {
     background-color: #712a86;
   }
 
+
   .btn-danger {
     background-color: transparent;
     border: none;
@@ -705,6 +706,7 @@ label {
     background-color: #6E196E;
     border-radius: 0 0 15px 15px;
     margin-top: 10px;
+    margin-left: 40%;
   }
 
   .navbar-nav {
