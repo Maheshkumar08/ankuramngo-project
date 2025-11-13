@@ -371,6 +371,17 @@ p {
   font-weight: 400;
 }
 
+.animated-list i {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  transition: transform 0.3s ease;
+}
+
+.animated-list li:hover i {
+  transform: scale(1.3) rotate(10deg);
+}
+
 .cartoon-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -386,6 +397,28 @@ p {
   margin-bottom: 50px;
   padding: 20px;
   background-color: rgb(243, 163, 190);
+}
+
+.glow-icon {
+  color: #f7b500;
+  margin-left: 8px;
+  animation: shine 2s infinite ease-in-out;
+}
+
+@keyframes shine {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    color: #f7b500;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+    color: #ffcd3c;
+  }
 }
 
 .section-heading h2 {
