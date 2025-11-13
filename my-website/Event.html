@@ -378,15 +378,18 @@
         margin-bottom: 18px;
         font-size: 1.3rem;
         position: relative;
+        text-align: center; /* 👈 Heading text bhi center */
       }
+
       .footer-column h3::after {
         content: "";
         position: absolute;
         width: 60px;
         height: 3px;
         background: #72be48;
-        left: 0;
+        left: 50%; /* 👈 Center position */
         bottom: -8px;
+        transform: translateX(-50%); /* 👈 Perfect centering trick */
         border-radius: 5px;
       }
 
