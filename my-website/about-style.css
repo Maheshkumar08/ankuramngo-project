@@ -172,7 +172,7 @@
 }
 
 /* 🌤 Hero Section */
-.hero {
+/* .hero {
   background-image: url(/image/about-img/about-background-copy.png);
   text-align: center;
   color: #F14079;
@@ -180,7 +180,7 @@
   font-size: 85px;
   font-weight: 900;
   margin-top: 8%;
-}
+} */
 
 /* 🌤 About Hero Section */
 .about-hero {
@@ -194,6 +194,7 @@
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInUp 1.5s ease forwards;
+  margin-top: 8%;
 }
 
 .about-hero .overlay {
