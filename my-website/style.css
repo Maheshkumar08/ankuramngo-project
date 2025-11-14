@@ -236,9 +236,12 @@ p {
   /* hover hataya */
 }
 
-.learning-section .container h2 {
-  background-color: #f3a3be;
-  border-radius: 12px
+.learning-section .container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  /* color: #57255a; */
+  font-weight: 400;
+  font-family: "Abril Fatface", serif;
 }
 
 /* ===== Background Colors ===== */
@@ -267,7 +270,7 @@ p {
 
 /* ===== Text Style ===== */
 .learning-card p {
-  color: #333;
+  color: white;
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
@@ -1192,6 +1195,14 @@ p {
     font-weight: 600;
     padding: 10px 10px;
 
+  }
+
+  .learning-section .container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    /* color: #57255a; */
+    font-weight: 400;
+    font-family: "Abril Fatface", serif;
   }
 
   .learning-card {
