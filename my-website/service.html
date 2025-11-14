@@ -411,33 +411,30 @@
         text-align: center;
       }
 
-      /* ✅ Responsive logo */
+      .footer-column {
+        text-align: justify;
+      }
+
+      /* Footer Logo */
       .footer-column img {
         width: 100%;
         max-width: 240px;
         height: auto;
         display: block;
-        margin: 0 auto 15px;
+        margin: 0 auto 10px;
+        /* Proper spacing */
         border-radius: 8px;
       }
 
-      /* ✅ Heading */
-      .footer-column h6 {
-        margin-top: 10px;
-        font-size: 1rem;
-        color: #fff;
-        font-family: Poppins, sans-serif;
-        font-weight: 600;
-      }
-      /* Headings */
       .footer-column h3 {
         color: #f14079;
         margin-bottom: 18px;
         font-size: 1.3rem;
         position: relative;
-        text-align: center;
+        text-align: justify;
         font-weight: 900;
-        font-family: "Playfair Display", serif; /* 👈 Heading text bhi center */
+        font-family: "Playfair Display", serif;
+        /* 👈 Heading text bhi center */
       }
 
       .footer-column h3::after {
@@ -446,9 +443,11 @@
         width: 60px;
         height: 3px;
         background: #72be48;
-        left: 50%; /* 👈 Center position */
+        left: 10%;
+        /* 👈 Center position */
         bottom: -8px;
-        transform: translateX(-50%); /* 👈 Perfect centering trick */
+        transform: translateX(-50%);
+        /* 👈 Perfect centering trick */
         border-radius: 5px;
       }
 
@@ -638,13 +637,22 @@
         .footer {
           text-align: center;
         }
+
+        .footer-column {
+          text-align: center;
+        }
+
+        .footer-column h3 {
+          text-align: center;
+        }
+
         .footer-column img {
           max-width: 180px;
         }
 
         .footer-column h6 {
           font-size: 0.95rem;
-          margin-top: 8px;
+          margin-top: -10%;
         }
         .footer-column h3::after {
           left: 50%;
@@ -1135,7 +1143,11 @@
             alt="Ankurm Foundation Logo"
             class="footer-logo"
           />
-          <h6>Every mind sprouts with learning</h6>
+          <h6 style="color: #72be48">Every mind sprouts with learning</h6>
+          <p style="color: #72be48">
+            A special education and therapy center dedicated to inclusive
+            growth.
+          </p>
         </div>
 
         <!-- 🔹 Column 2: Join Us -->
@@ -1156,7 +1168,8 @@
           <h3>Our Resources</h3>
           <ul>
             <li><a href="About-page.html">About Us</a></li>
-            <li><a href="sucess-story.html">Success Story</a></li>
+            <li><a href="Event.html">Success Story</a></li>
+            <li><a href="Event.html">Event</a></li>
             <li><a href="support.html">Donation</a></li>
           </ul>
 
@@ -1206,8 +1219,9 @@
       <div class="footer-bottom">
         <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
         <p>
-          <a href="https://www.thinkbizhightech.com/"
-            >development by ThinkBiz Hightech Private Limited</a
+          development by
+          <a href="https://www.thinkbizhightech.com/">
+            ThinkBiz Hightech Private Limited</a
           >
         </p>
       </div>

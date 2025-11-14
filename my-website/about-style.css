@@ -426,27 +426,32 @@
 }
 
 .footer-column {
-  text-align: center;
+  text-align: justify;
 }
 
-/* ✅ Responsive logo */
+/* Footer Logo */
 .footer-column img {
   width: 100%;
   max-width: 240px;
   height: auto;
   display: block;
-  margin: 0 auto 15px;
+  margin: 0 auto 10px;
+  /* Proper spacing */
   border-radius: 8px;
 }
 
-/* ✅ Heading */
+/* Footer Heading */
 .footer-column h6 {
-  margin-top: 10px;
+  margin-top: -14%;
+  /* Yeh perfect safe gap hai */
   font-size: 1rem;
   color: #fff;
-  font-family: Poppins, sans-serif;
+  font-family: "Roboto, sans-serif";
   font-weight: 600;
+  text-align: center;
+  /* Optional: image ke niche perfect centering */
 }
+
 
 /* Headings */
 .footer-column h3 {
@@ -454,7 +459,7 @@
   margin-bottom: 18px;
   font-size: 1.3rem;
   position: relative;
-  text-align: center;
+  text-align: justify;
   font-weight: 900;
   font-family: "Playfair Display", serif;
   /* 👈 Heading text bhi center */
@@ -466,7 +471,7 @@
   width: 60px;
   height: 3px;
   background: #72BE48;
-  left: 50%;
+  left: 10%;
   /* 👈 Center position */
   bottom: -8px;
   transform: translateX(-50%);
@@ -819,13 +824,21 @@ label {
     text-align: center;
   }
 
+  .footer-column {
+    text-align: center;
+  }
+
+  .footer-column h3 {
+    text-align: center;
+  }
+
   .footer-column img {
     max-width: 180px;
   }
 
   .footer-column h6 {
     font-size: 0.95rem;
-    margin-top: 8px;
+    margin-top: -10%;
   }
 
   .footer-column h3::after {

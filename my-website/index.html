@@ -141,6 +141,9 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-text">
+          <div class="hero-imag">
+            <img src="image/logo-removebg-preview-Copy.png" alt="Hero Image" />
+          </div>
           <h1>Every Child Can Bloom</h1>
           <p>
             Helping every child grow, learn, and shine through inclusive
@@ -157,8 +160,8 @@
                 >Visit</a
               >
             </button> -->
-            <button class="btn btn-danger">
-              <a href="Event.html" style="color: white; text-decoration: none"
+            <button class="btn btn-primary">
+              <a href="service.html" style="color: white; text-decoration: none"
                 >Visit</a
               >
             </button>
@@ -174,10 +177,19 @@
     </section>
     <section class="learning-section py-5">
       <div class="container">
+        <!-- 🟣 Section Heading -->
+        <h2
+          class="learning-title text-center mb-4 py-4"
+          style="background-color: #f3a3be; border-radius: 12px"
+        >
+          Creating a world where every child — regardless of ability — grows
+          confident, independent, and kind
+        </h2>
+
         <div class="row g-4">
           <!-- 📚 Card 1 -->
           <div class="col-md-4">
-            <div class="learning-card">
+            <div class="learning-card card-1">
               <div class="icon">
                 <i class="fa-solid fa-book-open"> </i>
               </div>
@@ -191,7 +203,7 @@
 
           <!-- 👩‍🏫 Card 2 -->
           <div class="col-md-4">
-            <div class="learning-card">
+            <div class="learning-card card-2">
               <div class="icon">
                 <i class="fa-solid fa-book-open-reader"></i>
               </div>
@@ -204,7 +216,7 @@
 
           <!-- 🌟 Card 3 -->
           <div class="col-md-4">
-            <div class="learning-card">
+            <div class="learning-card card-3">
               <div class="icon">
                 <i class="fa-solid fa-seedling"></i>
               </div>
@@ -237,8 +249,9 @@
           <h3>
             <!-- Creating a world where every child — regardless of ability — grows
             confident, independent, and kind. -->
-            Empowering every child to grow with confidence, independence, and
-            kindness.
+            <!-- Empowering every child to grow with confidence, independence, and
+            kindness. -->
+            "Building a World Where Every Child Thrives Together"
           </h3>
           <ul class="animated-list" style="list-style: none; padding: 0">
             <li style="margin-bottom: 12px">
@@ -519,29 +532,22 @@
         <div
           class="accreditation-box"
           style="
-            background-image: url(/image/img/chif-guest-image.webp);
-            background-size: cover;
+            background-image: url(/my-website/image/img/chif-guest-image.webp);
           "
         ></div>
+
         <div
           class="accreditation-box"
           style="
-            background-image: url(/image/img/chif-guest-image.webp);
-            background-size: cover;
-          "
-        ></div>
-        <div
-          class="accreditation-box"
-          style="
-            background-image: url(/image/img/chif-guest-image.webp);
-            background-size: cover;
+            background-image: url(/my-website/image/img/chif-guest-image.webp);
           "
         ></div>
       </div>
     </section>
+
     <!-- 🌐 Social Media Section -->
     <section class="social-media-section py-5 text-center bg-light">
-      <div class="container">
+      <div class="container" style="background-color: #f3a3be">
         <h2 class="mb-4">Connect with Us on Social Media</h2>
         <p class="mb-5">
           Follow Ankurm Foundation to stay updated with our latest news and
@@ -595,7 +601,11 @@
             alt="Ankurm Foundation Logo"
             class="footer-logo"
           />
-          <h6>Every mind sprouts with learning</h6>
+          <h6 style="color: #72be48">Every mind sprouts with learning</h6>
+          <p style="color: #72be48">
+            A special education and therapy center dedicated to inclusive
+            growth.
+          </p>
         </div>
 
         <!-- 🔹 Column 2: Join Us -->
@@ -616,7 +626,8 @@
           <h3>Our Resources</h3>
           <ul>
             <li><a href="About-page.html">About Us</a></li>
-            <li><a href="sucess-story.html">Success Story</a></li>
+            <li><a href="Event.html">Success Story</a></li>
+            <li><a href="Event.html">Event</a></li>
             <li><a href="support.html">Donation</a></li>
           </ul>
 
@@ -666,8 +677,9 @@
       <div class="footer-bottom">
         <p>© 2025 Ankurm Foundation. All Rights Reserved.</p>
         <p>
-          <a href="https://www.thinkbizhightech.com/"
-            >development by ThinkBiz Hightech Private Limited</a
+          development by
+          <a href="https://www.thinkbizhightech.com/">
+            ThinkBiz Hightech Private Limited</a
           >
         </p>
       </div>
@@ -681,9 +693,9 @@
         });
       });
       const videos = [
+        "image/parent-review-3.mp4",
         "image/parent-revi.mp4",
         "image/parent-review-2.mp4",
-        "image/parent-review-3.mp4",
       ];
 
       const mainVideoEl = document.getElementById("mainVideo");
