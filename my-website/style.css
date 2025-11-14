@@ -772,8 +772,6 @@ p {
   margin-bottom: 40px;
   text-transform: capitalize;
   font-family: "Playfair Display";
-
-
 }
 
 .accreditation-section .section-heading span {
@@ -785,29 +783,33 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
+  flex-wrap: wrap;
+  /* ✔ important for responsiveness */
   width: 100%;
 }
 
 /* 🔹 Individual box */
 .accreditation-box {
-  width: 350px;
-  /* bada width */
+  width: 30%;
+  /* ✔ 3 boxes in one row automatically */
+  min-width: 300px;
+  /* ✔ stops breaking into 2 rows on desktop */
   height: 250px;
-  /* bada height */
   background-size: cover;
   background-position: center;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
+  transition: all 0.3s ease;
 }
 
+/* Hover */
 .accreditation-box:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* 🔹 Image style */
+/* 🔹 If you ever use <img> inside */
 .accreditation-box img {
   max-width: 100%;
   max-height: 80%;
@@ -1294,7 +1296,8 @@ p {
   }
 
   .accreditation-box {
-    width: 90%;
+    width: 100%;
+    /* single column */
     height: 220px;
   }
 
