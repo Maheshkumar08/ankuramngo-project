@@ -236,6 +236,11 @@ p {
   /* hover hataya */
 }
 
+.learning-section .container h2 {
+  background-color: #f3a3be;
+  border-radius: 12px
+}
+
 /* ===== Background Colors ===== */
 .card-1 {
   background-color: #ffc402;
