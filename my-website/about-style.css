@@ -184,8 +184,8 @@
 
 /* 🌤 About Hero Section */
 .about-hero {
-  background-image: url("/image/about-img/about-background.png");
-  background-size: cover;
+  /* background-image: url("/image/about-img/about-background.png");
+  background-size: cover; */
   background-position: center;
   color: white;
   text-align: center;
@@ -735,6 +735,11 @@ label {
     font-weight: 600;
     border-radius: 25px;
     line-height: 1.4;
+  }
+
+  .about-hero {
+    margin-top: 21.9%;
+    background-color: white;
   }
 
   .about-hero h1 {
