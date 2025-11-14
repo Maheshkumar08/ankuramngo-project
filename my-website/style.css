@@ -786,7 +786,7 @@ p {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* 🔹 Individual box */
