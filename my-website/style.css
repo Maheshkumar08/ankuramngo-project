@@ -1245,6 +1245,7 @@ p {
 
   .animated-list li {
     font-size: 0.95rem;
+    font-weight: 200;
   }
 
   .cartoon-section {
