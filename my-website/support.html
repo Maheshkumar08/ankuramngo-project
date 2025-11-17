@@ -85,7 +85,7 @@
       }
 
       .navbar .nav-link {
-        color: #333;
+        color: var(--info-color);
         font-weight: 600;
         padding: 0.5rem 1rem;
         /* transition: color 0.3s ease; */
@@ -93,9 +93,7 @@
 
       .navbar .nav-link:hover,
       .navbar .nav-link:focus {
-        color: #0b5ed7;
-        transform: translateY(-5px);
-        font-size: 20px;
+        color: #6e196e;
       }
 
       .navbar .dropdown-menu {
@@ -392,82 +390,58 @@
         }
       }
 
+      /* 🌙 Footer */
       .footer {
         background: #333;
         color: #fff;
         padding: 60px 4% 20px;
         font-family: "Poppins", sans-serif;
+        text-align: center;
+        /* add this for mobile */
       }
 
       /* Grid layout */
       .footer-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
         margin-bottom: 10px;
+        padding: 0 10px;
+        /* small side padding */
       }
 
-      /* Logo */
-      .footer-logo {
-        width: 280px;
-        height: auto;
-      }
-      .footer-column img {
-        width: 240px;
-        /* 👈 Logo chhota aur neat */
-        height: auto;
-        display: block;
-        margin: 0 auto 15px;
-        /* Center + thoda space neeche */
-        border-radius: 8px;
-        /* optional, soft corners */
-      }
-
-      .footer-desc {
-        color: #ccc;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
+      /* Footer Column */
       .footer-column {
         text-align: center;
+        /* Change from justify to center */
       }
 
-      .footer-column {
-        text-align: justify;
-      }
-
-      /* Footer Logo */
+      /* Footer Images */
       .footer-column img {
         width: 100%;
-        max-width: 240px;
+        max-width: 180px;
+        /* max width */
         height: auto;
+        margin: 0 50px 1px;
         display: block;
-        margin: 0 auto 10px;
-        /* Proper spacing */
         border-radius: 8px;
       }
 
-      /* Footer Heading */
       .footer-column h6 {
-        margin-top: -14%;
-        /* Yeh perfect safe gap hai */
-        font-size: 1rem;
-        color: #fff;
-        font-family: "Roboto, sans-serif";
-        font-weight: 600;
-        text-align: center;
-        /* Optional: image ke niche perfect centering */
+        margin-top: -10%;
+        margin-left: 8%;
       }
 
+      /* Footer headings */
       .footer-column h3 {
         color: #f14079;
         margin-bottom: 18px;
         font-size: 1.3rem;
-        position: relative;
-        text-align: justify;
         font-weight: 900;
         font-family: "Playfair Display", serif;
-        /* 👈 Heading text bhi center */
+        text-align: center;
+        /* center headings */
+        position: relative;
       }
 
       .footer-column h3::after {
@@ -476,22 +450,35 @@
         width: 60px;
         height: 3px;
         background: #72be48;
-        left: 10%;
-        /* 👈 Center position */
+        left: 50%;
         bottom: -8px;
         transform: translateX(-50%);
-        /* 👈 Perfect centering trick */
         border-radius: 5px;
       }
 
-      /* Links */
+      /* Footer paragraph */
+      .footer-column p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        margin: 0 auto;
+        max-width: 300px;
+        text-align: center;
+        /* center text */
+      }
+
+      /* Footer links */
       .footer-column ul {
         list-style: none;
         padding: 0;
       }
+
       .footer-column ul li {
         margin-bottom: 10px;
       }
+
       .footer-column ul li a {
         color: #ddd;
         text-decoration: none;
@@ -499,44 +486,43 @@
         font-family: Poppins, sans-serif;
         font-weight: 600;
       }
+
       .footer-column ul li a:hover {
         color: #f14079;
-      }
-
-      /* Contact text */
-      .footer-column p {
-        color: #ccc;
-        font-size: 0.95rem;
-        line-height: 1.6;
       }
 
       /* Social icons */
       .footer-social {
         margin-top: 10px;
+        text-align: center;
+        /* center social icons */
       }
+
       .footer-social a {
         color: #fff;
         font-size: 1.3rem;
-        margin-right: 15px;
+        margin: 0 10px;
         transition: color 0.3s, transform 0.3s;
       }
+
       .footer-social a:hover {
         color: #f14079;
         transform: scale(1.2);
       }
 
-      /* Bottom */
+      /* Bottom text */
       .footer-bottom {
         text-align: center;
         padding-top: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
       }
+
       .footer-bottom p {
         font-size: 0.9rem;
         color: #ccc;
-      }
-
-      /* 📱 Responsive */
+        margin: 0 auto;
+        max-width: 500px;
+      } /* 📱 Responsive */
       @media (max-width: 992px) {
         /* 🔹 Responsive Fix */
         .nav-item.dropdown:hover .dropdown-menu {
@@ -747,6 +733,7 @@
 
         .footer-column img {
           max-width: 150px;
+          margin: auto;
         }
 
         .footer-column h6 {
@@ -833,7 +820,7 @@
                 <a
                   href="support.html"
                   style="text-decoration: none; color: white; font-weight: 600"
-                  >Support</a
+                  >Donation</a
                 >
               </button>
             </li>
@@ -844,7 +831,7 @@
         <div class="navbar-support d-none d-lg-block">
           <button class="btn btn-danger">
             <a href="support.html" style="color: white; text-decoration: none"
-              >Support</a
+              >Donation</a
             >
           </button>
         </div>

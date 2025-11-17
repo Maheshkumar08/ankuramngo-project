@@ -119,7 +119,7 @@
                 <a
                   href="support.html"
                   style="text-decoration: none; color: white; font-weight: 600"
-                  >Support</a
+                  >Donation</a
                 >
               </button>
             </li>
@@ -130,7 +130,7 @@
         <div class="navbar-support d-none d-lg-block">
           <button class="btn btn-danger">
             <a href="support.html" style="color: white; text-decoration: none"
-              >Support</a
+              >Donation</a
             >
           </button>
         </div>
@@ -681,7 +681,6 @@
         </p>
       </div>
     </footer>
-
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         const navbar = document.querySelector(".navbar");
@@ -689,6 +688,7 @@
           navbar.classList.toggle("scrolled", window.scrollY > 50);
         });
       });
+
       const videos = [
         "image/parent-review-3.mp4",
         "image/parent-revi.mp4",
@@ -705,6 +705,8 @@
         // Clear previews
         prevVideoBox.innerHTML = "";
         nextVideoBox.innerHTML = "";
+        prevVideoBox.style.backgroundColor = "transparent";
+        nextVideoBox.style.backgroundColor = "transparent";
 
         // Prev video thumbnail or blank
         if (currentIndex > 0) {
@@ -735,9 +737,9 @@
         }
       }
 
-      function playCurrentVideo() {
+      function loadCurrentVideo() {
         mainVideoEl.src = videos[currentIndex];
-        mainVideoEl.play();
+        mainVideoEl.load(); // load the video without autoplay
         updatePreviews();
       }
 
@@ -748,13 +750,28 @@
         setTimeout(() => {
           currentIndex++;
           if (currentIndex >= videos.length) currentIndex = 0;
-          playCurrentVideo();
+          loadCurrentVideo();
           mainVideoEl.classList.remove("rotate");
         }, 1000); // matches animation duration
       });
 
-      // Start first video
-      playCurrentVideo();
+      // Add click event listeners to preview boxes to change video on click without autoplay
+      prevVideoBox.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          loadCurrentVideo();
+        }
+      });
+
+      nextVideoBox.addEventListener("click", () => {
+        if (currentIndex < videos.length - 1) {
+          currentIndex++;
+          loadCurrentVideo();
+        }
+      });
+
+      // Start first video (loaded but NOT autoplayed)
+      loadCurrentVideo();
     </script>
   </body>
 </html>
