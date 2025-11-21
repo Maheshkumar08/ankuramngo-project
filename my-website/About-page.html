@@ -33,38 +33,42 @@
   </head>
   <body>
     <!-- ✅ Navbar Start -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg custom-nav">
       <div
         class="container-fluid d-flex align-items-center justify-content-between"
       >
-        <!-- 🔹 Logo -->
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="image/img/logo-removebg-preview-1.webp"
-            alt="ANKURM FOUNDATION"
-            style="height: 45px; width: auto"
-          />
-        </a>
-
-        <!-- 🔹 Toggle Button (Mobile) -->
+        <!-- 🔹 MOBILE: Hamburger Left -->
         <button
-          class="navbar-toggler text-black border-0"
+          class="navbar-toggler d-lg-none"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <i class="fa fa-bars fs-2"></i>
         </button>
 
-        <!-- 🔹 Navbar Links -->
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="mainNavbar"
-        >
-          <ul class="navbar-nav text-center mx-auto">
+        <!-- 🔹 MOBILE: Center Logo -->
+        <!-- 🔹 MOBILE: Center Logo -->
+        <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+          <img src="image/img/logo-r.png" class="nav-logo" />
+          <h1 style="font-family: Arial, sans-serif">Ankurm</h1>
+        </a>
+
+        <!-- 🔹 MOBILE: Right Contact Button -->
+        <a href="contact-us.html" class="d-lg-none">
+          <button class="btn btn-danger contact-btn">Contact</button>
+        </a>
+
+        <!-- 🔹 Desktop Logo (Left) -->
+        <a class="navbar-brand d-none d-lg-flex" href="index.html">
+          <img src="image/img/logo-r.png" class="nav-logo" />
+          <!-- <h1>Ankurm</h1> -->
+          <img src="/image/Untitled design.svg" alt="RAM" class="nav-logo" />
+        </a>
+
+        <!-- 🔹 Navbar Menu -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto text-center gap-lg-3">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -80,14 +84,10 @@
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
-                id="journalDropdown"
-                role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Journal</a
               >
-                Journal
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="Event.html">Event</a></li>
                 <li>
                   <a class="dropdown-item" href="sucess-story.html"
@@ -101,12 +101,10 @@
               <a class="nav-link" href="contact-us.html">Contact</a>
             </li>
 
-            <!-- 🔹 Support Button for Mobile -->
-            <li class="nav-item d-lg-none mt-3">
-              <button class="btn btn-outline-danger bg-transparent border-0">
-                <a
-                  href="support.html"
-                  style="text-decoration: none; color: white; font-weight: 600"
+            <!-- 🔹 Mobile Donation -->
+            <li class="nav-item d-lg-none mt-4">
+              <button class="btn btn-danger w-100">
+                <a href="support.html" class="text-white text-decoration-none"
                   >Donation</a
                 >
               </button>
@@ -114,10 +112,10 @@
           </ul>
         </div>
 
-        <!-- 🔹 Support Button (Desktop Only) -->
-        <div class="navbar-support d-none d-lg-block">
+        <!-- 🔹 Desktop Donation Button -->
+        <div class="d-none d-lg-block">
           <button class="btn btn-danger">
-            <a href="support.html" style="color: white; text-decoration: none"
+            <a href="support.html" class="text-white text-decoration-none"
               >Donation</a
             >
           </button>
@@ -125,7 +123,6 @@
       </div>
     </nav>
     <!-- ✅ Navbar End -->
-
     <se ction class="about-hero">
       <div class="overlay">
         <h1>About <span>Ankurm Foundation</span></h1>
