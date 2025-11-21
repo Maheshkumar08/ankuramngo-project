@@ -203,7 +203,7 @@
   border-radius: 20px;
   display: inline-block;
   width: 100%;
-  margin-top: -10%;
+  margin-top: 10%;
 
 }
 
@@ -784,7 +784,7 @@ label {
   }
 
   .contact-info-section .row {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
   }
 
@@ -827,12 +827,21 @@ label {
     transform: translateX(-50%);
   }
 
+  .contact-info-section {
+    margin-top: 20% !important;
+  }
+
 }
 
 @media (max-width: 576px) {
   .hero {
     font-size: 50px;
     padding: 60px 10px;
+  }
+
+  .about-hero .overlay {
+    margin-top: 20%;
+    width: 90%;
   }
 
   .about-hero h1 {
@@ -870,6 +879,8 @@ label {
   .contact-details p {
     font-size: 0.9rem;
   }
+
+
 
   .mb-3 {
     text-align: start;

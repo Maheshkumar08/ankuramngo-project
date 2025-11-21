@@ -294,6 +294,7 @@
                     type="text"
                     class="form-control"
                     id="name"
+                    name="name"
                     placeholder="Enter your name"
                     required
                   />
@@ -303,10 +304,11 @@
                   <label for="email" class="form-label">Email address</label>
                   <input
                     type="email"
-                    class="form-control"
+                    name="user_email"
                     id="email"
                     placeholder="Enter your email"
                     required
+                    class="form-control"
                   />
                 </div>
 
@@ -316,6 +318,7 @@
                     type="text"
                     class="form-control"
                     id="subject"
+                    name="subject"
                     placeholder="Subject"
                   />
                 </div>
@@ -325,6 +328,7 @@
                   <textarea
                     class="form-control"
                     id="message"
+                    name="message"
                     rows="5"
                     placeholder="Write your message..."
                     required
@@ -453,6 +457,7 @@
         </p>
       </div>
     </footer>
+    <!-- <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 
     <script type="module">
       // ===== Navbar Scroll Effect =====
@@ -524,6 +529,92 @@
             }
           });
         }
+      });
+    </script>
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script>
+      emailjs.init("YYVBXajsHvjdmPdbq"); // apna public key yaha daalo
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_s3cryci", "template_l7d65y1", this).then(
+            function () {
+              alert("✅ Message sent successfully!");
+              document.getElementById("contactForm").reset();
+            },
+            function (error) {
+              alert("❌ Failed to send message: " + error.text);
+              console.error("EmailJS error:", error);
+            }
+          );
+        });
+    </script> -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        set,
+      } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA5-oKQ0J23OusHFg0koC0PilXP7Y_IU64",
+        authDomain: "ankurm-project.firebaseapp.com",
+        databaseURL: "https://ankurm-project-default-rtdb.firebaseio.com",
+        projectId: "ankurm-project",
+        storageBucket: "ankurm-project.firebasestorage.app",
+        messagingSenderId: "38277687905",
+        appId: "1:38277687905:web:6644d7d6c275a5d0e61820",
+        measurementId: "G-WJVKTT37EB",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // Initialize EmailJS
+      emailjs.init("YYVBXajsHvjdmPdbq"); // your public key here
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const name = form.name.value.trim();
+          const email = form.user_email.value.trim();
+          const subject = form.subject.value.trim();
+          const message = form.message.value.trim();
+
+          if (!name || !email || !message) {
+            alert("⚠️ Please fill all required fields!");
+            return;
+          }
+
+          try {
+            // 1. Save to Firebase
+            const newMessageRef = push(ref(db, "contactMessages"));
+            await set(newMessageRef, {
+              name,
+              email,
+              subject,
+              message,
+              timestamp: new Date().toISOString(),
+            });
+
+            // 2. Send email via EmailJS
+            await emailjs.sendForm("service_s3cryci", "template_l7d65y1", form);
+
+            alert("✅ Message sent and saved successfully!");
+            form.reset();
+          } catch (error) {
+            console.error("Error:", error);
+            alert("❌ Failed to send message. Please try again.");
+          }
+        });
       });
     </script>
   </body>

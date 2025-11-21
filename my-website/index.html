@@ -45,38 +45,47 @@
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <!-- ✅ Navbar Start -->
+    <nav class="navbar navbar-expand-lg custom-nav">
       <div
         class="container-fluid d-flex align-items-center justify-content-between"
       >
-        <!-- Logo -->
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="image/img/logo-removebg-preview-1.webp"
-            alt="ANKURM FOUNDATION"
-            style="height: 45px; width: auto"
-          />
-        </a>
-
-        <!-- Toggle Button -->
+        <!-- 🔹 MOBILE: Hamburger Left -->
         <button
-          class="navbar-toggler text-black border-0"
+          class="navbar-toggler d-lg-none"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <i class="fa fa-bars fs-2"></i>
         </button>
 
-        <!-- Navbar Links -->
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="mainNavbar"
-        >
-          <ul class="navbar-nav text-center mx-auto">
+        <!-- 🔹 MOBILE: Center Logo -->
+        <!-- 🔹 MOBILE: Center Logo -->
+        <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+          <img src="image/img/logo-r.png" class="nav-logo" />
+          <h1 style="font-family: Arial, sans-serif">Ankurm</h1>
+        </a>
+
+        <!-- 🔹 MOBILE: Right Contact Button -->
+        <a href="contact-us.html" class="d-lg-none">
+          <button class="btn btn-danger contact-btn">Contact</button>
+        </a>
+
+        <!-- 🔹 Desktop Logo (Left) -->
+        <a class="navbar-brand d-none d-lg-flex" href="index.html">
+          <img src="image/img/logo-r.png" class="nav-logo" />
+          <!-- <h1>Ankurm</h1> -->
+          <img
+            src="/my-website/image/Untitled design.svg"
+            alt="RAM"
+            class="nav-logo"
+          />
+        </a>
+
+        <!-- 🔹 Navbar Menu -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto text-center gap-lg-3">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -87,19 +96,15 @@
               <a class="nav-link" href="About-page.html">About-us</a>
             </li>
 
-            <!-- Dropdown -->
+            <!-- 🔸 Dropdown -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
-                id="journalDropdown"
-                role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                >Journal</a
               >
-                Journal
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="Event.html">Event</a></li>
                 <li>
                   <a class="dropdown-item" href="sucess-story.html"
@@ -113,12 +118,10 @@
               <a class="nav-link" href="contact-us.html">Contact</a>
             </li>
 
-            <!-- Support Button for mobile -->
-            <li class="nav-item d-lg-none mt-3">
-              <button class="btn btn-outline-danger bg-transparent border-0">
-                <a
-                  href="support.html"
-                  style="text-decoration: none; color: white; font-weight: 600"
+            <!-- 🔹 Mobile Donation -->
+            <li class="nav-item d-lg-none mt-4">
+              <button class="btn btn-danger w-100">
+                <a href="support.html" class="text-white text-decoration-none"
                   >Donation</a
                 >
               </button>
@@ -126,55 +129,78 @@
           </ul>
         </div>
 
-        <!-- Support Button (Desktop only) -->
-        <div class="navbar-support d-none d-lg-block">
+        <!-- 🔹 Desktop Donation Button -->
+        <div class="d-none d-lg-block">
           <button class="btn btn-danger">
-            <a href="support.html" style="color: white; text-decoration: none"
+            <a href="support.html" class="text-white text-decoration-none"
               >Donation</a
             >
           </button>
         </div>
       </div>
     </nav>
-
-    <!-- ✅ Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="hero-imag">
-            <img src="image/logo-removebg-preview-Copy.png" alt="Hero Image" />
-          </div>
-          <h1>Every Child Can Bloom</h1>
+    <!-- ✅ Navbar End -->
+    <!-- new code -->
+    <div class="section-one">
+      <div class="left">
+        <div class="top">
+          <h1>Does Your Child Need Special Support</h1>
           <p>
-            Helping every child grow, learn, and shine through inclusive
-            education and joyful experiences.
+            If your child faces any of these challenges, We're here to help!
           </p>
-          <div class="hero-buttons">
-            <button class="btn btn-primary">
-              <a href="service.html" style="color: white; text-decoration: none"
-                >See Our Program</a
-              >
-            </button>
-            <!-- <button class="btn btn-primary">
-              <a href="Event.html" style="color: white; text-decoration: none"
-                >Visit</a
-              >
-            </button> -->
-            <button class="btn btn-primary">
-              <a href="service.html" style="color: white; text-decoration: none"
-                >Visit</a
-              >
-            </button>
-          </div>
         </div>
-        <div class="hero-image">
-          <img
-            src="image/img/hero-section-banner-copy.webp"
-            alt="Kids Learning"
-          />
+
+        <div class="bottom">
+          <img src="image/ram.png" alt="Bottom Image" />
         </div>
       </div>
-    </section>
+
+      <div class="right">
+        <img src="image/hero-section-banner-copy.jpg" alt="Image" />
+      </div>
+    </div>
+
+    <!-- SECTION TWO -->
+    <div class="section-two">
+      <div class="two-left">
+        <h1>
+          Every child deserves the right support our experts are here for you!
+        </h1>
+        <!-- <h1 style="color: #57255a; font-weight: 200">Every Child Can Bloom</h1> -->
+        <p>
+          Helping every child grow, learn, and shine through inclusive education
+          and joyful experiences.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">
+            <a href="service.html" style="color: white; text-decoration: none"
+              >See Our Program</a
+            >
+          </button>
+        </div>
+      </div>
+      <div class="two-right">
+        <img src="image/🎨 Colours of Inclusion (3).webp" alt="Image" />
+      </div>
+
+      <div class="two-center">
+        <ol>
+          <li>Special Education</li>
+          <li>Speech Therapy</li>
+          <li>Physio Therapy</li>
+          <li>Occupational Therapy</li>
+          <li>Counselling</li>
+          <li>Social Skills Building</li>
+          <li>Daily Living Training</li>
+          <li>Behaviour Modification</li>
+          <li>Dance & Music</li>
+          <li>Yoga Classes</li>
+          <li>Home Tution</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ent code -->
     <section class="learning-section py-5">
       <div class="container">
         <!-- 🟣 Section Heading -->
